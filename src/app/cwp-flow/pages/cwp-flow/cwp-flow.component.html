@@ -1,0 +1,31 @@
+<ng-container *ngIf="CWPFlowStepActive | async as active">
+  <div class="content">
+    <ng-container>
+      <div [ngSwitch]="active">
+        <div *ngSwitchCase="active === CWPFlowStepsSequence.personalData">
+          <!-- <app-step-one></app-step-one> -->
+          <div class="intro">
+            <app-intro-image></app-intro-image>
+          </div>
+          <div class="pd">
+            <h1>In wenigen Schritten zu Ihrer Consors Finanz Mastercard®.</h1>
+            <h2>
+              Pflichtfelder sind mit <span class="green">*</span> markiert
+            </h2>
+
+            <app-navigation-buttons [label]="'Weiter'"></app-navigation-buttons>
+          </div>
+        </div>
+        <div *ngSwitchCase="CWPFlowSteps.personalData">
+          <!-- <app-step-two></app-step-two> -->
+        </div>
+      </div>
+
+      <app-navigation-buttons
+        [activeStep]="active"
+        (backClicked)="onBack()"
+        (nextClicked)="onNext()"
+      ></app-navigation-buttons>
+    </ng-container>
+  </div>
+</ng-container>
