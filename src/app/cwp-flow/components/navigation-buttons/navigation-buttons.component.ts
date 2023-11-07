@@ -5,6 +5,8 @@ import {
   emptyNavigationButtons,
 } from '../../models/navigation-buttons.model';
 import { CWPFlowStepsSequence } from '../../enums/cwp-flow-steps-sequence.enum';
+import { CwpFlowControlService } from '../../services/cwp-flow-control.service';
+import { CWPFlowNavigationButtons } from '../../enums/cwp-flow-navigation-buttons.enum copy';
 
 @Component({
   selector: 'app-navigation-buttons',
@@ -12,29 +14,23 @@ import { CWPFlowStepsSequence } from '../../enums/cwp-flow-steps-sequence.enum';
   styleUrls: ['./navigation-buttons.component.scss'],
 })
 export class NavigationButtonsComponent {
-  @Input() label: string = '';
+  @Input() buttonType: CWPFlowNavigationButtons = CWPFlowNavigationButtons.next;
   @Input() navigation: NavigationButtons = emptyNavigationButtons;
   @Input() nextDisabled = false;
   @Input() activeStep: CWPFlowStepsSequence =
     CWPFlowStepsSequence.contactDetails;
 
-  @Output() backClicked = new EventEmitter<void>();
-  @Output() nextClicked = new EventEmitter<void>();
-  @Output() nextHovered = new EventEmitter<boolean>();
-
   readonly CWPFlowStepsSequence = CWPFlowStepsSequence;
+  readonly navigationButtons = CWPFlowNavigationButtons;
 
-  get last() {
-    return this.activeStep === CWPFlowStepsSequence.overallOverview;
-  }
-
-  constructor() {}
+  constructor(public CwpFlowService: CwpFlowControlService) {}
 
   onBack() {
-    this.backClicked.emit();
+    console.log("click")
+    this.CwpFlowService.stepBackwards();
   }
 
   onNext() {
-    this.nextClicked.emit();
+    this.CwpFlowService.stepForwards();
   }
 }

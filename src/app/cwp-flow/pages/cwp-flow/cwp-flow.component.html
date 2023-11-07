@@ -1,31 +1,100 @@
-<ng-container *ngIf="CWPFlowStepActive | async as active">
-  <div class="content">
-    <ng-container>
-      <div [ngSwitch]="active">
-        <div *ngSwitchCase="active === CWPFlowStepsSequence.personalData">
-          <!-- <app-step-one></app-step-one> -->
-          <div class="intro">
-            <app-intro-image></app-intro-image>
-          </div>
-          <div class="pd">
-            <h1>In wenigen Schritten zu Ihrer Consors Finanz Mastercard®.</h1>
-            <h2>
-              Pflichtfelder sind mit <span class="green">*</span> markiert
-            </h2>
-
-            <app-navigation-buttons [label]="'Weiter'"></app-navigation-buttons>
-          </div>
-        </div>
-        <div *ngSwitchCase="CWPFlowSteps.personalData">
-          <!-- <app-step-two></app-step-two> -->
+<ng-container *ngIf="CwpFlowService.CWPFlowStepActive | async as active">
+  <ng-container [ngSwitch]="active">
+    <ng-container *ngSwitchCase="active === CWPFlowStepsSequence.personalData">
+      <div class="step">
+        <app-intro-image></app-intro-image>
+        <div class="content">
+          <h1>In wenigen Schritten zu Ihrer Consors Finanz Mastercard®.</h1>
+          <h2>Pflichtfelder sind mit <span class="green">*</span> markiert</h2>
         </div>
       </div>
-
       <app-navigation-buttons
-        [activeStep]="active"
-        (backClicked)="onBack()"
-        (nextClicked)="onNext()"
+        [buttonType]="CWPFlowNavigationButtons.next"
       ></app-navigation-buttons>
     </ng-container>
-  </div>
+
+    <ng-container *ngSwitchCase="CWPFlowStepsSequence.contactDetails">
+      <app-navigation-buttons
+        [buttonType]="CWPFlowNavigationButtons.back"
+      ></app-navigation-buttons>
+      <div class="step">
+        <div class="content">
+          <h1>Contact Details.</h1>
+        </div>
+      </div>
+      <app-navigation-buttons
+        [buttonType]="CWPFlowNavigationButtons.next"
+      ></app-navigation-buttons>
+    </ng-container>
+
+    <ng-container *ngSwitchCase="CWPFlowStepsSequence.nationality">
+      <app-navigation-buttons
+        [buttonType]="CWPFlowNavigationButtons.back"
+      ></app-navigation-buttons>
+      <div class="step">
+        <div class="content">
+          <h1>Nationality.</h1>
+        </div>
+      </div>
+      <app-navigation-buttons
+        [buttonType]="CWPFlowNavigationButtons.next"
+      ></app-navigation-buttons>
+    </ng-container>
+
+    <ng-container *ngSwitchCase="CWPFlowStepsSequence.bankDetails">
+      <app-navigation-buttons
+        [buttonType]="CWPFlowNavigationButtons.back"
+      ></app-navigation-buttons>
+      <div class="step">
+        <div class="content">
+          <h1>Bank Details.</h1>
+        </div>
+      </div>
+      <app-navigation-buttons
+        [buttonType]="CWPFlowNavigationButtons.next"
+      ></app-navigation-buttons>
+    </ng-container>
+
+    <ng-container *ngSwitchCase="CWPFlowStepsSequence.employmentDetails">
+      <app-navigation-buttons
+        [buttonType]="CWPFlowNavigationButtons.back"
+      ></app-navigation-buttons>
+      <div class="step">
+        <div class="content">
+          <h1>Employment Details.</h1>
+        </div>
+      </div>
+      <app-navigation-buttons
+        [buttonType]="CWPFlowNavigationButtons.next"
+      ></app-navigation-buttons>
+    </ng-container>
+
+    <ng-container *ngSwitchCase="CWPFlowStepsSequence.regularExpenses">
+      <app-navigation-buttons
+      [buttonType]="CWPFlowNavigationButtons.back"
+    ></app-navigation-buttons>
+    <div class="step">
+      <div class="content">
+        <h1>Regular Expenses.</h1>
+      </div>
+    </div>
+    <app-navigation-buttons
+      [buttonType]="CWPFlowNavigationButtons.next"
+    ></app-navigation-buttons>
+    </ng-container>
+
+    <ng-container *ngSwitchCase="CWPFlowStepsSequence.overallOverview">
+      <app-navigation-buttons
+        [buttonType]="CWPFlowNavigationButtons.back"
+      ></app-navigation-buttons>
+      <div class="step">
+        <div class="content">
+          <h1>Overall Overview.</h1>
+        </div>
+      </div>
+      <app-navigation-buttons
+        [buttonType]="CWPFlowNavigationButtons.next"
+      ></app-navigation-buttons>
+    </ng-container>
+  </ng-container>
 </ng-container>

@@ -9,6 +9,8 @@ import {
   emailValidator,
   phoneNumberValidation,
 } from 'src/app/shared/utils/validation';
+import { CwpFlowControlService } from '../../services/cwp-flow-control.service';
+import { CWPFlowNavigationButtons } from '../../enums/cwp-flow-navigation-buttons.enum copy';
 
 @Component({
   selector: 'app-cwp-flow',
@@ -16,14 +18,13 @@ import {
   styleUrls: ['./cwp-flow.component.scss'],
 })
 export class CwpFlowComponent {
-  CWPFlowStepActive = new BehaviorSubject<CWPFlowStepsSequence>(
-    CWPFlowStepsSequence.personalData
-  );
-
-  readonly CWPFlowSteps = CWPFlowSteps;
   readonly CWPFlowStepsSequence = CWPFlowStepsSequence;
+  readonly CWPFlowNavigationButtons = CWPFlowNavigationButtons;
 
-  constructor(private fb: FormBuilder) {}
+  constructor(
+    private fb: FormBuilder,
+    public CwpFlowService: CwpFlowControlService
+  ) {}
 
   CWPForm: FormGroup = this.fb.group({
     salutation: this.fb.control(null, Validators.required),
@@ -42,54 +43,41 @@ export class CwpFlowComponent {
   });
 
   onBack() {
+    console.log(this.CwpFlowService.CWPFlowStepActive.value);
     scrollToTop();
-    this.CWPFlowStepActive.next(
-      Math.max(
-        CWPFlowStepsSequence.contactDetails,
-        this.CWPFlowStepActive.value - 1
-      )
-    );
+    this.CwpFlowService.stepBackwards();
   }
 
-  handleSections(index: number) {
-    const active = this.CWPFlowStepActive.value;
-    const current = index;
-    if (current < active) {
-      this.CWPFlowStepActive.next(current);
-    }
+  test(t?: string) {
+    t ? console.log(t) : console.log('nada');
   }
-
   onNext() {
-    if (!this.isCurrentStepValid) {
-      return;
-    }
+    console.log(this.CwpFlowService.CWPFlowStepActive.value);
+    // if (!this.isCurrentStepValid) {
+    //   return;
+    // }
     scrollToTop();
     if (
-      this.CWPFlowStepActive.value === CWPFlowStepsSequence.overallOverview &&
+      this.CwpFlowService.CWPFlowStepActive.value ===
+        CWPFlowStepsSequence.overallOverview &&
       this.CWPForm.valid
     ) {
       this.submitForm();
       return;
     }
-    this.goToNextStep(this.CWPFlowStepActive.value);
+    this.CwpFlowService.stepForwards();
   }
 
   get isCurrentStepValid() {
-    return this.checkIfValid(this.CWPFlowStepActive.value);
+    return this.checkIfValid(this.CwpFlowService.CWPFlowStepActive.value);
   }
 
   get isNextValid() {
-    return this.checkIfValid(this.CWPFlowStepActive.value);
+    return this.checkIfValid(this.CwpFlowService.CWPFlowStepActive.value);
   }
 
   get userForm() {
     return this.CWPForm.get('user') as FormGroup;
-  }
-
-  private goToNextStep(activeStep: CWPFlowStepsSequence) {
-    this.CWPFlowStepActive.next(
-      Math.min(CWPFlowStepsSequence.overallOverview, activeStep + 1)
-    );
   }
 
   private checkIfValid(step: CWPFlowStepsSequence) {

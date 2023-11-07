@@ -1,54 +1,11 @@
-<div
-  class="wrapper"
-  [ngClass]="{
-    end: !!navigation && !!navigation.backButton ? false : true,
-    warranty: activeStep === CWPFlowStepsSequence.contactDetails,
-    summary: activeStep === CWPFlowStepsSequence.overallOverview,
-    weiter: label === 'Weiter'
-  }"
->
-  <ng-container *ngIf="label === 'Weiter'">
+<ng-container *ngIf="buttonType === navigationButtons.next">
+  <div class="weiter" (click)="onNext()">
     <span>Weiter</span>
-  </ng-container>
+  </div>
+</ng-container>
 
-  <ng-container *ngIf="!!navigation?.backButton">
-    <div class="web-back">
-      <app-button
-        type="ghost"
-        *ngIf="!!navigation.backButton"
-        (clicked)="onBack()"
-      >
-      </app-button>
-    </div>
-
-    <div class="mobile-back" (click)="onBack()">
-      <div class="icon">
-        <!-- <app-arrow [black]="true" direction="left"></app-arrow> -->
-      </div>
-    </div>
-  </ng-container>
-  <ng-container *ngIf="!!navigation?.nextButton">
-    <div class="web-next">
-      <app-button type="round" [disabled]="nextDisabled" (clicked)="onNext()">
-      </app-button>
-    </div>
-
-    <div
-      *ngIf="!last"
-      class="mobile-next"
-      (click)="onNext()"
-      [ngClass]="{ disabled: nextDisabled }"
-    >
-      <p>{{ navigation.nextButton }}</p>
-      <div class="button">
-        <div class="icon">
-          <app-arrow></app-arrow>
-        </div>
-      </div>
-    </div>
-    <div *ngIf="last" class="mobile-next">
-      <app-button type="round" [disabled]="nextDisabled" (clicked)="onNext()">
-      </app-button>
-    </div>
-  </ng-container>
-</div>
+<ng-container *ngIf="buttonType === navigationButtons.back">
+  <div class="back" (click)="onBack()">
+    <app-arrow></app-arrow>
+  </div>
+</ng-container>

@@ -20,6 +20,6 @@ import { IntroImageComponent } from './components/intro-image/intro-image.compon
     IntroImageComponent,
   ],
   imports: [CommonModule, RouterModule],
-  exports: [ButtonComponent, ArrowComponent, IntroImageComponent],
+  exports: [ButtonComponent, ArrowComponent, IntroImageComponent, ArrowComponent],
 })
 export class SharedModule {}
