@@ -1,7 +1,4 @@
-import { CWPFlowSteps } from './../../enums/cwp-flow-steps.enum';
 import { Component } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
-import { CWPFlowStepsModel } from '../../models/cwp-flow-steps.model';
 import { scrollToTop } from 'src/app/shared/utils/scroll-to-top.util';
 import { CWPFlowStepsSequence } from '../../enums/cwp-flow-steps-sequence.enum';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
@@ -10,7 +7,6 @@ import {
   phoneNumberValidation,
 } from 'src/app/shared/utils/validation';
 import { CwpFlowControlService } from '../../services/cwp-flow-control.service';
-import { CWPFlowNavigationButtons } from '../../enums/cwp-flow-navigation-buttons.enum copy';
 
 @Component({
   selector: 'app-cwp-flow',
@@ -18,8 +14,6 @@ import { CWPFlowNavigationButtons } from '../../enums/cwp-flow-navigation-button
   styleUrls: ['./cwp-flow.component.scss'],
 })
 export class CwpFlowComponent {
-  readonly CWPFlowStepsSequence = CWPFlowStepsSequence;
-  readonly CWPFlowNavigationButtons = CWPFlowNavigationButtons;
 
   constructor(
     private fb: FormBuilder,

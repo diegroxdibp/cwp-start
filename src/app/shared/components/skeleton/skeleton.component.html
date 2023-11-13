@@ -1,4 +1,8 @@
-<cwp-header></cwp-header>
+<cwp-header
+  *ngIf="
+    CwpFlowService.CWPFlowStepActive.value === CWPFlowStepsSequence.personalData
+  "
+></cwp-header>
 
 <body>
   <router-outlet></router-outlet>

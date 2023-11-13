@@ -1,6 +1,13 @@
 <ng-container *ngIf="CwpFlowService.CWPFlowStepActive | async as active">
   <ng-container [ngSwitch]="active">
-    <ng-container *ngSwitchCase="active === CWPFlowStepsSequence.personalData">
+    <app-progress-bar
+      *ngIf="active !== CwpFlowService.CWPFlowStepsSequence.personalData"
+    ></app-progress-bar>
+    <ng-container
+      *ngSwitchCase="
+        active === CwpFlowService.CWPFlowStepsSequence.personalData
+      "
+    >
       <div class="step">
         <app-intro-image></app-intro-image>
         <div class="content">
@@ -9,13 +16,15 @@
         </div>
       </div>
       <app-navigation-buttons
-        [buttonType]="CWPFlowNavigationButtons.next"
+        [buttonType]="CwpFlowService.CWPFlowNavigationButtons.next"
       ></app-navigation-buttons>
     </ng-container>
 
-    <ng-container *ngSwitchCase="CWPFlowStepsSequence.contactDetails">
+    <ng-container
+      *ngSwitchCase="CwpFlowService.CWPFlowStepsSequence.contactDetails"
+    >
       <app-navigation-buttons
-        [buttonType]="CWPFlowNavigationButtons.back"
+        [buttonType]="CwpFlowService.CWPFlowNavigationButtons.back"
       ></app-navigation-buttons>
       <div class="step">
         <div class="content">
@@ -23,13 +32,15 @@
         </div>
       </div>
       <app-navigation-buttons
-        [buttonType]="CWPFlowNavigationButtons.next"
+        [buttonType]="CwpFlowService.CWPFlowNavigationButtons.next"
       ></app-navigation-buttons>
     </ng-container>
 
-    <ng-container *ngSwitchCase="CWPFlowStepsSequence.nationality">
+    <ng-container
+      *ngSwitchCase="CwpFlowService.CWPFlowStepsSequence.nationality"
+    >
       <app-navigation-buttons
-        [buttonType]="CWPFlowNavigationButtons.back"
+        [buttonType]="CwpFlowService.CWPFlowNavigationButtons.back"
       ></app-navigation-buttons>
       <div class="step">
         <div class="content">
@@ -37,13 +48,15 @@
         </div>
       </div>
       <app-navigation-buttons
-        [buttonType]="CWPFlowNavigationButtons.next"
+        [buttonType]="CwpFlowService.CWPFlowNavigationButtons.next"
       ></app-navigation-buttons>
     </ng-container>
 
-    <ng-container *ngSwitchCase="CWPFlowStepsSequence.bankDetails">
+    <ng-container
+      *ngSwitchCase="CwpFlowService.CWPFlowStepsSequence.bankDetails"
+    >
       <app-navigation-buttons
-        [buttonType]="CWPFlowNavigationButtons.back"
+        [buttonType]="CwpFlowService.CWPFlowNavigationButtons.back"
       ></app-navigation-buttons>
       <div class="step">
         <div class="content">
@@ -51,13 +64,15 @@
         </div>
       </div>
       <app-navigation-buttons
-        [buttonType]="CWPFlowNavigationButtons.next"
+        [buttonType]="CwpFlowService.CWPFlowNavigationButtons.next"
       ></app-navigation-buttons>
     </ng-container>
 
-    <ng-container *ngSwitchCase="CWPFlowStepsSequence.employmentDetails">
+    <ng-container
+      *ngSwitchCase="CwpFlowService.CWPFlowStepsSequence.employmentDetails"
+    >
       <app-navigation-buttons
-        [buttonType]="CWPFlowNavigationButtons.back"
+        [buttonType]="CwpFlowService.CWPFlowNavigationButtons.back"
       ></app-navigation-buttons>
       <div class="step">
         <div class="content">
@@ -65,27 +80,31 @@
         </div>
       </div>
       <app-navigation-buttons
-        [buttonType]="CWPFlowNavigationButtons.next"
+        [buttonType]="CwpFlowService.CWPFlowNavigationButtons.next"
       ></app-navigation-buttons>
     </ng-container>
 
-    <ng-container *ngSwitchCase="CWPFlowStepsSequence.regularExpenses">
+    <ng-container
+      *ngSwitchCase="CwpFlowService.CWPFlowStepsSequence.regularExpenses"
+    >
       <app-navigation-buttons
-      [buttonType]="CWPFlowNavigationButtons.back"
-    ></app-navigation-buttons>
-    <div class="step">
-      <div class="content">
-        <h1>Regular Expenses.</h1>
+        [buttonType]="CwpFlowService.CWPFlowNavigationButtons.back"
+      ></app-navigation-buttons>
+      <div class="step">
+        <div class="content">
+          <h1>Regular Expenses.</h1>
+        </div>
       </div>
-    </div>
-    <app-navigation-buttons
-      [buttonType]="CWPFlowNavigationButtons.next"
-    ></app-navigation-buttons>
+      <app-navigation-buttons
+        [buttonType]="CwpFlowService.CWPFlowNavigationButtons.next"
+      ></app-navigation-buttons>
     </ng-container>
 
-    <ng-container *ngSwitchCase="CWPFlowStepsSequence.overallOverview">
+    <ng-container
+      *ngSwitchCase="CwpFlowService.CWPFlowStepsSequence.overallOverview"
+    >
       <app-navigation-buttons
-        [buttonType]="CWPFlowNavigationButtons.back"
+        [buttonType]="CwpFlowService.CWPFlowNavigationButtons.back"
       ></app-navigation-buttons>
       <div class="step">
         <div class="content">
@@ -93,7 +112,7 @@
         </div>
       </div>
       <app-navigation-buttons
-        [buttonType]="CWPFlowNavigationButtons.next"
+        [buttonType]="CwpFlowService.CWPFlowNavigationButtons.next"
       ></app-navigation-buttons>
     </ng-container>
   </ng-container>

@@ -8,6 +8,7 @@ import { ButtonComponent } from './components/button/button.component';
 import { ArrowComponent } from './components/arrow/arrow.component';
 import { CfgLogoComponent } from './components/cfg-logo/cfg-logo.component';
 import { IntroImageComponent } from './components/intro-image/intro-image.component';
+import { ProgressBarComponent } from './components/progress-bar/progress-bar.component';
 
 @NgModule({
   declarations: [
@@ -18,8 +19,9 @@ import { IntroImageComponent } from './components/intro-image/intro-image.compon
     ArrowComponent,
     CfgLogoComponent,
     IntroImageComponent,
+    ProgressBarComponent,
   ],
   imports: [CommonModule, RouterModule],
-  exports: [ButtonComponent, ArrowComponent, IntroImageComponent, ArrowComponent],
+  exports: [ButtonComponent, ArrowComponent, IntroImageComponent, ArrowComponent, ProgressBarComponent],
 })
 export class SharedModule {}
