@@ -12,7 +12,7 @@ export class CwpFlowControlService {
   readonly CWPFlowStepsSequence = CWPFlowStepsSequence;
   readonly CWPFlowNavigationButtons = CWPFlowNavigationButtons;
   CWPFlowStepActive = new BehaviorSubject<CWPFlowStepsSequence>(
-    CWPFlowStepsSequence.personalData
+    CWPFlowStepsSequence.personalData_salutationAndNamePage
   );
 
   constructor() {}
@@ -24,20 +24,22 @@ export class CwpFlowControlService {
         this.CWPFlowStepActive.value + 1
       )
     );
+    console.log(this.CWPFlowStepActive.value);
   }
 
   stepBackwards() {
     this.CWPFlowStepActive.next(
       Math.max(
-        CWPFlowStepsSequence.personalData,
+        CWPFlowStepsSequence.personalData_salutationAndNamePage,
         this.CWPFlowStepActive.value - 1
       )
     );
   }
 
   get CWPFlowStepActiveName() {
-    const key : string = this.CWPFlowStepNameByStepNumber(this.CWPFlowStepActive.value);
-    const CWPFlowStepActiveName = this.CWPFlowSteps[key as keyof typeof CWPFlowSteps];
+    const key: string = this.CWPBlock(this.CWPFlowStepActive.value);
+    const CWPFlowStepActiveName =
+      this.CWPFlowSteps[key as keyof typeof CWPFlowSteps];
     return CWPFlowStepActiveName;
   }
 
@@ -62,5 +64,24 @@ export class CwpFlowControlService {
     return Object.values(CWPFlowStepsSequence).filter(
       (value) => value === stepName
     )[0] as number;
+  }
+
+  CWPBlock(step: CWPFlowStepsSequence): string {
+    switch (true) {
+      case step >= 1 && step <= 4:
+        return 'personalData';
+      case step >= 5 && step <= 7:
+        return 'contactDetails';
+      case step === 8:
+        return 'nationality';
+      case step === 9:
+        return 'bankDetails';
+      default:
+        return 'unknownGroup';
+    }
+  }
+
+  get CWPBlockNames(): string[] {
+    return Object.values(this.CWPFlowSteps);
   }
 }

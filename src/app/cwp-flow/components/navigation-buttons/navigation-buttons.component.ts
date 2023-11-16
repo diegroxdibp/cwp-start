@@ -18,7 +18,7 @@ export class NavigationButtonsComponent {
   @Input() navigation: NavigationButtons = emptyNavigationButtons;
   @Input() nextDisabled = false;
   @Input() activeStep: CWPFlowStepsSequence =
-    CWPFlowStepsSequence.contactDetails;
+    CWPFlowStepsSequence.personalData_salutationAndNamePage;
 
   readonly CWPFlowStepsSequence = CWPFlowStepsSequence;
   readonly navigationButtons = CWPFlowNavigationButtons;

@@ -1,3 +1,23 @@
+export const salutation = 'salutation';
+export const firstName = 'firstName';
+export const lastName = 'lastName';
+export const email = 'email';
+export const birthDate = 'birthDate';
+export const birthName = 'birthName';
+export const maritalStatus = 'maritalStatus';
+
+export const postalCode = 'postalCode';
+export const location = 'location';
+export const street = 'street';
+export const number = 'number';
+export const residentSince = 'residentSince';
+export const country = 'country';
+export const mobileNumber = 'mobileNumber';
+
+export const residencePermit = 'residencePermit';
+export const dateOfExpiry = 'dateOfExpiry';
+export const countryExceptionCheck = 'countryExceptionCheck';
+
 export const EmailRegex =
   /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 

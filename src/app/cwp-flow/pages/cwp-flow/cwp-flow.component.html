@@ -1,14 +1,28 @@
 <ng-container *ngIf="CwpFlowService.CWPFlowStepActive | async as active">
+  <app-progress-bar
+    *ngIf="
+      active !==
+      CwpFlowService.CWPFlowStepsSequence.personalData_salutationAndNamePage
+    "
+  ></app-progress-bar>
+
   <ng-container [ngSwitch]="active">
-    <app-progress-bar
-      *ngIf="active !== CwpFlowService.CWPFlowStepsSequence.personalData"
-    ></app-progress-bar>
     <ng-container
       *ngSwitchCase="
-        active === CwpFlowService.CWPFlowStepsSequence.personalData
+        CwpFlowService.CWPFlowStepsSequence.personalData_salutationAndNamePage
       "
     >
       <div class="step">
+        <app-intro-image></app-intro-image>
+        <div class="content">
+          <h1>In wenigen Schritten zu Ihrer Consors Finanz Mastercard®.</h1>
+          <h2>Pflichtfelder sind mit <span class="green">*</span> markiert</h2>
+        </div>
+        <app-intro-image></app-intro-image>
+        <div class="content">
+          <h1>In wenigen Schritten zu Ihrer Consors Finanz Mastercard®.</h1>
+          <h2>Pflichtfelder sind mit <span class="green">*</span> markiert</h2>
+        </div>
         <app-intro-image></app-intro-image>
         <div class="content">
           <h1>In wenigen Schritten zu Ihrer Consors Finanz Mastercard®.</h1>
@@ -21,14 +35,14 @@
     </ng-container>
 
     <ng-container
-      *ngSwitchCase="CwpFlowService.CWPFlowStepsSequence.contactDetails"
+      *ngSwitchCase="CwpFlowService.CWPFlowStepsSequence.personalData_emailPage"
     >
       <app-navigation-buttons
         [buttonType]="CwpFlowService.CWPFlowNavigationButtons.back"
       ></app-navigation-buttons>
       <div class="step">
         <div class="content">
-          <h1>Contact Details.</h1>
+          <h1>Email page.</h1>
         </div>
       </div>
       <app-navigation-buttons
@@ -37,7 +51,101 @@
     </ng-container>
 
     <ng-container
-      *ngSwitchCase="CwpFlowService.CWPFlowStepsSequence.nationality"
+      *ngSwitchCase="
+        CwpFlowService.CWPFlowStepsSequence.personalData_birthDatePage
+      "
+    >
+      <app-navigation-buttons
+        [buttonType]="CwpFlowService.CWPFlowNavigationButtons.back"
+      ></app-navigation-buttons>
+      <div class="step">
+        <div class="content">
+          <h1>Birthday page.</h1>
+        </div>
+      </div>
+      <app-navigation-buttons
+        [buttonType]="CwpFlowService.CWPFlowNavigationButtons.next"
+      ></app-navigation-buttons>
+    </ng-container>
+
+    <ng-container
+      *ngSwitchCase="
+        CwpFlowService.CWPFlowStepsSequence.personalData_maritalStatusPage
+      "
+    >
+      <app-navigation-buttons
+        [buttonType]="CwpFlowService.CWPFlowNavigationButtons.back"
+      ></app-navigation-buttons>
+      <div class="step">
+        <div class="content">
+          <h1>Marital status page.</h1>
+        </div>
+      </div>
+      <app-navigation-buttons
+        [buttonType]="CwpFlowService.CWPFlowNavigationButtons.next"
+      ></app-navigation-buttons>
+    </ng-container>
+
+    <ng-container
+      *ngSwitchCase="
+        CwpFlowService.CWPFlowStepsSequence.contactDetails_addressCurrentPage
+      "
+    >
+      <app-navigation-buttons
+        [buttonType]="CwpFlowService.CWPFlowNavigationButtons.back"
+      ></app-navigation-buttons>
+      <div class="step">
+        <div class="content">
+          <h1>Contact Details.</h1>
+          <h2>Current address.</h2>
+        </div>
+      </div>
+      <app-navigation-buttons
+        [buttonType]="CwpFlowService.CWPFlowNavigationButtons.next"
+      ></app-navigation-buttons>
+    </ng-container>
+
+    <ng-container
+      *ngSwitchCase="
+        CwpFlowService.CWPFlowStepsSequence.contactDetails_addressPreviousPage
+      "
+    >
+      <app-navigation-buttons
+        [buttonType]="CwpFlowService.CWPFlowNavigationButtons.back"
+      ></app-navigation-buttons>
+      <div class="step">
+        <div class="content">
+          <h1>Contact Details.</h1>
+          <h2>Previous address.</h2>
+        </div>
+      </div>
+      <app-navigation-buttons
+        [buttonType]="CwpFlowService.CWPFlowNavigationButtons.next"
+      ></app-navigation-buttons>
+    </ng-container>
+
+    <ng-container
+      *ngSwitchCase="
+        CwpFlowService.CWPFlowStepsSequence.contactDetails_phoneNumberPage
+      "
+    >
+      <app-navigation-buttons
+        [buttonType]="CwpFlowService.CWPFlowNavigationButtons.back"
+      ></app-navigation-buttons>
+      <div class="step">
+        <div class="content">
+          <h1>Phone Number.</h1>
+        </div>
+      </div>
+      <app-navigation-buttons
+        [buttonType]="CwpFlowService.CWPFlowNavigationButtons.next"
+      ></app-navigation-buttons>
+    </ng-container>
+
+    <ng-container
+      *ngSwitchCase="
+        CwpFlowService.CWPFlowStepsSequence.nationality_nationalityPage
+      "
     >
       <app-navigation-buttons
         [buttonType]="CwpFlowService.CWPFlowNavigationButtons.back"
@@ -53,7 +161,9 @@
     </ng-container>
 
     <ng-container
-      *ngSwitchCase="CwpFlowService.CWPFlowStepsSequence.bankDetails"
+      *ngSwitchCase="
+        CwpFlowService.CWPFlowStepsSequence.bankDetails_bankDetailsPage
+      "
     >
       <app-navigation-buttons
         [buttonType]="CwpFlowService.CWPFlowNavigationButtons.back"

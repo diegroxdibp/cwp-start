@@ -1,11 +1,17 @@
-import { SalutationEnum } from '../enums/salutation.enum';
-
 export interface PersonalDataModel {
-  salutation: SalutationEnum;
-  firstName: string;
-  lastName: string;
-  email: string;
-  birthDate: string;
-  birthName: string;
-  maritalStatus: string;
+  salutationAndNamePage: {
+    salutation: string;
+    firstName: string;
+    lastName: string;
+  };
+  emailPage: {
+    email: string;
+  };
+  birthDatePage: {
+    birthDate: Date;
+    birthName?: string;
+  };
+  maritalStatusPage: {
+    maritalStatus: string;
+  };
 }
