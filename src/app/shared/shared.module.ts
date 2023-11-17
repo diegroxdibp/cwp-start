@@ -9,6 +9,7 @@ import { ArrowComponent } from './components/arrow/arrow.component';
 import { CfgLogoComponent } from './components/cfg-logo/cfg-logo.component';
 import { IntroImageComponent } from './components/intro-image/intro-image.component';
 import { ProgressBarComponent } from './components/progress-bar/progress-bar.component';
+import { CwpLoaderComponent } from './components/cwp-loader/cwp-loader.component';
 
 @NgModule({
   declarations: [
@@ -20,8 +21,9 @@ import { ProgressBarComponent } from './components/progress-bar/progress-bar.com
     CfgLogoComponent,
     IntroImageComponent,
     ProgressBarComponent,
+    CwpLoaderComponent,
   ],
   imports: [CommonModule, RouterModule],
-  exports: [ButtonComponent, ArrowComponent, IntroImageComponent, ArrowComponent, ProgressBarComponent],
+  exports: [ButtonComponent, ArrowComponent, IntroImageComponent, ArrowComponent, ProgressBarComponent, CwpLoaderComponent],
 })
 export class SharedModule {}
