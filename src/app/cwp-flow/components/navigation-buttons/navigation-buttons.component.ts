@@ -22,15 +22,13 @@ export class NavigationButtonsComponent {
 
   readonly CWPFlowStepsSequence = CWPFlowStepsSequence;
   readonly navigationButtons = CWPFlowNavigationButtons;
-
   constructor(public CwpFlowService: CwpFlowControlService) {}
-
-  onBack() {
-    console.log("click")
-    this.CwpFlowService.stepBackwards();
-  }
 
   onNext() {
     this.CwpFlowService.stepForwards();
+  }
+
+  onBack() {
+    this.CwpFlowService.stepBackwards();
   }
 }

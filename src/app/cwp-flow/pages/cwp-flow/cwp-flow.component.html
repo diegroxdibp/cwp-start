@@ -5,7 +5,6 @@
       CwpFlowService.CWPFlowStepsSequence.personalData_salutationAndNamePage
     "
   ></app-progress-bar>
-  <app-cwp-loader></app-cwp-loader>
   <ng-container [ngSwitch]="active">
     <ng-container
       *ngSwitchCase="
@@ -18,17 +17,9 @@
           <h1>In wenigen Schritten zu Ihrer Consors Finanz Mastercard®.</h1>
           <h2>Pflichtfelder sind mit <span class="green">*</span> markiert</h2>
         </div>
-        <app-intro-image></app-intro-image>
-        <div class="content">
-          <h1>In wenigen Schritten zu Ihrer Consors Finanz Mastercard®.</h1>
-          <h2>Pflichtfelder sind mit <span class="green">*</span> markiert</h2>
-        </div>
-        <app-intro-image></app-intro-image>
-        <div class="content">
-          <h1>In wenigen Schritten zu Ihrer Consors Finanz Mastercard®.</h1>
-          <h2>Pflichtfelder sind mit <span class="green">*</span> markiert</h2>
-        </div>
       </div>
+      <app-cwp-loader></app-cwp-loader>
+
       <app-navigation-buttons
         [buttonType]="CwpFlowService.CWPFlowNavigationButtons.next"
       ></app-navigation-buttons>
@@ -100,6 +91,11 @@
           <h2>Current address.</h2>
         </div>
       </div>
+      <input
+        (click)="CwpFlowService.toggleResidentLessThenTwoYearsStatus()"
+        type="checkbox"
+        [value]="CwpFlowService.toggleResidentLessThenTwoYearsStatus"
+      />
       <app-navigation-buttons
         [buttonType]="CwpFlowService.CWPFlowNavigationButtons.next"
       ></app-navigation-buttons>
@@ -179,7 +175,10 @@
     </ng-container>
 
     <ng-container
-      *ngSwitchCase="CwpFlowService.CWPFlowStepsSequence.employmentDetails"
+      *ngSwitchCase="
+        CwpFlowService.CWPFlowStepsSequence
+          .employmentDetails_employmentRelationtshipPage
+      "
     >
       <app-navigation-buttons
         [buttonType]="CwpFlowService.CWPFlowNavigationButtons.back"
@@ -187,6 +186,12 @@
       <div class="step">
         <div class="content">
           <h1>Employment Details.</h1>
+          <h2>employmentRelationtshipPage</h2>
+          <label for="mySelect">Select an option:</label>
+          <select id="mySelect" [formControl]="employmentRelationshipOptionControl">
+            <option *ngFor="let option of CwpFlowService.CWPFlowEmploymentRelationshipValuesToArray" [value]="option">{{ option }}</option>
+          </select>
+          <p>bs on service: {{ CwpFlowService.employmentRelationship.value }}</p>
         </div>
       </div>
       <app-navigation-buttons
@@ -195,7 +200,69 @@
     </ng-container>
 
     <ng-container
-      *ngSwitchCase="CwpFlowService.CWPFlowStepsSequence.regularExpenses"
+      *ngSwitchCase="
+        CwpFlowService.CWPFlowStepsSequence
+          .employmentDetails_timeWorkingForCurrentEmployerPage
+      "
+    >
+      <app-navigation-buttons
+        [buttonType]="CwpFlowService.CWPFlowNavigationButtons.back"
+      ></app-navigation-buttons>
+      <div class="step">
+        <div class="content">
+          <h1>Employment Details.</h1>
+          <h2>timeWorkingForCurrentEmployerPage</h2>
+        </div>
+      </div>
+      <app-navigation-buttons
+        [buttonType]="CwpFlowService.CWPFlowNavigationButtons.next"
+      ></app-navigation-buttons>
+    </ng-container>
+
+    <ng-container
+      *ngSwitchCase="
+        CwpFlowService.CWPFlowStepsSequence
+          .employmentDetails_industryTypeAndMajoritySalesCountryPage
+      "
+    >
+      <app-navigation-buttons
+        [buttonType]="CwpFlowService.CWPFlowNavigationButtons.back"
+      ></app-navigation-buttons>
+      <div class="step">
+        <div class="content">
+          <h1>Employment Details.</h1>
+          <h2>industryTypeAndMajoritySalesCountryPage</h2>
+        </div>
+      </div>
+      <app-navigation-buttons
+        [buttonType]="CwpFlowService.CWPFlowNavigationButtons.next"
+      ></app-navigation-buttons>
+    </ng-container>
+
+    <ng-container
+      *ngSwitchCase="
+        CwpFlowService.CWPFlowStepsSequence
+          .employmentDetails_employerAddressPage
+      "
+    >
+      <app-navigation-buttons
+        [buttonType]="CwpFlowService.CWPFlowNavigationButtons.back"
+      ></app-navigation-buttons>
+      <div class="step">
+        <div class="content">
+          <h1>Employment Details.</h1>
+          <h2>employerAddressPage</h2>
+        </div>
+      </div>
+      <app-navigation-buttons
+        [buttonType]="CwpFlowService.CWPFlowNavigationButtons.next"
+      ></app-navigation-buttons>
+    </ng-container>
+
+    <ng-container
+      *ngSwitchCase="
+        CwpFlowService.CWPFlowStepsSequence.regularExpenses_whoDoYouLiveWithPage
+      "
     >
       <app-navigation-buttons
         [buttonType]="CwpFlowService.CWPFlowNavigationButtons.back"
@@ -203,6 +270,7 @@
       <div class="step">
         <div class="content">
           <h1>Regular Expenses.</h1>
+          <h2>whoDoYouLiveWithPage</h2>
         </div>
       </div>
       <app-navigation-buttons
@@ -211,14 +279,36 @@
     </ng-container>
 
     <ng-container
-      *ngSwitchCase="CwpFlowService.CWPFlowStepsSequence.overallOverview"
+      *ngSwitchCase="
+        CwpFlowService.CWPFlowStepsSequence
+          .regularExpenses_haveChildrenWhomYouAreResponsiblePage
+      "
     >
       <app-navigation-buttons
         [buttonType]="CwpFlowService.CWPFlowNavigationButtons.back"
       ></app-navigation-buttons>
       <div class="step">
         <div class="content">
-          <h1>Overall Overview.</h1>
+          <h1>Regular Expenses.</h1>
+          <h2>haveChildrenWhomYouAreResponsiblePage</h2>
+        </div>
+      </div>
+      <app-navigation-buttons
+        [buttonType]="CwpFlowService.CWPFlowNavigationButtons.next"
+      ></app-navigation-buttons>
+    </ng-container>
+
+    <ng-container
+      *ngSwitchCase="
+        CwpFlowService.CWPFlowStepsSequence.overallOverview_summaryPage
+      "
+    >
+      <app-navigation-buttons
+        [buttonType]="CwpFlowService.CWPFlowNavigationButtons.back"
+      ></app-navigation-buttons>
+      <div class="step">
+        <div class="content">
+          <h1>Overall Overview</h1>
         </div>
       </div>
       <app-navigation-buttons
