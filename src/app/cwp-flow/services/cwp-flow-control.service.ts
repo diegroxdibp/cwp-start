@@ -2,36 +2,53 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { CWPFlowStepsSequence } from '../enums/cwp-flow-steps-sequence.enum';
 import { CWPFlowNavigationButtons } from '../enums/cwp-flow-navigation-buttons.enum copy';
-import { CWPFlowSteps } from '../enums/cwp-flow-steps.enum';
+import { CWPFlowBlocks } from '../enums/cwp-flow-steps.enum';
 import { CWPFlowEmploymentRelationship } from '../enums/employment-relationship.enum';
+import { Title } from '@angular/platform-browser';
 
 @Injectable({
   providedIn: 'root',
 })
 export class CwpFlowControlService {
-  readonly CWPFlowSteps = CWPFlowSteps;
+  readonly CWPFlowBlocks = CWPFlowBlocks;
   readonly CWPFlowStepsSequence = CWPFlowStepsSequence;
   readonly CWPFlowNavigationButtons = CWPFlowNavigationButtons;
   readonly CWPFlowEmploymentRelationship = CWPFlowEmploymentRelationship; // Reference to the enum in the component
   CWPFlowStepActive = new BehaviorSubject<CWPFlowStepsSequence>(
     CWPFlowStepsSequence.personalData_salutationAndNamePage
   );
-  residentLessThenTwoYears: boolean = false;
+  residentLessThenTwoYears = new BehaviorSubject<boolean>(false);
   employmentRelationship =
     new BehaviorSubject<CWPFlowEmploymentRelationship | null>(null);
 
-  constructor() {}
+  constructor(private titleService: Title) {
+    this.CWPFlowStepActive.subscribe((data) =>
+      this.titleService.setTitle(this.CWPFlowStepActiveName)
+    );
+  }
 
   stepForwards(steps: number = 1) {
-    if (this.CWPFlowStepActive.value === 5 && !this.residentLessThenTwoYears) {
-      this.CWPFlowStepActive.next(
-        Math.min(
-          CWPFlowStepsSequence.overallOverview_summaryPage,
-          this.CWPFlowStepActive.value + 2
-        )
+    if (
+      this.CWPFlowStepActive.value ===
+        CWPFlowStepsSequence.contactDetails_addressCurrentPage &&
+      !this.residentLessThenTwoYears.value
+    ) {
+      this.toStep(CWPFlowStepsSequence.contactDetails_phoneNumberPage);
+      return;
+    }
+
+    if (
+      this.CWPFlowStepActive.value ===
+        CWPFlowStepsSequence.employmentDetails_employmentRelationtshipPage &&
+      this.employmentRelationship.value ===
+        CWPFlowEmploymentRelationship.executive
+    ) {
+      this.toStep(
+        CWPFlowStepsSequence.employmentDetails_industryTypeAndMajoritySalesCountryPage
       );
       return;
     }
+
     this.CWPFlowStepActive.next(
       Math.min(
         CWPFlowStepsSequence.overallOverview_summaryPage,
@@ -42,13 +59,12 @@ export class CwpFlowControlService {
   }
 
   stepBackwards() {
-    if (this.CWPFlowStepActive.value === 7 && !this.residentLessThenTwoYears) {
-      this.CWPFlowStepActive.next(
-        Math.min(
-          CWPFlowStepsSequence.overallOverview_summaryPage,
-          this.CWPFlowStepActive.value - 2
-        )
-      );
+    if (
+      this.CWPFlowStepActive.value ===
+        CWPFlowStepsSequence.contactDetails_phoneNumberPage &&
+      !this.residentLessThenTwoYears.value
+    ) {
+      this.toStep(CWPFlowStepsSequence.contactDetails_addressCurrentPage);
       return;
     }
 
@@ -60,10 +76,14 @@ export class CwpFlowControlService {
     );
   }
 
+  toStep(step: CWPFlowStepsSequence): void {
+    this.CWPFlowStepActive.next(step);
+  }
+
   get CWPFlowStepActiveName() {
     const key: string = this.CWPBlock(this.CWPFlowStepActive.value);
     const CWPFlowStepActiveName =
-      this.CWPFlowSteps[key as keyof typeof CWPFlowSteps];
+      this.CWPFlowBlocks[key as keyof typeof CWPFlowBlocks];
     return CWPFlowStepActiveName;
   }
 
@@ -118,10 +138,10 @@ export class CwpFlowControlService {
   }
 
   get CWPBlockNames(): string[] {
-    return Object.values(this.CWPFlowSteps);
+    return Object.values(this.CWPFlowBlocks);
   }
 
   toggleResidentLessThenTwoYearsStatus(): void {
-    this.residentLessThenTwoYears = !this.residentLessThenTwoYears;
+    this.residentLessThenTwoYears.next(!this.residentLessThenTwoYears.value);
   }
 }

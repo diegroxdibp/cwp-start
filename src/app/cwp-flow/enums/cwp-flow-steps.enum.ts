@@ -1,4 +1,4 @@
-export enum CWPFlowSteps {
+export enum CWPFlowBlocks {
   personalData = 'Persönliche Daten',
   contactDetails = 'Kontaktdaten',
   nationality = 'Staatsangehörigkeit',

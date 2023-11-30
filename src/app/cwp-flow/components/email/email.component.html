@@ -1,0 +1,40 @@
+<app-navigation-buttons
+  [buttonType]="CwpFlowService.CWPFlowNavigationButtons.back"
+></app-navigation-buttons>
+<div class="content">
+  <h1 class="introduction2">Wie lautet Ihre E-Mail-Adresse?</h1>
+  <div class="introText">
+    <h1 class="salutation"><span class="green">*</span>E-Mail-Adresse</h1>
+    <input
+      id="email"
+      class="inputField"
+      type="text"
+      name="email"
+      [ngClass]="{success:CwpFormService.CWPForm.get('personalData.email')?.valid , 
+        error:CwpFormService.CWPForm.get('personalData.email')?.errors?.['required'] && isSubmited}"
+    />
+    <div
+      *ngIf="
+        !isSubmited ||
+        (CwpFormService.CWPForm.get('personalData.email')?.valid && isSubmited)
+      "
+    >
+      <p class="validation">
+        Nennen Sie uns die E-Mail-Adresse (z. B. beispiel&#64;beispiel.com), an
+        die wir Ihren Vertrag senden werden.
+      </p>
+    </div>
+    <div
+      *ngIf="CwpFormService.CWPForm.get('personalData.email')?.errors?.['required'] && isSubmited"
+    >
+      <p class="validation" style="color: red">
+        Bitte überprüfen Sie Ihre E-Mail-Adresse(zB. beispiel&#64;beispiel.com).
+      </p>
+    </div>
+    <app-cwp-loader></app-cwp-loader>
+  </div>
+</div>
+<app-navigation-buttons
+  [buttonType]="CwpFlowService.CWPFlowNavigationButtons.next"
+></app-navigation-buttons>
+<!-- <button class="weiter" (click)="onNext()">Weiter</button> -->

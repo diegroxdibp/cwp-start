@@ -1,5 +1,4 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { CWPFlowSteps } from '../../enums/cwp-flow-steps.enum';
 import {
   NavigationButtons,
   emptyNavigationButtons,

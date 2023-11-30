@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {
+  AbstractControl,
   FormBuilder,
   FormControl,
   FormGroup,
@@ -12,6 +13,9 @@ import {
 import { CwpFlowControlService } from '../../services/cwp-flow-control.service';
 import { CWPFlowEmploymentRelationship } from '../../enums/employment-relationship.enum';
 
+import { scrollToTop } from 'src/app/shared/utils/scroll-to-top.util';
+import { CwpFormControlService } from '../../services/cwp-form-control.service';
+
 @Component({
   selector: 'app-cwp-flow',
   templateUrl: './cwp-flow.component.html',
@@ -19,10 +23,11 @@ import { CWPFlowEmploymentRelationship } from '../../enums/employment-relationsh
 })
 export class CwpFlowComponent {
   employmentRelationshipOptionControl = new FormControl(null);
+  condition = true;
 
   constructor(
-    private fb: FormBuilder,
-    public CwpFlowService: CwpFlowControlService
+    public CwpFlowService: CwpFlowControlService,
+    public CwpFormService: CwpFormControlService
   ) {
     this.employmentRelationshipOptionControl.valueChanges.subscribe(
       (value: CWPFlowEmploymentRelationship | null) => {
@@ -31,22 +36,6 @@ export class CwpFlowComponent {
     );
   }
 
-  CWPForm: FormGroup = this.fb.group({
-    salutation: this.fb.control(null, Validators.required),
-    firstName: this.fb.control(null),
-    lastName: this.fb.control(null),
-    user: this.fb.group({
-      salutation: this.fb.control(null, Validators.required),
-      firstName: this.fb.control(null, Validators.required),
-      lastName: this.fb.control(null, [Validators.required]),
-      phone: this.fb.control(null, [
-        Validators.required,
-        phoneNumberValidation(),
-      ]),
-      email: this.fb.control(null, [Validators.required, emailValidator()]),
-    }),
-  });
-
   // get isCurrentStepValid() {
   //   return this.checkIfValid(this.CwpFlowService.CWPFlowStepActive.value);
   // }
@@ -54,10 +43,6 @@ export class CwpFlowComponent {
   // get isNextValid() {
   //   return this.checkIfValid(this.CwpFlowService.CWPFlowStepActive.value);
   // }
-
-  get userForm() {
-    return this.CWPForm.get('user') as FormGroup;
-  }
 
   // private checkIfValid(step: CWPFlowStepsSequence) {
   //   switch (step) {
@@ -80,21 +65,19 @@ export class CwpFlowComponent {
   //   }
   // }
 
-  private get salutationControl() {
-    return this.CWPForm.controls['salutation'];
-  }
+  onNext() {
+    // this.isSubmited = true;
 
-  private get firstNameControl() {
-    return this.CWPForm.controls['firstName'];
+    // if (
+    //   this.personalDataControl.controls['firstName'].invalid ||
+    //   this.personalDataControl.controls['lastName'].invalid
+    // ) {
+    //   console.log('ola');
+    //   return;
+    // } else {
+    // }
+    this.CwpFlowService.stepForwards();
+    scrollToTop();
+    // this.isSubmited = false;
   }
-
-  private get lastNameControl() {
-    return this.CWPForm.controls['lastName'];
-  }
-
-  public get userFormGroup() {
-    return this.CWPForm.get('user') as FormGroup;
-  }
-
-  private submitForm() {}
 }

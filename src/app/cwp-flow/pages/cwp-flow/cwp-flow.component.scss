@@ -1,4 +1,7 @@
-:host {
+@import "/node_modules/flag-icons/css/flag-icons.min.css";
+@import '/src/app/styles/variables';
+:host,
+form {
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -15,10 +18,16 @@
   padding: 24px;
 }
 
-app-navigation-buttons {
-  padding: 24px;
-}
+// .introduction {
+//   font-family: $font-family-base;
+//   font-size: 24px;
+//   font-weight: 700;
+//   line-height: 31.2px;
+// }
 
-.error {
-  color: red;
-}
+// .introText {
+//   // width: Fill (327px);
+//   // height: Hug (32px);
+//   padding: 0px, 0px, 8px, 0px;
+//   gap: 10px;
+// }
