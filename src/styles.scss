@@ -1,7 +1,6 @@
 @import "./app/styles/variables";
 @import "./app/styles/palette";
 @import "./app/styles/fonts";
-@import "./app/styles/media-queries";
 
 html {
   display: flex;
@@ -26,6 +25,21 @@ body {
   line-height: 130%;
 
   margin-bottom: 16px;
+
+  @media (min-width: $breakpoint-sm) {
+    font-size: 30px;
+    font-weight: 700;
+
+    margin-bottom: 24px;
+  }
+
+  // Media query for desktops
+  @media (min-width: $breakpoint-md) {
+  }
+
+  // Media query for large screens
+  @media (min-width: $breakpoint-lg) {
+  }
 }
 
 .label {
@@ -49,8 +63,18 @@ body {
   letter-spacing: -0.15px;
 
   margin-bottom: 24px;
-}
 
+  @media (min-width: $breakpoint-sm) {
+  }
+
+  // Media query for desktops
+  @media (min-width: $breakpoint-md) {
+  }
+
+  // Media query for large screens
+  @media (min-width: $breakpoint-lg) {
+  }
+}
 
 .loading-message {
   text-align: center;

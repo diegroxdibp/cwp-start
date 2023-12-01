@@ -1,1 +1,5 @@
-<img src="assets/Image_Startscreen_Mobile_V2.jpg" alt="" />
+<div class="image-container">
+  <img *ngIf="isMobile" src="assets/images/Image_Startscreen_Mobile_V2.jpg" alt="Mobile Card Image" />
+  <img *ngIf="isTablet" src="assets/images/Image_Startscreen_Mobile_V2.jpg" alt="Tablet Card Image" />
+  <img *ngIf="isDesktop" src="assets/images/84a23a5cb0da4eca3742fa8d2ccd4ca7.png" alt="Desktop Card Image" />
+</div>

@@ -1,7 +1,30 @@
+@import "../../../../app/styles/variables";
+
 :host {
   display: flex;
-}
 
-app-cfg-logo {
-  padding: 16px 24px;
+  header {
+    padding: 16px 24px;
+  }
+
+  @media (min-width: $breakpoint-sm) {
+    justify-content: center;
+    header {
+      padding: 16px 0;
+      width: 100%;
+      max-width: 448px;
+    }
+  }
+
+  @media (min-width: $breakpoint-md) {
+  }
+
+  @media (min-width: $breakpoint-lg) {
+    justify-content: center;
+
+    header {
+      width: 100%;
+      max-width: 1040px;
+    }
+  }
 }

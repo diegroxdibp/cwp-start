@@ -1,7 +1,35 @@
-footer {
+@import "/src/app/styles/variables";
+@import "/src/app/styles/palette";
+
+:host {
   display: flex;
-  gap: 16px;
-  padding: 8px 24px;
-  margin: 24px 0;
+  width: 100%;
+  padding: 24px 0;
   justify-content: center;
+
+  footer {
+    width: 100%;
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+
+    span {
+      font-family: $font-family-base;
+      color: $--color-default-black;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 300;
+      line-height: 140%;
+      cursor: pointer;
+    }
+  }
+
+  @media (min-width: $breakpoint-lg) {
+    background-color: $--color-neutral-lighter;
+    footer {
+      max-width: 1040px;
+      justify-content: start;
+      background-color: $--color-neutral-lighter;
+    }
+  }
 }

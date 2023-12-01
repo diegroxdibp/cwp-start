@@ -1,5 +1,5 @@
 //----- TYPOGRAPHY -----//
-$bnpp-sans: 'bnpp-sans';
+$bnpp-sans: "bnpp-sans";
 $font-family-base: $bnpp-sans;
 
 $font-weight-light: 300;
@@ -9,3 +9,26 @@ $font-weight-semibold: 600;
 $font-weight-bold: 700;
 $font-weight-bolder: 800;
 $font-weight-max: 900;
+
+// Breakpoints
+$breakpoint-xs: 576px;
+$breakpoint-sm: 768px;
+$breakpoint-md: 992px;
+$breakpoint-lg: 1200px;
+
+// Default styles for mobile
+
+// Media query for tablets
+@media (min-width: $breakpoint-sm) {
+  // Tablet styles
+}
+
+// Media query for desktops
+@media (min-width: $breakpoint-md) {
+  // Desktop styles
+}
+
+// Media query for large screens
+@media (min-width: $breakpoint-lg) {
+  // Large screen styles
+}

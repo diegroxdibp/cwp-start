@@ -1,22 +1,56 @@
+@import "/src/app/styles/variables";
+@import "/src/app/styles/palette";
+
 :host {
   display: flex;
   flex-direction: column;
   height: 100%;
-  .content {
+  .wrapper {
+    display: flex;
+    flex-direction: column;
     height: 100%;
-    justify-content: space-between;
     padding: 24px 24px 0 24px;
+    .content {
+      //   height: 100%;
+      //   padding: 24px 24px 0 24px;
+    }
   }
 
-  @include media-breakpoint-up(xs) {
-    padding: 48px 24px 0 24px;
+  @media (min-width: $breakpoint-sm) {
+    .wrapper {
+      max-width: 448px;
+      margin: 0 auto;
+      padding: 32px 0 0 0;
+      .content {
+      }
+    }
   }
-  @include media-breakpoint-up(md) {
+
+  // Media query for desktops
+  @media (min-width: $breakpoint-md) {
+    .wrapper {
+      .content {
+      }
+    }
     max-width: 448px;
     margin: 0 auto;
   }
-  @include media-breakpoint-up(lg) {
-    padding: 90px 116px 0 116px;
+
+  // Media query for large screens
+  @media (min-width: $breakpoint-lg) {
+    flex-direction: row-reverse;
+    width: 100%;
+    max-width: 1040px;
+    background-color: $--color-default-white;
+    border-radius: 15px;
+
+    margin-top: 40px;
+    .wrapper {
+      max-width: 392px;
+      width: 100%;
+      .content {
+      }
+    }
   }
 }
 
