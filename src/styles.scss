@@ -92,3 +92,82 @@ body {
   background-position: 50%;
   background-repeat: no-repeat;
 }
+
+.radio-buttons {
+  display: flex;
+  padding-top: 8px;
+  margin-bottom: 24px;
+  .button {
+    input[type="radio"] {
+      float: left;
+      width: 24px;
+      height: 24px;
+      color: #8295a5;
+      margin: 0px 8px 0 0px;
+      clear: none;
+
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 25px;
+      letter-spacing: 0.10000000149011612px;
+      text-align: left;
+    }
+
+    input[type="radio"]:checked {
+      accent-color: #00915a;
+    }
+  }
+}
+
+.success {
+  color: #00915a;
+  border-color: #00915a !important;
+}
+
+.green {
+  width: 8px;
+  height: 11px;
+  color: #00965e;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0px;
+  text-align: left;
+}
+
+.input-field {
+  width: -webkit-fill-available;
+  height: 20px;
+  padding: 16px;
+  margin-bottom: 8px;
+  border-radius: 5px;
+  border: 1px;
+  gap: 8px;
+  border: 1px solid #8295a5;
+}
+
+.error {
+  color: red !important;
+  border-color: red;
+}
+
+.label {
+  color: var(--neutrals-shades-black, #212529);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%;
+  letter-spacing: 0.1px;
+  padding: 0px 19.82px 0px 0px;
+}
+
+.validation {
+  width: 327px;
+  height: 48px;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 24px;
+  letter-spacing: -0.15000000596046448px;
+  text-align: left;
+  color: #000000;
+}

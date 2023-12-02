@@ -22,19 +22,12 @@ import { CwpFormControlService } from '../../services/cwp-form-control.service';
   styleUrls: ['./cwp-flow.component.scss'],
 })
 export class CwpFlowComponent {
-  employmentRelationshipOptionControl = new FormControl(null);
   condition = true;
 
   constructor(
     public CwpFlowService: CwpFlowControlService,
     public CwpFormService: CwpFormControlService
-  ) {
-    this.employmentRelationshipOptionControl.valueChanges.subscribe(
-      (value: CWPFlowEmploymentRelationship | null) => {
-        this.CwpFlowService.employmentRelationship.next(value);
-      }
-    );
-  }
+  ) {}
 
   // get isCurrentStepValid() {
   //   return this.checkIfValid(this.CwpFlowService.CWPFlowStepActive.value);

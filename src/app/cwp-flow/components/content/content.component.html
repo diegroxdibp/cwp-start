@@ -1,0 +1,277 @@
+<div
+  class="content"
+  [ngClass]="{
+    intro:
+      CwpFlowService.CWPFlowStepActive.value ==
+      CwpFlowService.CWPFlowStepsSequence.personalData_salutationAndNamePage
+  }"
+  *ngIf="CwpFlowService.CWPFlowStepActive | async as active"
+  [ngSwitch]="active"
+>
+  <ng-container
+    *ngSwitchCase="
+      CwpFlowService.CWPFlowStepsSequence.personalData_salutationAndNamePage
+    "
+  >
+    <app-intro-image></app-intro-image>
+
+    <app-salutation-and-name></app-salutation-and-name>
+  </ng-container>
+
+  <ng-container
+    *ngSwitchCase="CwpFlowService.CWPFlowStepsSequence.personalData_emailPage"
+  >
+    <app-email></app-email>
+  </ng-container>
+
+  <ng-container
+    *ngSwitchCase="
+      CwpFlowService.CWPFlowStepsSequence.personalData_birthDatePage
+    "
+  >
+    <app-navigation-buttons
+      [buttonType]="CwpFlowService.CWPFlowNavigationButtons.back"
+    ></app-navigation-buttons>
+
+    <div class="step">
+      <div class="content">
+        <h1>Birthday page.</h1>
+      </div>
+    </div>
+  </ng-container>
+
+  <ng-container
+    *ngSwitchCase="
+      CwpFlowService.CWPFlowStepsSequence.personalData_maritalStatusPage
+    "
+  >
+    <app-navigation-buttons
+      [buttonType]="CwpFlowService.CWPFlowNavigationButtons.back"
+    ></app-navigation-buttons>
+    <div class="step">
+      <div class="content">
+        <h1>Marital status page.</h1>
+      </div>
+    </div>
+  </ng-container>
+
+  <ng-container
+    *ngSwitchCase="
+      CwpFlowService.CWPFlowStepsSequence.contactDetails_addressCurrentPage
+    "
+  >
+    <app-navigation-buttons
+      [buttonType]="CwpFlowService.CWPFlowNavigationButtons.back"
+    ></app-navigation-buttons>
+    <div class="step">
+      <div class="content">
+        <h1>Contact Details.</h1>
+        <h2>Current address.</h2>
+      </div>
+    </div>
+    <input
+      (change)="CwpFlowService.toggleResidentLessThenTwoYearsStatus()"
+      type="checkbox"
+      [checked]="CwpFlowService.residentLessThenTwoYears | async"
+    />
+  </ng-container>
+
+  <ng-container
+    *ngSwitchCase="
+      CwpFlowService.CWPFlowStepsSequence.contactDetails_addressPreviousPage
+    "
+  >
+    <app-navigation-buttons
+      [buttonType]="CwpFlowService.CWPFlowNavigationButtons.back"
+    ></app-navigation-buttons>
+    <div class="step">
+      <div class="content">
+        <h1>Contact Details.</h1>
+        <h2>Previous address.</h2>
+      </div>
+    </div>
+  </ng-container>
+
+  <ng-container
+    *ngSwitchCase="
+      CwpFlowService.CWPFlowStepsSequence.contactDetails_phoneNumberPage
+    "
+  >
+    <app-navigation-buttons
+      [buttonType]="CwpFlowService.CWPFlowNavigationButtons.back"
+    ></app-navigation-buttons>
+    <div class="step">
+      <div class="content">
+        <h1>Phone Number.</h1>
+      </div>
+    </div>
+  </ng-container>
+
+  <ng-container
+    *ngSwitchCase="
+      CwpFlowService.CWPFlowStepsSequence.nationality_nationalityPage
+    "
+  >
+    <app-navigation-buttons
+      [buttonType]="CwpFlowService.CWPFlowNavigationButtons.back"
+    ></app-navigation-buttons>
+    <div class="step">
+      <div class="content">
+        <h1>Nationality.</h1>
+      </div>
+    </div>
+  </ng-container>
+
+  <ng-container
+    *ngSwitchCase="
+      CwpFlowService.CWPFlowStepsSequence.bankDetails_bankDetailsPage
+    "
+  >
+    <app-navigation-buttons
+      [buttonType]="CwpFlowService.CWPFlowNavigationButtons.back"
+    ></app-navigation-buttons>
+    <div class="step">
+      <div class="content">
+        <h1>Bank Details.</h1>
+      </div>
+    </div>
+  </ng-container>
+
+  <ng-container
+    *ngSwitchCase="
+      CwpFlowService.CWPFlowStepsSequence
+        .employmentDetails_employmentRelationtshipPage
+    "
+  >
+    <app-navigation-buttons
+      [buttonType]="CwpFlowService.CWPFlowNavigationButtons.back"
+    ></app-navigation-buttons>
+    <div class="step">
+      <div class="content">
+        <h1>Employment Details.</h1>
+        <h2>employmentRelationtshipPage</h2>
+        <label for="mySelect">Select an option:</label>
+        <select
+          id="mySelect"
+          [formControl]="employmentRelationshipOptionControl"
+        >
+          <option
+            *ngFor="
+              let option of CwpFlowService.CWPFlowEmploymentRelationshipValuesToArray
+            "
+            [value]="option"
+          >
+            {{ option }}
+          </option>
+        </select>
+        <p>bs on service: {{ CwpFlowService.employmentRelationship.value }}</p>
+      </div>
+    </div>
+  </ng-container>
+
+  <ng-container
+    *ngSwitchCase="
+      CwpFlowService.CWPFlowStepsSequence
+        .employmentDetails_timeWorkingForCurrentEmployerPage
+    "
+  >
+    <app-navigation-buttons
+      [buttonType]="CwpFlowService.CWPFlowNavigationButtons.back"
+    ></app-navigation-buttons>
+    <div class="step">
+      <div class="content">
+        <h1>Employment Details.</h1>
+        <h2>timeWorkingForCurrentEmployerPage</h2>
+      </div>
+    </div>
+  </ng-container>
+
+  <ng-container
+    *ngSwitchCase="
+      CwpFlowService.CWPFlowStepsSequence
+        .employmentDetails_industryTypeAndMajoritySalesCountryPage
+    "
+  >
+    <app-navigation-buttons
+      [buttonType]="CwpFlowService.CWPFlowNavigationButtons.back"
+    ></app-navigation-buttons>
+    <div class="step">
+      <div class="content">
+        <h1>Employment Details.</h1>
+        <h2>industryTypeAndMajoritySalesCountryPage</h2>
+      </div>
+    </div>
+  </ng-container>
+
+  <ng-container
+    *ngSwitchCase="
+      CwpFlowService.CWPFlowStepsSequence.employmentDetails_employerAddressPage
+    "
+  >
+    <app-navigation-buttons
+      [buttonType]="CwpFlowService.CWPFlowNavigationButtons.back"
+    ></app-navigation-buttons>
+    <div class="step">
+      <div class="content">
+        <h1>Employment Details.</h1>
+        <h2>employerAddressPage</h2>
+      </div>
+    </div>
+  </ng-container>
+
+  <ng-container
+    *ngSwitchCase="
+      CwpFlowService.CWPFlowStepsSequence.regularExpenses_whoDoYouLiveWithPage
+    "
+  >
+    <app-navigation-buttons
+      [buttonType]="CwpFlowService.CWPFlowNavigationButtons.back"
+    ></app-navigation-buttons>
+    <div class="step">
+      <div class="content">
+        <h1>Regular Expenses.</h1>
+        <h2>whoDoYouLiveWithPage</h2>
+      </div>
+    </div>
+  </ng-container>
+
+  <ng-container
+    *ngSwitchCase="
+      CwpFlowService.CWPFlowStepsSequence
+        .regularExpenses_haveChildrenWhomYouAreResponsiblePage
+    "
+  >
+    <app-navigation-buttons
+      [buttonType]="CwpFlowService.CWPFlowNavigationButtons.back"
+    ></app-navigation-buttons>
+    <div class="step">
+      <div class="content">
+        <h1>Regular Expenses.</h1>
+        <h2>haveChildrenWhomYouAreResponsiblePage</h2>
+      </div>
+    </div>
+  </ng-container>
+
+  <ng-container
+    *ngSwitchCase="
+      CwpFlowService.CWPFlowStepsSequence.overallOverview_summaryPage
+    "
+  >
+    <app-navigation-buttons
+      [buttonType]="CwpFlowService.CWPFlowNavigationButtons.back"
+    ></app-navigation-buttons>
+    <div class="step">
+      <div class="content">
+        <h1>Overall Overview</h1>
+      </div>
+    </div>
+  </ng-container>
+
+  <app-navigation-buttons
+    *ngIf="
+      CwpFlowService.CWPFlowStepActive.value !==
+      CwpFlowService.CWPFlowStepsSequence.personalData_salutationAndNamePage
+    "
+    [buttonType]="CwpFlowService.CWPFlowNavigationButtons.next"
+  ></app-navigation-buttons>
+</div>

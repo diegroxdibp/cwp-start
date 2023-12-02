@@ -1,121 +1,117 @@
-<app-intro-image></app-intro-image>
 <div class="wrapper">
-  <div class="content">
-    <h1 class="title">
-      In wenigen Schritten zu Ihrer Consors Finanz Mastercard®.
+  <h1 class="title">
+    In wenigen Schritten zu Ihrer Consors Finanz Mastercard®.
+  </h1>
+  <h2 class="description">
+    Pflichtfelder sind mit <span class="green">*</span> markiert
+  </h2>
+
+  <div class="salutation">
+    <h1 class="label">
+      <span
+        class="green"
+        [ngClass]="{error:CwpFormService.CWPForm.get('personalData.salutation')?.errors?.['required'] && isSubmited}"
+        >*</span
+      >Anrede
     </h1>
-    <h2 class="description">
-      Pflichtfelder sind mit <span class="green">*</span> markiert
-    </h2>
-
-    <div class="salutation">
-      <h1 class="label">
-        <span
-          class="green"
+    <div class="radio-buttons">
+      <div
+        class="button"
+        *ngFor="let value of salutation | async; let i = index"
+      >
+        <label class="label">{{ value }}</label>
+        <input
+          class="radio"
+          type="radio"
+          [value]="value"
+          [attr.id]="'salutation' + i"
+          [formControl]="CwpFormService.salutationControl"
           [ngClass]="{error:CwpFormService.CWPForm.get('personalData.salutation')?.errors?.['required'] && isSubmited}"
-          >*</span
-        >Anrede
-      </h1>
-      <div class="radio-buttons">
-        <div
-          class="button"
-          *ngFor="let value of salutation | async; let i = index"
-        >
-          <label class="label">{{ value }}</label>
-          <input
-            class="radio"
-            type="radio"
-            [value]="value"
-            [attr.id]="'salutation' + i"
-            [formControl]="CwpFormService.salutationControl"
-            [ngClass]="{error:CwpFormService.CWPForm.get('personalData.salutation')?.errors?.['required'] && isSubmited}"
-          />
-        </div>
-      </div>
-      <div
-        *ngIf="isSubmited && CwpFormService.CWPForm.get('personalData.salutation')?.errors?.['required']"
-      >
-        <p class="validation" style="color: red">
-          Wählen Sie die zutreffende Option.
-        </p>
+        />
       </div>
     </div>
-
-    <div class="first-name">
-      <h1 class="label">
-        <span
-          class="green"
-          [ngClass]="{error:CwpFormService.CWPForm.get('personalData.firstName')?.errors?.['required'] && isSubmited}"
-          >*</span
-        >Vorname
-      </h1>
-      <input
-        id="firstName"
-        class="input-field"
-        type="text"
-        name="firstName"
-        [ngClass]="{success:CwpFormService.CWPForm.get('personalData.firstName')?.valid ,
-                error:CwpFormService.CWPForm.get('personalData.firstName')?.errors?.['required']&& isSubmited}"
-      />
-
-      <div
-        *ngIf="
-          !isSubmited ||
-          (CwpFormService.CWPForm.get('personalData.firstName')?.valid &&
-            isSubmited)
-        "
-      >
-        <p class="description">
-          Geben Sie alle Vornamen so an, wie sie in Ihrem Personalausweis
-          stehen.
-        </p>
-      </div>
-      <div
-        *ngIf="CwpFormService.CWPForm.get('personalData.firstName')?.errors?.['required'] && isSubmited"
-      >
-        <p style="color: red">Bitte geben Sie Ihren Vorname an.</p>
-      </div>
-    </div>
-
-    <div class="last-name">
-      <h1 class="label">
-        <span
-          class="green"
-          [ngClass]="{error:CwpFormService.CWPForm.get('personalData.lastName')?.errors?.['required'] && isSubmited}"
-          >*</span
-        >Nachname
-      </h1>
-      <input
-        id="lastName"
-        class="input-field"
-        type="text"
-        name="lastName"
-        [ngClass]="{success:CwpFormService.CWPForm.get('personalData.lastName')?.valid ,
-                error:CwpFormService.CWPForm.get('personalData.lastName')?.errors?.['required']&& isSubmited}"
-      />
-      <div
-        *ngIf="
-          !isSubmited ||
-          (CwpFormService.CWPForm.get('personalData.lastName')?.valid &&
-            isSubmited)
-        "
-      >
-        <p class="description">
-          Geben Sie alle Nachnamen so an, wie er in Ihrem Personalausweis steht.
-        </p>
-      </div>
-      <div
-        *ngIf="CwpFormService.CWPForm.get('personalData.lastName')?.errors?.['required'] && isSubmited"
-      >
-        <p class="validation" style="color: red">
-          Bitte geben Sie Ihren Nachname an.
-        </p>
-      </div>
+    <div
+      *ngIf="isSubmited && CwpFormService.CWPForm.get('personalData.salutation')?.errors?.['required']"
+    >
+      <p class="validation" style="color: red">
+        Wählen Sie die zutreffende Option.
+      </p>
     </div>
   </div>
 
-  <app-navigation-buttons
-    [buttonType]="CwpFlowService.CWPFlowNavigationButtons.next"
-  ></app-navigation-buttons>
+  <div class="first-name">
+    <h1 class="label">
+      <span
+        class="green"
+        [ngClass]="{error:CwpFormService.CWPForm.get('personalData.firstName')?.errors?.['required'] && isSubmited}"
+        >*</span
+      >Vorname
+    </h1>
+    <input
+      id="firstName"
+      class="input-field"
+      type="text"
+      name="firstName"
+      [ngClass]="{success:CwpFormService.CWPForm.get('personalData.firstName')?.valid , 
+            error:CwpFormService.CWPForm.get('personalData.firstName')?.errors?.['required']&& isSubmited}"
+    />
+
+    <div
+      *ngIf="
+        !isSubmited ||
+        (CwpFormService.CWPForm.get('personalData.firstName')?.valid &&
+          isSubmited)
+      "
+    >
+      <p class="description">
+        Geben Sie alle Vornamen so an, wie sie in Ihrem Personalausweis stehen.
+      </p>
+    </div>
+    <div
+      *ngIf="CwpFormService.CWPForm.get('personalData.firstName')?.errors?.['required'] && isSubmited"
+    >
+      <p style="color: red">Bitte geben Sie Ihren Vorname an.</p>
+    </div>
+  </div>
+
+  <div class="last-name">
+    <h1 class="label">
+      <span
+        class="green"
+        [ngClass]="{error:CwpFormService.CWPForm.get('personalData.lastName')?.errors?.['required'] && isSubmited}"
+        >*</span
+      >Nachname
+    </h1>
+    <input
+      id="lastName"
+      class="input-field"
+      type="text"
+      name="lastName"
+      [ngClass]="{success:CwpFormService.CWPForm.get('personalData.lastName')?.valid , 
+            error:CwpFormService.CWPForm.get('personalData.lastName')?.errors?.['required']&& isSubmited}"
+    />
+    <div
+      *ngIf="
+        !isSubmited ||
+        (CwpFormService.CWPForm.get('personalData.lastName')?.valid &&
+          isSubmited)
+      "
+    >
+      <p class="description">
+        Geben Sie alle Nachnamen so an, wie er in Ihrem Personalausweis steht.
+      </p>
+    </div>
+    <div
+      *ngIf="CwpFormService.CWPForm.get('personalData.lastName')?.errors?.['required'] && isSubmited"
+    >
+      <p class="validation" style="color: red">
+        Bitte geben Sie Ihren Nachname an.
+      </p>
+    </div>
+  </div>
 </div>
+
+<app-navigation-buttons
+  [buttonType]="CwpFlowService.CWPFlowNavigationButtons.next"
+></app-navigation-buttons>
 <!-- <button class="weiter" (click)="onNext()">Weiter</button> -->
