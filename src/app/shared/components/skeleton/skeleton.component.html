@@ -1,6 +1,8 @@
 <cwp-header
   *ngIf="
-    CwpFlowService.CWPFlowStepActive.value === CWPFlowStepsSequence.personalData_salutationAndNamePage
+    CwpFlowService.CWPFlowStepActive.value ===
+      CWPFlowStepsSequence.personalData_salutationAndNamePage ||
+    (screenSizeService.isDesktop | async)
   "
 ></cwp-header>
 

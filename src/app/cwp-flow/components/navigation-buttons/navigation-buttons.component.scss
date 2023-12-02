@@ -11,12 +11,13 @@
   border-radius: 5px;
   cursor: pointer;
   gap: 8px;
+  align-items: center;
 
   margin-top: 16px;
 
   span {
+    height: 26px;
     color: var(--neutrals-shades-white, #fff);
-    text-align: center;
     font-family: $font-family-base;
     font-size: 18px;
     font-style: normal;
@@ -37,5 +38,10 @@
 
   // Media query for large screens
   @media (min-width: $breakpoint-lg) {
+    width: fit-content;
+    margin-left: auto;
+    span {
+      height: fit-content;
+    }
   }
 }

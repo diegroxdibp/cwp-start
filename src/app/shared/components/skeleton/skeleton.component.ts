@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CWPFlowStepsSequence } from 'src/app/cwp-flow/enums/cwp-flow-steps-sequence.enum';
 import { CwpFlowControlService } from 'src/app/cwp-flow/services/cwp-flow-control.service';
+import { ScreenSizeService } from '../../services/screen-size.service';
 
 @Component({
   selector: 'app-skeleton',
@@ -9,5 +10,8 @@ import { CwpFlowControlService } from 'src/app/cwp-flow/services/cwp-flow-contro
 })
 export class SkeletonComponent {
   readonly CWPFlowStepsSequence = CWPFlowStepsSequence;
-  constructor(public CwpFlowService: CwpFlowControlService) {}
+  constructor(
+    public CwpFlowService: CwpFlowControlService,
+    public screenSizeService: ScreenSizeService
+  ) {}
 }
