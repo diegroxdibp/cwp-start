@@ -1,12 +1,10 @@
 export const maxLengthFirtName = 10;
 export const minLengthFisrtName = 0;
 
-
 export const maxLengthLastName = 10;
 export const minLengthLastName = 0;
 
 export const emailRegex = '';
-
 
 export const maxLengthBirthName = 10;
 export const minLengthBirthName = 0;
@@ -14,7 +12,6 @@ export const birthDateRegex = '';
 
 export const maxLengthZipCode = 10;
 export const minLengthZipCode = 0;
-
 
 export const maxLengthCity = 10;
 export const minLengthCity = 0;
@@ -25,7 +22,6 @@ export const minLengthStreet = 0;
 
 export const maxLengthDoorNumber = 10;
 export const minLengthDoorNumber = 0;
-
 
 export const residentDateSinceRegex = '';
 
@@ -44,8 +40,7 @@ export const minLengthIban = 0;
 export const maxLengthProfession = 10;
 export const minLengthProfession = 0;
 
-
-export const netIncomeRegex='';
+export const netIncomeRegex = '';
 export const maxLengthIndustry = 10;
 export const minLengthIndustry = 0;
 
@@ -66,12 +61,7 @@ export const residencePermitValidRegex = '';
 
 export const maxLengthRent = 0;
 export const minLengthRent = 0;
-export const rentRegex=''
-
+export const rentRegex = '';
 
 export const maxLengthNumberOfChildren = 0;
 export const minLengthNumberOfChildren = 0;
-
-
-
-

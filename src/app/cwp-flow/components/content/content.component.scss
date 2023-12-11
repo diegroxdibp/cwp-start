@@ -1,39 +1,83 @@
 @import "/src/app/styles/variables";
 @import "/src/app/styles/palette";
 
-.content {
+:host {
+  height: 100%;
   display: flex;
   flex-direction: column;
-  // height: 100%;
-  padding: 24px 24px 0 24px;
-  @media (min-width: $breakpoint-sm) {
-  }
+  position: relative;
 
-  // Media query for desktops
-  @media (min-width: $breakpoint-md) {
-    max-width: 448px;
-    margin: 0 auto;
-  }
+  .content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 24px 24px 0 24px;
 
-  // Media query for large screens
-  @media (min-width: $breakpoint-lg) {
-    width: 100%;
-    max-width: 1040px;
-    background-color: $--color-default-white;
-    border-radius: 15px;
+    .page-title {
+      font-family: $font-family-base;
+      color: $--color-default-black;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 140%; /* 25.2px */
+      letter-spacing: 0.1px;
+      line-height: 18px;
+      margin: 32px 0 15px 0;
+    }
 
-    margin-top: 40px;
+    @media (min-width: $breakpoint-md) {
+      width: 100%;
+      max-width: $max-width-desktop;
+      background-color: $--color-default-white;
+      border-radius: 20px;
+      padding: 0;
+      position: relative;
 
-    app-navigation-buttons{
-      margin: 0 64px 64px 0;
+      margin: 40px auto 0 auto;
     }
   }
-}
 
-.intro {
-  padding: 0;
+  .intro {
+    padding: 0;
 
-  @media (min-width: $breakpoint-lg) {
-    flex-direction: row-reverse;
+    @media (min-width: $breakpoint-md) {
+      flex-direction: row-reverse;
+    }
+  }
+
+  .desktop-padding {
+    padding-left: 60px;
+  }
+
+  .desktop-back {
+    @media (min-width: $breakpoint-md) {
+      position: absolute;
+      margin-top: 40px;
+      margin-left: 40px;
+    }
+  }
+
+  .page-title,
+  app-email,
+  app-birth-date,
+  app-marital-status,
+  app-current-address,
+  app-previous-address,
+  app-phone-number,
+  app-nationality,
+  app-bank-details,
+  app-employment-relationship,
+  app-time-working-for-current-employer,
+  app-industry-type-and-majority-sales-country,
+  app-employer-address,
+  app-who-do-you-live-with,
+  app-have-children-whom-you-are-responsible,
+  app-summary {
+    @media (min-width: $breakpoint-md) {
+      padding-left: $padding-left-desktop;
+    }
+
+    app-navigation-buttons {
+    }
   }
 }

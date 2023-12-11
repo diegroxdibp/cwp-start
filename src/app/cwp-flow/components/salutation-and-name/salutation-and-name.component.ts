@@ -9,7 +9,6 @@ import { CwpFlowControlService } from '../../services/cwp-flow-control.service';
   styleUrls: ['./salutation-and-name.component.scss'],
 })
 export class SalutationAndNameComponent {
-  isSubmited: boolean = false;
   salutation = new BehaviorSubject<string[]>(['Frau', 'Herr', 'Divers/Offen']);
 
   constructor(

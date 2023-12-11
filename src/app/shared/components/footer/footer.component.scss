@@ -24,10 +24,10 @@
     }
   }
 
-  @media (min-width: $breakpoint-lg) {
+  @media (min-width: $breakpoint-md) {
     background-color: $--color-neutral-lighter;
     footer {
-      max-width: 1040px;
+      max-width: $max-width-desktop;
       justify-content: start;
       background-color: $--color-neutral-lighter;
     }

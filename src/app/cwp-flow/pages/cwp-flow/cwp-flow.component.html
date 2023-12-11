@@ -5,7 +5,8 @@
   <app-progress-bar
     *ngIf="
       CwpFlowService.CWPFlowStepActive.value !==
-      CwpFlowService.CWPFlowStepsSequence.personalData_salutationAndNamePage
+      CwpFlowService.CWPFlowStepsSequence.personalData_salutationAndNamePage 
+      && !(screenSizeService.isDesktop | async)
     "
   ></app-progress-bar>
 

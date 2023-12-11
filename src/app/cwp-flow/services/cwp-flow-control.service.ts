@@ -2,9 +2,9 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { CWPFlowStepsSequence } from '../enums/cwp-flow-steps-sequence.enum';
 import { CWPFlowNavigationButtons } from '../enums/cwp-flow-navigation-buttons.enum copy';
-import { CWPFlowBlocks } from '../enums/cwp-flow-steps.enum';
 import { CWPFlowEmploymentRelationship } from '../enums/employment-relationship.enum';
 import { Title } from '@angular/platform-browser';
+import { CWPFlowBlocks } from '../enums/cwp-flow-blocks.enum';
 
 @Injectable({
   providedIn: 'root',

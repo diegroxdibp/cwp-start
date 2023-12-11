@@ -1,0 +1,134 @@
+[
+    {
+      "ISO Code": 276,
+      "german_name": "Deutschland",
+      "international_area_code": 49,
+      "length_of_international_area_code_+_00": 4
+    },
+    {
+      "ISO Code": 616,
+      "german_name": "Polen",
+      "international_area_code": 48,
+      "length_of_international_area_code_+_00": 4
+    },
+    {
+      "ISO Code": 792,
+      "german_name": "Türkei",
+      "international_area_code": 90,
+      "length_of_international_area_code_+_00": 4
+    },
+    {
+      "ISO Code": 4,
+      "german_name": "Afghanistan",
+      "international_area_code": 93,
+      "length_of_international_area_code_+_00": 4
+    },
+    {
+      "ISO Code": 8,
+      "german_name": "Albanien",
+      "international_area_code": 355,
+      "length_of_international_area_code_+_00": 5
+    },
+    {
+      "ISO Code": 12,
+      "german_name": "Algerien",
+      "international_area_code": 213,
+      "length_of_international_area_code_+_00": 5
+    },
+    {
+      "ISO Code": 16,
+      "german_name": "Amerikanisch Samoa",
+      "international_area_code": 1684,
+      "length_of_international_area_code_+_00": 6
+    },
+    {
+      "ISO Code": 850,
+      "german_name": "Amerikanische Jungferninseln",
+      "international_area_code": 1340,
+      "length_of_international_area_code_+_00": 6
+    },
+    {
+      "ISO Code": 20,
+      "german_name": "Andorra",
+      "international_area_code": 376,
+      "length_of_international_area_code_+_00": 5
+    },
+    {
+      "ISO Code": 24,
+      "german_name": "Angola",
+      "international_area_code": 244,
+      "length_of_international_area_code_+_00": 5
+    },
+    {
+      "ISO Code": 660,
+      "german_name": "Anguilla",
+      "international_area_code": 1264,
+      "length_of_international_area_code_+_00": 6
+    },
+    {
+      "ISO Code": 10,
+      "german_name": "Antarktis",
+      "international_area_code": 672,
+      "length_of_international_area_code_+_00": 5
+    },
+    {
+      "ISO Code": 28,
+      "german_name": "Antigua and Barbuda",
+      "international_area_code": 1268,
+      "length_of_international_area_code_+_00": 6
+    },
+    {
+      "ISO Code": 32,
+      "german_name": "Argentinien",
+      "international_area_code": 54,
+      "length_of_international_area_code_+_00": 4
+    },
+    {
+      "ISO Code": 51,
+      "german_name": "Armenien",
+      "international_area_code": 374,
+      "length_of_international_area_code_+_00": 5
+    },
+    {
+      "ISO Code": 533,
+      "german_name": "Aruba",
+      "international_area_code": 297,
+      "length_of_international_area_code_+_00": 5
+    },
+    {
+      "ISO Code": 31,
+      "german_name": "Aserbaidschan",
+      "international_area_code": 994,
+      "length_of_international_area_code_+_00": 5
+    },
+    {
+      "ISO Code": 36,
+      "german_name": "Australien",
+      "international_area_code": 61,
+      "length_of_international_area_code_+_00": 4
+    },
+    {
+      "ISO Code": 44,
+      "german_name": "Bahamas",
+      "international_area_code": 1242,
+      "length_of_international_area_code_+_00": 6
+    },
+    {
+      "ISO Code": 48,
+      "german_name": "Bahrain",
+      "international_area_code": 973,
+      "length_of_international_area_code_+_00": 5
+    },
+    {
+      "ISO Code": 50,
+      "german_name": "Bangladesh",
+      "international_area_code": 880,
+      "length_of_international_area_code_+_00": 5
+    },
+    {
+      "ISO Code": 52,
+      "german_name": "Barbados",
+      "international_area_code": 1246,
+      "length_of_international_area_code_+_00": 6
+    }
+]

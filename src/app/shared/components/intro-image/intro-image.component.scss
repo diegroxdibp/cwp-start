@@ -15,12 +15,7 @@
     max-height: 256px;
   }
 
-  // Media query for desktops
   @media (min-width: $breakpoint-md) {
-  }
-
-  // Media query for large screens
-  @media (min-width: $breakpoint-lg) {
     width: 100%;
     max-width: 526px;
     height: 100%;

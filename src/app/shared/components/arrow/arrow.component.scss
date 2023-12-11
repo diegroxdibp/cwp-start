@@ -1,4 +1,10 @@
 :host {
   display: flex;
   align-items: center;
+
+  .circle {
+    border-radius: 100px;
+    border: 1.5px solid #212529;
+    background: #fff;
+  }
 }

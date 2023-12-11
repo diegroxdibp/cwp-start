@@ -6,6 +6,7 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
+import { BehaviorSubject } from 'rxjs';
 import {
   birthDateRegex,
   cityRegex,
@@ -39,12 +40,24 @@ import {
   residencePermitValidTillRegex,
   residentDateSinceRegex,
 } from 'src/app/shared/constants/dynamicValidations';
+import { CWPFlowStepsSequence } from '../enums/cwp-flow-steps-sequence.enum';
+import { CwpFlowControlService } from './cwp-flow-control.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class CwpFormControlService {
-  constructor(private fb: FormBuilder) {}
+  isSubmited = new BehaviorSubject<boolean>(false);
+  //CwpFlowService: any;
+
+  readonly CWPFlowStepsSequence = CWPFlowStepsSequence;
+
+  constructor(
+    private fb: FormBuilder,
+    public CwpFlowService: CwpFlowControlService
+  ) {
+    console.log(CWPFlowStepsSequence);
+  }
 
   CWPForm: FormGroup = this.fb.group({
     personalData: this.fb.group({
@@ -61,7 +74,7 @@ export class CwpFormControlService {
       ]),
       email: this.fb.control(null, [
         Validators.required,
-        Validators.pattern(emailRegex),
+        // Validators.pattern(emailRegex),
       ]),
       birthDate: this.fb.control(null, [
         Validators.required,
@@ -204,35 +217,121 @@ export class CwpFormControlService {
     }),
   });
 
-  personalDataControl = this.CWPForm.get('personalData');
+  personalDataControl = this.CWPForm.get('personalData') as FormGroup;
 
-  get userForm() {
+  /* get userForm() {
     return this.CWPForm.get('user') as FormGroup;
-  }
+  }*/
 
   get salutationControl(): FormControl {
     return this.personalDataControl!.get('salutation') as FormControl;
   }
-  get firstNameControl() {
-    return this.CWPForm.controls['firstName'];
+  get firstNameControl(): FormControl {
+    return this.personalDataControl!.get('firstName') as FormControl;
   }
 
-  get lastNameControl() {
-    return this.CWPForm.controls['lastName'];
+  get lastNameControl(): FormControl {
+    return this.personalDataControl!.get('lastName') as FormControl;
   }
 
-  public get userFormGroup() {
+  get emailControl(): FormControl {
+    return this.personalDataControl!.get('email') as FormControl;
+  }
+
+  /* public get userFormGroup() {
     return this.CWPForm.get('user') as FormGroup;
-  }
+  }*/
 
   submitForm() {
-    if (!this.CWPForm.valid) {
+    /*if (!this.CWPForm.valid) {
       return;
     }
+    console.log(this.CWPForm.value);*/
+
     console.log(this.CWPForm.value);
   }
+  /*
+  validation() {
+    this.isSubmited.next(true);
+    if (
+      this.personalDataControl.controls['firstName'].invalid ||
+      this.personalDataControl.controls['lastName'].invalid ||
+      this.personalDataControl.controls['salutation'].invalid
+    ) {
+      console.log('2');
+      return false;
+    } else {
+      this.isSubmited.next(false);
+      console.log('1');
+      return true;
+    }
+  }*/
+  //saber a posição em que está e fazer a validação conforme a posição
+  /*validation(){
+    if (this.CwpFlowService.CWPFlowStepActive.value === this.CwpFlowService.CWPFlowStepsSequence.personalData_salutationAndNamePage) {
+      this.isSubmited.next(true);
+      if (
+        this.personalDataControl.controls['firstName'].invalid ||
+        this.personalDataControl.controls['lastName'].invalid ||
+        this.personalDataControl.controls['salutation'].invalid
+      ) {
+        console.log('2');
+        return false; 
+      } else {
+        this.isSubmited.next(false);
+         return true; 
+      }
+      
+    }else if(this.CwpFlowService.CWPFlowStepActive){
+      this.isSubmited.next(true);
+      if (
+        this.personalDataControl.controls['email'].invalid 
+      ) {
+        console.log('2');
+        return false; 
+      } else {
+        this.isSubmited.next(false);
+        return true; 
+      }
+    }
+    else {
+      return false; 
+    }
+  }*/
+  // step: number = this.CwpFlowService.CWPFlowStepActive.value;
 
-  getControl(name: any): AbstractControl | null {
-    return this.CWPForm.get(name);
+  Validation(): boolean {
+    switch (true) {
+      case this.CwpFlowService.CWPFlowStepActive.value ===
+        this.CwpFlowService.CWPFlowStepsSequence
+          .personalData_salutationAndNamePage:
+        console.log('1');
+        this.isSubmited.next(true);
+        if (
+          this.personalDataControl.controls['firstName'].invalid ||
+          this.personalDataControl.controls['lastName'].invalid ||
+          this.personalDataControl.controls['salutation'].invalid
+        ) {
+          console.log('2');
+          return false;
+        } else {
+          this.isSubmited.next(false);
+          return true;
+        }
+
+      case this.CwpFlowService.CWPFlowStepActive.value ===
+        this.CwpFlowService.CWPFlowStepsSequence.personalData_emailPage:
+        this.isSubmited.next(true);
+        if (this.personalDataControl.controls['email'].invalid) {
+          console.log('2');
+          return false;
+        } else {
+          this.isSubmited.next(false);
+          return true;
+        }
+
+      default:
+        return true;
+    }
   }
 }

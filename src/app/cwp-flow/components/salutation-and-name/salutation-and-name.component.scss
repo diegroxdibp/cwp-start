@@ -10,16 +10,13 @@
     max-width: 448px;
     margin: 0 auto;
     padding: 32px 0 0 0;
+
+    .wrapper {
+      height: 100%;
+    }
   }
 
-  // Media query for desktops
   @media (min-width: $breakpoint-md) {
-    max-width: 448px;
-    margin: 0 auto;
-  }
-
-  // Media query for large screens
-  @media (min-width: $breakpoint-lg) {
     padding: 0;
     max-width: 392px;
 

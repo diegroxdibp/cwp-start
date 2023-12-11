@@ -1,22 +1,32 @@
+<div *ngIf="!barOnly" class="status">
+  <div class="back">
+    <app-navigation-buttons
+      [buttonType]="CwpFlowService.CWPFlowNavigationButtons.back"
+    ></app-navigation-buttons>
+  </div>
+
+  <h1 class="progress-bar-title">
+    {{ CwpFlowService.CWPFlowStepActiveName }}
+  </h1>
+</div>
+
 <div class="progress-bar">
-  {{ CwpFlowService.CWPFlowStepActiveName }}
-  <div class="progress-bar">
+  <div class="mask"></div>
+  <div
+    *ngFor="let step of CwpFlowService.CWPBlockNames; let i = index"
+    class="progress-step"
+    [style.width.%]="
+      ((i + 1) /
+        (CwpFlowService.CWPFlowStepsSequenceKeysToArray.length / 2 - 1)) *
+      100
+    "
+  >
     <div
-      *ngFor="let step of CwpFlowService.CWPBlockNames; let i = index"
-      class="progress-step"
-      [style.width.%]="
-        ((i + 1) /
-          (CwpFlowService.CWPFlowStepsSequenceKeysToArray.length / 2 - 1)) *
-        100
-      "
+      class="current"
+      *ngIf="step === CwpFlowService.CWPFlowStepActiveName"
+      [style.width.%]=""
     >
-      <div
-        class="current"
-        *ngIf="step === CwpFlowService.CWPFlowStepActiveName"
-        [style.width.%]=""
-      >
-        {{ i + 1 }}
-      </div>
+      {{ i + 1 }}
     </div>
   </div>
 </div>

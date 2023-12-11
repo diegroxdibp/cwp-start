@@ -1,0 +1,21 @@
+<ng-container *ngIf="buttonType === navigationButtons.next">
+  <div
+    class="weiter"
+    [ngClass]="{
+      'desktop-right-margin':
+        CwpFlowService.CWPFlowStepActive.value !==
+          CwpFlowService.CWPFlowStepsSequence
+            .personalData_salutationAndNamePage &&
+        (screenSizeService.isDesktop | async)
+    }"
+    (click)="onNext()"
+  >
+    <span>Weiter</span><app-arrow [color]="'white'"></app-arrow>
+  </div>
+</ng-container>
+
+<ng-container *ngIf="buttonType === navigationButtons.back">
+  <div class="back" (click)="onBack()">
+    <app-arrow></app-arrow>
+  </div>
+</ng-container>

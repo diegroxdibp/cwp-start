@@ -1,22 +1,34 @@
-<app-navigation-buttons
-  [buttonType]="CwpFlowService.CWPFlowNavigationButtons.back"
-></app-navigation-buttons>
 <div class="content">
   <h1 class="title">Wie lautet Ihre E-Mail-Adresse?</h1>
   <div class="introText">
-    <h1 class="label"><span class="green">*</span>E-Mail-Adresse</h1>
-    <input
-      id="email"
-      class="input-field"
-      type="text"
-      name="email"
-      [ngClass]="{success:CwpFormService.CWPForm.get('personalData.email')?.valid , 
-        error:CwpFormService.CWPForm.get('personalData.email')?.errors?.['required'] && isSubmited}"
-    />
+    <h1 class="label"><span class="asterisk">*</span>E-Mail-Adresse</h1>
+    <div class="input">
+      <input
+        id="email"
+        class="input-field"
+        type="text"
+        name="email"
+        [formControl]="CwpFormService.emailControl"
+        [ngClass]="{success:CwpFormService.CWPForm.get('personalData.email')?.valid , 
+        error:CwpFormService.CWPForm.get('personalData.email')?.errors?.['required'] && CwpFormService.isSubmited.value}"
+      />
+      <i-tabler
+        *ngIf="CwpFormService.CWPForm.get('personalData.email')?.errors?.['required'] && CwpFormService.isSubmited.value"
+        name="exclamation-circle"
+        class="icon-exclamation"
+      ></i-tabler>
+      <i-tabler
+        *ngIf="CwpFormService.CWPForm.get('personalData.email')?.valid"
+        name="circle-check"
+        class="icon-check"
+      >
+      </i-tabler>
+    </div>
     <div
       *ngIf="
-        !isSubmited ||
-        (CwpFormService.CWPForm.get('personalData.email')?.valid && isSubmited)
+        !CwpFormService.isSubmited.value ||
+        (CwpFormService.CWPForm.get('personalData.email')?.valid &&
+          CwpFormService.isSubmited.value)
       "
     >
       <p class="description">
@@ -25,13 +37,12 @@
       </p>
     </div>
     <div
-      *ngIf="CwpFormService.CWPForm.get('personalData.email')?.errors?.['required'] && isSubmited"
+      *ngIf="CwpFormService.CWPForm.get('personalData.email')?.errors?.['required'] && CwpFormService.isSubmited.value"
     >
-      <p class="validation" style="color: red">
+      <p class="validation">
         Bitte überprüfen Sie Ihre E-Mail-Adresse(zB. beispiel&#64;beispiel.com).
       </p>
     </div>
-    <app-cwp-loader></app-cwp-loader>
   </div>
+  <app-cwp-loader></app-cwp-loader>
 </div>
-<!-- <button class="weiter" (click)="onNext()">Weiter</button> -->

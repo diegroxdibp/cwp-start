@@ -1,53 +1,65 @@
+@import "/src/app/styles/variables";
+@import "/src/app/styles/palette";
+
 :host {
   display: flex;
   flex-direction: column;
+  align-items: center;
   margin: auto;
   gap: 32px;
-}
 
-
-$spinner-width: 8px;
-$spinner-color: green;
-
-.spinner-wrapper {
-  display: flex;
-  flex-direction: column;
-  margin: auto;
-}
-.spinner {
-  border-width: $spinner-width;
-  border-style: solid;
-  border-color: $spinner-color $spinner-color $spinner-color transparent;
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  position: relative;
-  box-sizing: initial;
-  margin: auto;
-  animation: spin 1s linear infinite;
-
-  &:before,
-  &:after {
-    content: "";
-    width: $spinner-width;
-    height: $spinner-width;
-    border-radius: 50%;
-    background: $spinner-color;
+  @media (min-width: $breakpoint-sm) {
+  }
+  @media (min-width: $breakpoint-md) {
     position: absolute;
-    left: $spinner-width;
+    width: 100%;
+    left: 47px;
+    // desktop paddings in margin of the page block
   }
+}
 
-  &:before {
-    top: $spinner-width;
-  }
+.customSpinner {
+  width: 64px;
+}
 
-  &:after {
-    bottom: $spinner-width;
-  }
+.customSpinner span {
+  display: block;
+  height: 0;
+  padding-bottom: 100%;
+  position: relative;
+  width: 100%;
+}
+
+.customSpinner svg {
+  height: 100%;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
 }
 
 @keyframes spin {
   100% {
     transform: rotate(360deg);
   }
+}
+
+svg {
+  animation: spin 1s linear infinite;
+  stroke-dasharray: 27 57;
+  stroke-dashoffset: 27;
+  transform-origin: 50% 50%;
+  transform: rotate(0turn);
+}
+
+.loading-message {
+  color: $--color-default-black;
+  font-family: $font-family-base;
+  text-align: center;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 140%;
+  letter-spacing: -0.18px;
 }

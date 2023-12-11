@@ -1,15 +1,11 @@
-<svg
-  xmlns="http://www.w3.org/2000/svg"
-  width="24"
-  height="24"
-  viewBox="0 0 24 24"
-  fill="none"
->
-  <path
-    d="M5 12.6282H19M5 12.6282L11 18.6282M5 12.6282L11 6.62817"
-    [attr.stroke]="color"
-    stroke-width="2"
-    stroke-linecap="round"
-    stroke-linejoin="round"
-  />
+<svg *ngIf="screenSizeService.isMobile | async" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+  <path d="M5 12.6282H19M5 12.6282L11 18.6282M5 12.6282L11 6.62817" [attr.stroke]="color" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+<svg *ngIf="screenSizeService.isTablet | async" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
+  <path d="M8.3335 20.6282H31.6668M8.3335 20.6282L18.3335 30.6282M8.3335 20.6282L18.3335 10.6282" [attr.stroke]="color" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+<svg *ngIf="screenSizeService.isDesktop | async" xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+  <path d="M5 12.1157H19M5 12.1157L11 18.1157M5 12.1157L11 6.11572" [attr.stroke]="color" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>

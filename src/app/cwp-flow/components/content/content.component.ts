@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
 import { CwpFlowControlService } from '../../services/cwp-flow-control.service';
 import { CwpFormControlService } from '../../services/cwp-form-control.service';
-import { CWPFlowEmploymentRelationship } from '../../enums/employment-relationship.enum';
-import { FormControl } from '@angular/forms';
+import { ScreenSizeService } from 'src/app/shared/services/screen-size.service';
 
 @Component({
   selector: 'app-content',
@@ -10,15 +9,9 @@ import { FormControl } from '@angular/forms';
   styleUrls: ['./content.component.scss'],
 })
 export class ContentComponent {
-  employmentRelationshipOptionControl = new FormControl(null);
   constructor(
     public CwpFlowService: CwpFlowControlService,
-    public CwpFormService: CwpFormControlService
-  ) {
-    this.employmentRelationshipOptionControl.valueChanges.subscribe(
-      (value: CWPFlowEmploymentRelationship | null) => {
-        this.CwpFlowService.employmentRelationship.next(value);
-      }
-    );
-  }
+    public CwpFormService: CwpFormControlService,
+    public screenSizeService: ScreenSizeService
+  ) {}
 }

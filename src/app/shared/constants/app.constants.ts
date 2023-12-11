@@ -1,3 +1,8 @@
+export const CWP_URLS = {
+  DATA_PROTECTION: 'https://www.consorsfinanz.de/datenschutz',
+  INPRINT: 'https://www.consorsfinanz.de/impressum'
+}
+
 export const salutation = 'salutation';
 export const firstName = 'firstName';
 export const lastName = 'lastName';

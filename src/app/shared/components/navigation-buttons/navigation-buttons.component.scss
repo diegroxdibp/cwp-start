@@ -1,0 +1,64 @@
+@import "/src/app/styles/variables";
+@import "/src/app/styles/palette";
+@import "/src/app/styles/fonts";
+
+:host {
+  height: fit-content;
+  position: relative;
+}
+
+.weiter {
+  display: flex;
+  justify-content: center;
+  background-color: #00965e;
+  padding: 12px 20px;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  gap: 8px;
+  align-items: center;
+  max-width: calc($max-width-tablet - 40px);
+  //to account for button padding horizontal padding
+
+  margin: 16px auto 0 auto;
+
+  span {
+    color: var(--neutrals-shades-white, #fff);
+    font-family: $font-family-base;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+  }
+
+  app-arrow {
+    rotate: 180deg;
+  }
+
+  @media (min-width: $breakpoint-sm) {
+    margin-top: 32px;
+  }
+
+  @media (min-width: $breakpoint-md) {
+    width: fit-content;
+    margin: 24px 0 64px auto;
+  }
+}
+
+.back {
+  @media (min-width: $breakpoint-sm) {
+  }
+
+  @media (min-width: $breakpoint-md) {
+    display: flex;
+    padding: 12px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100px;
+    border: 1.5px solid #212529;
+    background: #fff;
+  }
+}
+
+.desktop-right-margin {
+  margin-right: $margin-right-desktop;
+}

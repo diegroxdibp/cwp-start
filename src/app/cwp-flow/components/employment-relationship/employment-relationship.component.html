@@ -1,0 +1,15 @@
+<h1 class="title">Employment Details.</h1>
+<label class="description" for="mySelect">Select an option:</label>
+<select id="mySelect" [formControl]="employmentRelationshipOptionControl">
+  <option
+    *ngFor="
+      let option of CwpFlowService.CWPFlowEmploymentRelationshipValuesToArray
+    "
+    [value]="option"
+  >
+    {{ option }}
+  </option>
+</select>
+<p class="description">
+  Selected value: {{ CwpFlowService.employmentRelationship | async }}
+</p>

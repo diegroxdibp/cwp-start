@@ -1,0 +1,12 @@
+<div class="wrapper">
+  <h1 class="title">Wie lautet Ihre aktuelle Adresse?</h1>
+  <h2 class="description">
+    Ihr ständiger Wohnsitz muss sich in Deutschland befinden.
+  </h2>
+
+  <input
+    (change)="CwpFlowService.toggleResidentLessThenTwoYearsStatus()"
+    type="checkbox"
+    [checked]="CwpFlowService.residentLessThenTwoYears | async"
+  />
+</div>

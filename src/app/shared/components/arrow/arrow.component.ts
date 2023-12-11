@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { ScreenSizeService } from '../../services/screen-size.service';
 
 @Component({
   selector: 'app-arrow',
@@ -7,4 +8,9 @@ import { Component, Input } from '@angular/core';
 })
 export class ArrowComponent {
   @Input() color: string = 'black';
+  constructor(public screenSizeService: ScreenSizeService) {
+    if (screenSizeService.isDesktop.value) {
+      this.color = '#00965E';
+    }
+  }
 }
