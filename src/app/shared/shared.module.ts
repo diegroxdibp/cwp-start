@@ -11,11 +11,20 @@ import { ProgressBarComponent } from './components/progress-bar/progress-bar.com
 import { CwpLoaderComponent } from './components/cwp-loader/cwp-loader.component';
 import { NavigationButtonsComponent } from './components/navigation-buttons/navigation-buttons.component';
 import { TablerIconsModule } from 'angular-tabler-icons';
-import { IconCircleCheck,IconExclamationCircle} from 'angular-tabler-icons/icons';
+import {
+  IconCheck,
+  IconChevronDown,
+  IconChevronUp,
+  IconCircleCheck,
+  IconExclamationCircle,
+} from 'angular-tabler-icons/icons';
 
 const icons = {
   IconCircleCheck,
   IconExclamationCircle,
+  IconChevronUp,
+  IconChevronDown,
+  IconCheck 
 };
 @NgModule({
   declarations: [
@@ -36,8 +45,8 @@ const icons = {
     ArrowComponent,
     ProgressBarComponent,
     CwpLoaderComponent,
-    NavigationButtonsComponent, 
-    TablerIconsModule
+    NavigationButtonsComponent,
+    TablerIconsModule,
   ],
 })
 export class SharedModule {}

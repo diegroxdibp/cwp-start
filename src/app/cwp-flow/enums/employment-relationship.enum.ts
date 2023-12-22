@@ -1,5 +1,5 @@
 export enum CWPFlowEmploymentRelationship {
   employee = 'Angestellte',
-  selfEmplyed = 'Selbstständig',
+  selfEmployed = 'Selbstständig',
   executive = 'Vorstand'
 }

@@ -3,4 +3,103 @@
   <h2 class="description">
     Diese wird benötigt, damit Sie Ihren Antrag digital abschließen können.F
   </h2>
+  <div class="phone-input-area">
+    <div class="country-selection">
+      <h1 class="label">
+        <span
+          class="asterisk"
+          [ngClass]="{error:CwpFormService.CWPForm.get('personalData.firstName')?.errors?.['required'] && CwpFormService.isSubmited.value}"
+          >*</span
+        >Land
+      </h1>
+      <div
+        *ngIf="CwpFormService.CWPForm.get('personalData.firstName')?.errors?.['required'] && CwpFormService.isSubmited.value"
+      ></div>
+      <div class="input-field" (click)="toggleCountrySelection()">
+        <span
+          [ngClass]="[
+            'circle',
+            'fi',
+            'fis',
+            'fi-' + countryService.currentCountry.value.code
+          ]"
+        ></span>
+        <i-tabler
+          *ngIf="!countrySelectionIsOpen.value"
+          name="chevron-down"
+          class="arrow"
+        ></i-tabler>
+
+        <i-tabler
+          *ngIf="countrySelectionIsOpen.value"
+          name="chevron-up"
+          class="arrow"
+        ></i-tabler>
+      </div>
+    </div>
+    <div class="phone-number">
+      <h1 class="label">
+        <span
+          class="asterisk"
+          [ngClass]="{error:CwpFormService.CWPForm.get('personalData.firstName')?.errors?.['required'] && CwpFormService.isSubmited.value}"
+          >*</span
+        >Handynummer
+      </h1>
+      <div
+        *ngIf="CwpFormService.CWPForm.get('personalData.firstName')?.errors?.['required'] && CwpFormService.isSubmited.value"
+      ></div>
+      <div class="input-container">
+        <span #prefix class="label prefix phone-prefix-color"
+          >+{{ countryService.currentCountry.value.international_area_code
+          }}<span
+            class="label phone-prefix-color"
+            *ngIf="countryService.currentCountry.value.name === 'Germany'"
+          >
+            (0)</span
+          ></span
+        >
+        <input
+          #phoneNumberInput
+          id="phoneNumber"
+          class="input-field label phone-input"
+          type="number"
+          name="phoneNumber"
+        />
+        <i-tabler
+          *ngIf="CwpFormService.CWPForm.get('personalData.firstName')?.valid"
+          name="circle-check"
+          class="icon-check"
+        >
+        </i-tabler>
+      </div>
+    </div>
+  </div>
+
+  <div class="country-drop-down" *ngIf="countrySelectionIsOpen.value">
+    <div
+      (click)="countryService.selectCountry(country)"
+      class="country"
+      [class.selected-country]="
+        countryService.currentCountry.value.name === country.name
+      "
+      *ngFor="let country of countryService.countries"
+    >
+      <span [ngClass]="['circle', 'fi', 'fis', 'fi-' + country.code]"></span>
+      <span class="text"
+        >{{ country.german_name }} (+{{
+          country.international_area_code
+        }})</span
+      >
+      <i-tabler
+        *ngIf="countryService.currentCountry.value.name === country.name"
+        name="check"
+        class="icon-check"
+      >
+      </i-tabler>
+    </div>
+  </div>
+
+  <p class="description" *ngIf="!countrySelectionIsOpen.value">
+    Bitte geben Sie Ihre Handynummer an (z. B. +49 1604922458).
+  </p>
 </div>

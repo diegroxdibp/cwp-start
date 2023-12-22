@@ -1,6 +1,7 @@
 @import "./app/styles/variables";
 @import "./app/styles/palette";
 @import "./app/styles/fonts";
+@import "./assets/flag-icons/css/flag-icons.min.css";
 
 html {
   display: flex;
@@ -77,6 +78,7 @@ body {
 .radio-buttons {
   display: flex;
   padding-top: 8px;
+  gap: 20px;
   margin-bottom: 24px;
 
   .button {
@@ -138,7 +140,9 @@ body {
 }
 
 .input-field {
+  display: inline-flex;
   position: relative;
+  align-items: center;
   width: -webkit-fill-available;
   height: 20px;
   padding: 16px;
@@ -155,13 +159,12 @@ body {
 }
 
 .label {
-  color: var(--neutrals-shades-black, #212529);
+  color: $--color-default-black;
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
   line-height: 140%;
   letter-spacing: 0.1px;
-  padding: 0px 19.82px 0px 0px;
 }
 
 .validation {
@@ -176,11 +179,17 @@ body {
   font-family: $font-family-base;
 }
 
-.icon-check {
+.circle-check {
   color: $--color-success-default !important;
   position: absolute;
   right: 18px;
   margin-top: 17px;
+}
+
+.icon-check {
+  color: $--color-success-default !important;
+  position: absolute;
+  right: 8px;
 }
 
 .icon-exclamation {
@@ -198,4 +207,8 @@ body {
   @media (min-width: $breakpoint-lg) {
     padding-left: $padding-left-desktop;
   }
+}
+
+.phone-prefix-color {
+  color: $--color-neutrals-placeholder;
 }

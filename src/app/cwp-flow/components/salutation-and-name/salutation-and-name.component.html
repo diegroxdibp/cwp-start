@@ -61,9 +61,15 @@
       />
       <i-tabler
         *ngIf="CwpFormService.CWPForm.get('personalData.firstName')?.errors?.['required'] && CwpFormService.isSubmited.value"
-        name="exclamation-circle" class="icon-exclamation"></i-tabler>
-      <i-tabler *ngIf="CwpFormService.CWPForm.get('personalData.firstName')?.valid" name="circle-check"
-        class="icon-check"> </i-tabler>
+        name="exclamation-circle"
+        class="icon-exclamation"
+      ></i-tabler>
+      <i-tabler
+        *ngIf="CwpFormService.CWPForm.get('personalData.firstName')?.valid"
+        name="circle-check"
+        class="circle-check"
+      >
+      </i-tabler>
     </div>
     <div
       *ngIf="
@@ -102,10 +108,16 @@
             error:CwpFormService.CWPForm.get('personalData.lastName')?.errors?.['required']&& CwpFormService.isSubmited.value}"
       />
       <i-tabler
-      *ngIf="CwpFormService.CWPForm.get('personalData.lastName')?.errors?.['required'] && CwpFormService.isSubmited.value"
-      name="exclamation-circle" class="icon-exclamation"></i-tabler>
-    <i-tabler *ngIf="CwpFormService.CWPForm.get('personalData.lastName')?.valid" name="circle-check" class="icon-check">
-    </i-tabler>
+        *ngIf="CwpFormService.CWPForm.get('personalData.lastName')?.errors?.['required'] && CwpFormService.isSubmited.value"
+        name="exclamation-circle"
+        class="icon-exclamation"
+      ></i-tabler>
+      <i-tabler
+        *ngIf="CwpFormService.CWPForm.get('personalData.lastName')?.valid"
+        name="circle-check"
+        class="icon-check"
+      >
+      </i-tabler>
     </div>
     <div
       *ngIf="
