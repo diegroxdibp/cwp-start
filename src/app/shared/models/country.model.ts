@@ -8,6 +8,6 @@ export interface CountryModel {
   name: string;
   ISO_Code: string;
   german_name: string;
-  international_area_code: string;
-  'length_of_international_area_code_+_00': string;
+  international_area_code: number;
+  'length_of_international_area_code_+_00': number;
 }

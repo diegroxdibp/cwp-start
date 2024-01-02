@@ -1,1 +1,38 @@
-<h1 class="title">Bank details</h1>
+<h1 class="title">
+  Welches Konto möchten Sie für Zahlungen mit Ihrer Mastercard® hinterlegen?
+</h1>
+<h1 class="label"><span class="asterisk">*</span>IBAN</h1>
+<div class="input">
+  <input
+    id="iban"
+    class="input-field label"
+    type="text"
+    name="iban"
+    [formControl]="CwpFormService.ibanControl"
+    [ngClass]="{success:CwpFormService.CWPForm.get('bankData.iban')?.valid , 
+          error:CwpFormService.CWPForm.get('bankData.iban')?.errors?.['required'] && CwpFormService.isSubmited.value}"
+  />
+  <i-tabler
+    *ngIf="CwpFormService.CWPForm.get('bankData.iban')?.errors?.['required'] && CwpFormService.isSubmited.value"
+    name="exclamation-circle"
+    class="icon-exclamation"
+  ></i-tabler>
+  <i-tabler
+    *ngIf="CwpFormService.CWPForm.get('bankData.iban')?.valid"
+    name="circle-check"
+    class="circle-check"
+  >
+  </i-tabler>
+</div>
+<p class="description">
+  Für den Antrag ist ein gültiges SEPA-Bankkonto erforderlich (z. B. DE12 3456
+  7890 1234 5678 90). Kontoinhaber:in und Antragsteller:in müssen dieselbe
+  Person sein.
+</p>
+<div
+  *ngIf="
+    !CwpFormService.isSubmited.value ||
+    (CwpFormService.CWPForm.get('bankData.iban')?.valid &&
+      CwpFormService.isSubmited.value)
+  "
+></div>

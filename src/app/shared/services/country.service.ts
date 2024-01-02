@@ -9,16 +9,18 @@ import { CountryModel } from '../models/country.model';
 export class CountryService {
   readonly countries: CountryModel[] = COUNTRIES_LIBRARY;
   // First country should aways be germany
-  currentCountry: BehaviorSubject<CountryModel> =
+  currentCountryPhone: BehaviorSubject<CountryModel> =
     new BehaviorSubject<CountryModel>(this.countries[0]);
+  currentCountryNationality: BehaviorSubject<CountryModel> =
+    new BehaviorSubject<CountryModel >(this.countries[0]);
 
   constructor() {}
 
-  selectCountry(country: CountryModel): void {
-    this.currentCountry.next(country);
+  selectCountryPhone(country: CountryModel): void {
+    this.currentCountryPhone.next(country);
   }
 
-  cu() {
-    this.countries.forEach((country: CountryModel) => {});
+  selectCountryNationality(country: CountryModel): void {
+    this.currentCountryNationality.next(country);
   }
 }

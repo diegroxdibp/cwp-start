@@ -17,3 +17,32 @@
     margin: 0;
   }
 }
+
+.input-field {
+  .name-arrow-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    gap: 8px;
+  }
+}
+
+.permit-input-text {
+  text-wrap: nowrap;
+  overflow: hidden;
+  width: 100%;
+  text-overflow: ellipsis;
+}
+
+.country-name {
+  padding-top: 16px;
+  margin-right: auto;
+  text-wrap: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.MSQC {
+  display: flex;
+}

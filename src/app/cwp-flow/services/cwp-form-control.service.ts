@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import {
-  AbstractControl,
   FormBuilder,
   FormControl,
   FormGroup,
@@ -10,7 +9,6 @@ import { BehaviorSubject } from 'rxjs';
 import {
   birthDateRegex,
   cityRegex,
-  emailRegex,
   employedDateSinceRegex,
   employmentContractValidTillRegex,
   ibanRegex,
@@ -35,13 +33,14 @@ import {
   minLengthStreet,
   minLengthZipCode,
   netIncomeRegex,
-  phoneNumberRegex,
   rentRegex,
   residencePermitValidTillRegex,
   residentDateSinceRegex,
 } from 'src/app/shared/constants/dynamicValidations';
 import { CWPFlowStepsSequence } from '../enums/cwp-flow-steps-sequence.enum';
 import { CwpFlowControlService } from './cwp-flow-control.service';
+import { dynamicMinLengthValidator } from 'src/app/shared/validators/validators';
+import { CountryService } from 'src/app/shared/services/country.service';
 
 @Injectable({
   providedIn: 'root',
@@ -54,7 +53,8 @@ export class CwpFormControlService {
 
   constructor(
     private fb: FormBuilder,
-    public CwpFlowService: CwpFlowControlService
+    private CwpFlowService: CwpFlowControlService,
+    private countryService: CountryService
   ) {
     console.log(CWPFlowStepsSequence);
   }
@@ -134,7 +134,7 @@ export class CwpFormControlService {
       ]),
       phoneNumber: this.fb.control(null, [
         Validators.required,
-        Validators.pattern(phoneNumberRegex),
+        dynamicMinLengthValidator(this.countryService.currentCountryPhone),
       ]),
     }),
     nationalityDetails: this.fb.group({
@@ -149,7 +149,7 @@ export class CwpFormControlService {
       ]),
       countryExceptionCheck: this.fb.control(null, [Validators.required]),
     }),
-    backDetails: this.fb.group({
+    bankDetails: this.fb.group({
       iban: this.fb.control(null, [
         Validators.required,
         Validators.pattern(ibanRegex),
@@ -218,6 +218,8 @@ export class CwpFormControlService {
   });
 
   personalDataControl = this.CWPForm.get('personalData') as FormGroup;
+  contactDetails = this.CWPForm.get('contactDetails') as FormGroup;
+  bankDetails = this.CWPForm.get('bankDetails') as FormGroup;
 
   /* get userForm() {
     return this.CWPForm.get('user') as FormGroup;
@@ -236,6 +238,14 @@ export class CwpFormControlService {
 
   get emailControl(): FormControl {
     return this.personalDataControl!.get('email') as FormControl;
+  }
+
+  get phoneNumberControl() {
+    return this.contactDetails!.get('phoneNumber') as FormControl;
+  }
+
+  get ibanControl() {
+    return this.bankDetails!.get('iban') as FormControl;
   }
 
   /* public get userFormGroup() {
@@ -300,12 +310,11 @@ export class CwpFormControlService {
   }*/
   // step: number = this.CwpFlowService.CWPFlowStepActive.value;
 
-  Validation(): boolean {
+  validation(): boolean {
     switch (true) {
       case this.CwpFlowService.CWPFlowStepActive.value ===
         this.CwpFlowService.CWPFlowStepsSequence
           .personalData_salutationAndNamePage:
-        console.log('1');
         this.isSubmited.next(true);
         if (
           this.personalDataControl.controls['firstName'].invalid ||
@@ -324,6 +333,22 @@ export class CwpFormControlService {
         this.isSubmited.next(true);
         if (this.personalDataControl.controls['email'].invalid) {
           console.log('2');
+          return false;
+        } else {
+          this.isSubmited.next(false);
+          return true;
+        }
+
+      case this.CwpFlowService.CWPFlowStepActive.value ===
+        this.CwpFlowService.CWPFlowStepsSequence.contactDetails_phoneNumberPage:
+        this.isSubmited.next(true);
+        if (this.contactDetails.controls['phoneNumber'].invalid) {
+          console.log(
+            'minLegth error => ',
+            this.CWPForm.get('contactDetails.phoneNumber')?.hasError(
+              'dynamicMinLengthValidator'
+            )
+          );
           return false;
         } else {
           this.isSubmited.next(false);

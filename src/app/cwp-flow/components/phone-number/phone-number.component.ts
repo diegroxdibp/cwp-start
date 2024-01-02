@@ -1,5 +1,7 @@
 import {
   AfterViewChecked,
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
   Component,
   ElementRef,
   ViewChild,
@@ -8,11 +10,14 @@ import { CountryService } from 'src/app/shared/services/country.service';
 import { CwpFlowControlService } from '../../services/cwp-flow-control.service';
 import { CwpFormControlService } from '../../services/cwp-form-control.service';
 import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
+import { CountryModel } from 'src/app/shared/models/country.model';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-phone-number',
   templateUrl: './phone-number.component.html',
   styleUrls: ['./phone-number.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PhoneNumberComponent implements AfterViewChecked {
   @ViewChild('prefix', { read: ElementRef }) prefix: ElementRef | undefined;
@@ -22,13 +27,23 @@ export class PhoneNumberComponent implements AfterViewChecked {
   countrySelectionIsOpen: BehaviorSubject<boolean> =
     new BehaviorSubject<boolean>(false);
   isHovered: boolean = false;
+  phoneInputmaxLength: number = 15;
 
   constructor(
     public countryService: CountryService,
     public CwpFlowService: CwpFlowControlService,
-    public CwpFormService: CwpFormControlService
+    public CwpFormService: CwpFormControlService,
+    private cdr: ChangeDetectorRef
   ) {
-    this.countryService.currentCountry.subscribe(() => this.updateOffset());
+    this.countryService.currentCountryPhone.subscribe(
+      (country: CountryModel) => {
+        this.clearInput();
+        this.calcMaxLength(country['length_of_international_area_code_+_00']);
+        this.setMaxLength();
+        this.updateOffset();
+        this.cdr.markForCheck();
+      }
+    );
   }
 
   ngAfterViewChecked() {
@@ -51,5 +66,34 @@ export class PhoneNumberComponent implements AfterViewChecked {
 
   onHover(isHovered: boolean): void {
     this.isHovered = isHovered;
+  }
+
+  clearInput(): void {
+    if (this.phoneNumberInput) this.phoneNumberInput.nativeElement.value = '';
+  }
+  onPhoneInput(event: Event): void {
+    this.countrySelectionIsOpen.next(false);
+
+    // Get the input value
+    const value = (event.target as HTMLInputElement).value;
+
+    // Limit the length of the input
+    const limitedValue = value.substring(0, this.phoneInputmaxLength);
+    this.phoneNumberInput!.nativeElement.value = limitedValue;
+
+    // Check if the value starts with '0' and remove it
+    if (limitedValue.startsWith('0')) {
+      this.phoneNumberInput!.nativeElement.value = limitedValue.substring(1);
+    }
+  }
+
+  calcMaxLength(offset: number = 15): void {
+    this.phoneInputmaxLength = Math.max(15 - offset, 1);
+  }
+
+  setMaxLength(): void {
+    if (this.phoneNumberInput) {
+      this.phoneNumberInput.nativeElement.maxLength = this.phoneInputmaxLength;
+    }
   }
 }

@@ -1,10 +1,4 @@
-import {
-  Component,
-  ElementRef,
-  Input,
-  Renderer2,
-  ViewChild,
-} from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CWPFlowStepsSequence } from 'src/app/cwp-flow/enums/cwp-flow-steps-sequence.enum';
 import { CwpFlowControlService } from 'src/app/cwp-flow/services/cwp-flow-control.service';
 

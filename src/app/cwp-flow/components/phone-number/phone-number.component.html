@@ -1,7 +1,12 @@
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+/>
+
 <div class="wrapper">
   <h1 class="title">Wie lautet Ihre aktuelle Handynummer?</h1>
   <h2 class="description">
-    Diese wird benötigt, damit Sie Ihren Antrag digital abschließen können.F
+    Diese wird benötigt, damit Sie Ihren Antrag digital abschließen können.
   </h2>
   <div class="phone-input-area">
     <div class="country-selection">
@@ -15,13 +20,19 @@
       <div
         *ngIf="CwpFormService.CWPForm.get('personalData.firstName')?.errors?.['required'] && CwpFormService.isSubmited.value"
       ></div>
-      <div class="input-field" (click)="toggleCountrySelection()">
+      <div
+        class="input-field"
+        (click)="toggleCountrySelection()"
+        [class.selection-active]="countrySelectionIsOpen.value"
+        [ngClass]="{success:CwpFormService.CWPForm.get('contactDetails.phoneNumber')?.valid , 
+      error:CwpFormService.CWPForm.get('contactDetails.phoneNumber')?.errors?.['required'] && CwpFormService.isSubmited.value}"
+      >
         <span
           [ngClass]="[
             'circle',
             'fi',
             'fis',
-            'fi-' + countryService.currentCountry.value.code
+            'fi-' + countryService.currentCountryPhone.value.code
           ]"
         ></span>
         <i-tabler
@@ -41,34 +52,37 @@
       <h1 class="label">
         <span
           class="asterisk"
-          [ngClass]="{error:CwpFormService.CWPForm.get('personalData.firstName')?.errors?.['required'] && CwpFormService.isSubmited.value}"
+          [ngClass]="{error:(CwpFormService.CWPForm.get('contactDetails.phoneNumber')?.errors?.['required'] || CwpFormService.CWPForm.get('contactDetails.phoneNumber')?.errors?.['dynamicMinLengthValidator']) && CwpFormService.isSubmited.value}"
           >*</span
         >Handynummer
       </h1>
-      <div
-        *ngIf="CwpFormService.CWPForm.get('personalData.firstName')?.errors?.['required'] && CwpFormService.isSubmited.value"
-      ></div>
       <div class="input-container">
         <span #prefix class="label prefix phone-prefix-color"
-          >+{{ countryService.currentCountry.value.international_area_code
+          >+{{ countryService.currentCountryPhone.value.international_area_code
           }}<span
             class="label phone-prefix-color"
-            *ngIf="countryService.currentCountry.value.name === 'Germany'"
+            *ngIf="countryService.currentCountryPhone.value.name === 'Germany'"
           >
             (0)</span
           ></span
         >
+
         <input
           #phoneNumberInput
           id="phoneNumber"
           class="input-field label phone-input"
-          type="number"
+          type="text"
           name="phoneNumber"
+          [formControl]="CwpFormService.phoneNumberControl"
+          (input)="onPhoneInput($event)"
+          [maxlength]="phoneInputmaxLength"
+          [ngClass]="{success:CwpFormService.CWPForm.get('contactDetails.phoneNumber')?.valid , 
+            error:CwpFormService.CWPForm.get('contactDetails.phoneNumber')?.errors?.['required'] && CwpFormService.isSubmited.value}"
         />
         <i-tabler
           *ngIf="CwpFormService.CWPForm.get('personalData.firstName')?.valid"
           name="circle-check"
-          class="icon-check"
+          class="circle-check"
         >
         </i-tabler>
       </div>
@@ -77,10 +91,11 @@
 
   <div class="country-drop-down" *ngIf="countrySelectionIsOpen.value">
     <div
-      (click)="countryService.selectCountry(country)"
+      (click)="countryService.selectCountryPhone(country)"
+      (click)="toggleCountrySelection()"
       class="country"
       [class.selected-country]="
-        countryService.currentCountry.value.name === country.name
+        countryService.currentCountryPhone.value.name === country.name
       "
       *ngFor="let country of countryService.countries"
     >
@@ -91,7 +106,7 @@
         }})</span
       >
       <i-tabler
-        *ngIf="countryService.currentCountry.value.name === country.name"
+        *ngIf="countryService.currentCountryPhone.value.name === country.name"
         name="check"
         class="icon-check"
       >
@@ -99,7 +114,50 @@
     </div>
   </div>
 
-  <p class="description" *ngIf="!countrySelectionIsOpen.value">
+  <p class="tip" *ngIf="!countrySelectionIsOpen.value">
     Bitte geben Sie Ihre Handynummer an (z. B. +49 1604922458).
   </p>
+
+  <ng-container *ngIf="CwpFormService.isSubmited | async as isSubmited">
+    <p
+      class="tip"
+      [ngClass]="{
+        error:
+          CwpFormService.CWPForm.get('contactDetails.phoneNumber')?.hasError(
+            'required'
+          ) && isSubmited
+      }"
+      *ngIf="
+        CwpFormService.CWPForm.get('contactDetails.phoneNumber')?.hasError(
+          'required'
+        ) && isSubmited
+      "
+    >
+      Bitte überprüfen Sie Ihre Handynummer.
+    </p>
+  </ng-container>
+
+  <ng-container *ngIf="CwpFormService.isSubmited | async as isSubmited">
+    <p
+      class="tip"
+      [ngClass]="{
+        error:
+          !CwpFormService.CWPForm.get('contactDetails.phoneNumber')?.hasError(
+            'dynamicMinLengthValidator'
+          ) && isSubmited
+      }"
+      *ngIf="
+        !CwpFormService.CWPForm.get('contactDetails.phoneNumber')?.hasError(
+          'dynamicMinLengthValidator'
+        ) &&
+        isSubmited &&
+        !CwpFormService.CWPForm.get('contactDetails.phoneNumber')?.valid &&
+        !CwpFormService.CWPForm.get('contactDetails.phoneNumber')?.hasError(
+          'required'
+        )
+      "
+    >
+      Error for minLegth.
+    </p>
+  </ng-container>
 </div>

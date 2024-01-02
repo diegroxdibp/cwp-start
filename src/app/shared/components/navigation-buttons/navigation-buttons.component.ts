@@ -29,7 +29,7 @@ export class NavigationButtonsComponent {
   ) {}
 
   onNext() {
-    if (this.CwpFormService.Validation() === true) {
+    if (this.CwpFormService.validation() === true) {
       this.CwpFlowService.stepForwards();
     }
   }
