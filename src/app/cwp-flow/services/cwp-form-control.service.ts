@@ -218,7 +218,7 @@ export class CwpFormControlService {
   });
 
   personalDataControl = this.CWPForm.get('personalData') as FormGroup;
-  contactDetails = this.CWPForm.get('contactDetails') as FormGroup;
+  contactDetailsControl = this.CWPForm.get('contactDetails') as FormGroup;
   bankDetails = this.CWPForm.get('bankDetails') as FormGroup;
 
   /* get userForm() {
@@ -240,8 +240,45 @@ export class CwpFormControlService {
     return this.personalDataControl!.get('email') as FormControl;
   }
 
+  get birthDateControl(): FormControl {
+    return this.personalDataControl!.get('birthDate') as FormControl;
+  }
+  get birthNameControl(): FormControl {
+    return this.personalDataControl!.get('birthName') as FormControl;
+  }
+  get maritalStatusControl(): FormControl {
+    return this.personalDataControl!.get('maritalStatus') as FormControl;
+  }
+  get zipCodeControl(): FormControl {
+    return this.contactDetailsControl!.get('zipCode') as FormControl;
+  }
+  get cityControl(): FormControl {
+    return this.contactDetailsControl!.get('city') as FormControl;
+  }
+  get streetControl(): FormControl {
+    return this.contactDetailsControl!.get('street') as FormControl;
+  }
+  get doorNumberControl(): FormControl {
+    return this.contactDetailsControl!.get('doorNumber') as FormControl;
+  }
+  get residentDateSinceControl(): FormControl {
+    return this.contactDetailsControl!.get('residentDateSince') as FormControl;
+  }
+  get previousZipCodeControl(): FormControl {
+    return this.contactDetailsControl!.get('previousZipCode') as FormControl;
+  }
+  get previousCityControl(): FormControl {
+    return this.contactDetailsControl!.get('previousCity') as FormControl;
+  }
+  get previousStreetControl(): FormControl {
+    return this.contactDetailsControl!.get('previousStreet') as FormControl;
+  }
+  get previousDoorNumberControl(): FormControl {
+    return this.contactDetailsControl!.get('previousDoorNumber') as FormControl;
+  }
+
   get phoneNumberControl() {
-    return this.contactDetails!.get('phoneNumber') as FormControl;
+    return this.contactDetailsControl!.get('phoneNumber') as FormControl;
   }
 
   get ibanControl() {
@@ -342,7 +379,7 @@ export class CwpFormControlService {
       case this.CwpFlowService.CWPFlowStepActive.value ===
         this.CwpFlowService.CWPFlowStepsSequence.contactDetails_phoneNumberPage:
         this.isSubmited.next(true);
-        if (this.contactDetails.controls['phoneNumber'].invalid) {
+        if (this.contactDetailsControl.controls['phoneNumber'].invalid) {
           console.log(
             'minLegth error => ',
             this.CWPForm.get('contactDetails.phoneNumber')?.hasError(

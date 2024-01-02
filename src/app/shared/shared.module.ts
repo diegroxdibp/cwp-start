@@ -12,19 +12,32 @@ import { CwpLoaderComponent } from './components/cwp-loader/cwp-loader.component
 import { NavigationButtonsComponent } from './components/navigation-buttons/navigation-buttons.component';
 import { TablerIconsModule } from 'angular-tabler-icons';
 import {
+  IconCalendar,
   IconCheck,
   IconChevronDown,
+  IconChevronLeft,
+  IconChevronRight,
   IconChevronUp,
+  IconChevronsLeft,
+  IconChevronsRight,
   IconCircleCheck,
   IconExclamationCircle,
 } from 'angular-tabler-icons/icons';
+import { InputComponent } from './components/input/input.component';
+import { CalendarComponent } from './components/calendar/calendar.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 const icons = {
   IconCircleCheck,
   IconExclamationCircle,
+  IconCalendar, 
   IconChevronUp,
   IconChevronDown,
-  IconCheck 
+  IconChevronLeft,
+  IconChevronRight,
+  IconChevronsLeft,
+  IconChevronsRight,
+  IconCheck
 };
 @NgModule({
   declarations: [
@@ -37,8 +50,16 @@ const icons = {
     ProgressBarComponent,
     CwpLoaderComponent,
     NavigationButtonsComponent,
+    InputComponent,
+    CalendarComponent,
   ],
-  imports: [CommonModule, RouterModule, TablerIconsModule.pick(icons)],
+  imports: [
+    CommonModule,
+    RouterModule,
+    TablerIconsModule.pick(icons),
+    FormsModule,
+    ReactiveFormsModule,
+  ],
   exports: [
     ArrowComponent,
     IntroImageComponent,
@@ -47,6 +68,8 @@ const icons = {
     CwpLoaderComponent,
     NavigationButtonsComponent,
     TablerIconsModule,
+    InputComponent,
+    CalendarComponent,
   ],
 })
 export class SharedModule {}

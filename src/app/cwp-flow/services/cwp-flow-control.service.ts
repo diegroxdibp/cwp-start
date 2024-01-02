@@ -15,9 +15,10 @@ export class CwpFlowControlService {
   readonly CWPFlowNavigationButtons = CWPFlowNavigationButtons;
   readonly CWPFlowEmploymentRelationship = CWPFlowEmploymentRelationship; // Reference to the enum in the component
   CWPFlowStepActive = new BehaviorSubject<CWPFlowStepsSequence>(
-    CWPFlowStepsSequence.contactDetails_phoneNumberPage
+    CWPFlowStepsSequence.personalData_salutationAndNamePage
   );
   residentLessThenTwoYears = new BehaviorSubject<boolean>(false);
+  ageLessThen18Years = new BehaviorSubject<boolean>(false);
   employmentRelationship =
     new BehaviorSubject<CWPFlowEmploymentRelationship | null>(null);
 

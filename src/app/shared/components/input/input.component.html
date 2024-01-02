@@ -1,0 +1,32 @@
+<div class="input">
+  <input
+    class="input-field"
+    [type]="typeInput"
+    [placeholder]="placeholder"
+    [name]="name"
+    [formControl]="control"
+    [ngClass]="{ success: msgSuccess, error: msgError && isSubmited }"
+  />
+  <i-tabler
+    *ngIf="msgError && isSubmited"
+    name="exclamation-circle"
+    class="icon-exclamation"
+  ></i-tabler>
+
+  <i-tabler
+    *ngIf="msgSuccess"
+    name="circle-check"
+    class="icon-check"
+  ></i-tabler>
+</div>
+<div *ngIf="!isSubmited || (msgSuccess && isSubmited)">
+  <p class="description">
+    {{ message }}
+  </p>
+</div>
+
+<div *ngIf="msgError && isSubmited">
+  <p class="validation">
+    {{ errorMessage }}
+  </p>
+</div>

@@ -1,0 +1,90 @@
+<div class="calendar">
+  <div *ngIf="step === 1" class="content-calendar">
+    <div class="header">
+      <div>
+        <button
+          style="background-color: #ffffff; border: 0rem"
+          (click)="getPreviousBlockYears()"
+        >
+          <i-tabler name="chevrons-left"></i-tabler>
+        </button>
+      </div>
+      <div class="titleRange">{{ rangeStartYear }}-{{ rangeEndYear }}</div>
+      <div>
+        <button
+          style="background-color: #ffffff; border: 0rem"
+          (click)="getNextBlockYears()"
+        >
+          <i-tabler name="chevrons-right"></i-tabler>
+        </button>
+      </div>
+    </div>
+    <div class="divider">
+      <hr />
+    </div>
+    <div class="years">
+      <li
+        (click)="getYear(year)"
+        class="year"
+        *ngFor="let year of currentRange"
+        [ngClass]="{ selected: year === selectedYear }"
+      >
+        {{ year }}
+      </li>
+    </div>
+  </div>
+  <div *ngIf="step === 2" class="content-calendar">
+    <div class="header">
+      <div>
+        <button style="background-color: #ffffff; border: 0rem">
+          <i-tabler name="chevron-left" (click)="goBack(step)"></i-tabler>
+        </button>
+      </div>
+      <div class="titleYear">{{ currentYearSelected }}</div>
+    </div>
+    <div class="divider">
+      <hr />
+    </div>
+    <div class="months">
+      <li
+        (click)="getMonth(listMonths.id)"
+        class="month"
+        *ngFor="let listMonths of listMonths"
+        [ngClass]="{ selected: listMonths.id === selectedMonth }"
+      >
+        {{ listMonths.acronym }}
+      </li>
+    </div>
+  </div>
+  <div *ngIf="step === 3" class="content-calendar">
+    <div class="header">
+      <div>
+        <button style="background-color: #ffffff; border: 0rem">
+          <i-tabler name="chevron-left" (click)="goBack(step)"></i-tabler>
+        </button>
+      </div>
+      <div class="titleMonth">{{ nameMonthSelected }}</div>
+    </div>
+    <div class="divider">
+      <hr />
+    </div>
+    <div>
+      <div class="daysWeek">
+        <div class="dayWeek" *ngFor="let weeks of dayWeek">{{ weeks }}</div>
+      </div>
+      <div class="daysWeek">
+        <li
+          class="day"
+          (click)="getDay(day.day)"
+          *ngFor="let day of calendar"
+          [ngClass]="{
+            'other-month': day.otherMonth,
+            selected: day.day === selectedDay && !day.otherMonth
+          }"
+        >
+          {{ day.day }}
+        </li>
+      </div>
+    </div>
+  </div>
+</div>
