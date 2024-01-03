@@ -10,7 +10,35 @@
     max-width: 448px;
     margin: 0 auto;
     // padding: 32px 0 0 0;
+    .dayWeek {
+      width: 35px;
+      height: 20px;
+      text-align: center;
+      padding-top: 8px;
+      padding-bottom: 8px;
+      color: #000000;
+      font-weight: 300;
+      font-size: 18px;
+   
+    }
+    .day {
+      width: 25px;
+      height: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      margin: auto;
+      cursor: pointer;
+      font-weight: 300;
+      border-radius: 50%;
+      transition: 0.2s;
+    
+      font-size: 18px;
+     // padding-top: -25px;
 
+    
+    }
   }
 
   // Media query for desktops
@@ -23,9 +51,61 @@
 
   // Media query for large screens
   @media (min-width: $breakpoint-lg) {
-    // padding: 40px 64px 64px 40px;
+    
     margin: 0 auto;
-
+    .month {
+      font-weight: 300;
+      font-size: 18px;
+      width: 48px;
+      height: 25px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      margin: auto;
+      cursor: pointer;
+      transition: 0.2s;
+      margin-top: 16px;
+      margin-bottom: 16px;
+    }
+    
+    .year {
+  
+      width: 48px;
+      height: 30px;
+      cursor: pointer;
+      font-weight: 300;
+      font-size: 18px;
+      line-height: 25px;
+      letter-spacing: -0.20000000298023224px;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+      margin-top: 16px;
+      margin-left: 36px;
+    }
+    .day {
+      width: 48px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      margin: auto;
+      cursor: pointer;
+      font-weight: 300;
+      font-size: 18px;
+      border-radius: 50%;
+      transition: 0.2s;
+      width: 14px;
+      height: 10px;
+     // padding-top: -25px;
+     margin-bottom: 10px;
+     margin-top: 16px;
+     //margin-right: 21px;
+    }
     .divider {
       width: 398px;
       border: 1px;
@@ -75,38 +155,7 @@
 
     }
 
-    day {
-      width: 40px;
-      height: 20px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      margin: auto;
-      cursor: pointer;
-      font-weight: 200;
 
-      transition: 0.2s;
-
-      // padding-top: -25px;
-      margin-bottom: 16px;
-    }
-
-    .year {
-      width: 48px;
-      height: 25px;
-      cursor: pointer;
-      font-weight: 300;
-      font-size: 18px;
-      line-height: 25px;
-      letter-spacing: -0.20000000298023224px;
-      text-align: center;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 16px;
-      margin-left: 36px;
-    }
 
     .titleYear {
 
@@ -132,14 +181,15 @@
       margin-right: 360px;
     }
 
-    .selected {
+    /*.selected {
       background-color: $--color-success-default;
-      /* Set your desired color */
-      border-radius: 100px;
-      width: 60px;
-      height: 60px;
+    
+      border-radius: 90px;
+      width: 45px;
+      height: 45px;
       color: #fff;
-    }
+    
+    }*/
 
     .dayWeek {
       text-align: center;
@@ -157,22 +207,14 @@
    
      
     }
-    .day {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      margin: auto;
-      cursor: pointer;
-      font-weight: 200;
-      border-radius: 50%;
-      transition: 0.2s;
-      width: 20px;
-      height: 10px;
-     // padding-top: -25px;
-     margin-bottom: 20px;
-     margin-top: 16px;
-     margin-right: 21px;
+    .selected {
+      
+      
+      border-radius: 30px;
+      width: 46px;
+      height: 46px;
+      margin-top: -5px;
+      margin-bottom: -6px;
     }
   }
 }
@@ -214,11 +256,12 @@
 
 .selected {
   background-color: $--color-success-default;
-  /* Set your desired color */
-  border-radius: 100px;
-  width: 50px;
-  height: 50px;
+  
+  border-radius: 40px;
+  width: 45px;
+  height: 45px;
   color: #fff;
+
 }
 
 .divider {
@@ -250,7 +293,7 @@
 
 .year {
   width: 48px;
-  height: 25px;
+  height: 48px;
   cursor: pointer;
   font-weight: 300;
   font-size: 18px;
@@ -262,6 +305,7 @@
   justify-content: center;
   margin-bottom: 16px;
   margin-left: 20px;
+  
 }
 
 .titleYear {
@@ -299,14 +343,14 @@
 
 .month {
   width: 48px;
-  height: 25px;
+  height: 48px;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   margin: auto;
   cursor: pointer;
-  font-weight: 200;
+  font-weight: 300;
   border-radius: 50%;
   transition: 0.2s;
 
@@ -336,29 +380,32 @@
   padding-top: 8px;
   padding-bottom: 8px;
   color: #000000;
-  font-weight: 500;
+  font-weight: 300;
+  font-size: 18px;
 }
 
 .daysWeek {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   
-  width: 300px;
-
+  width: 320px;
+  margin-top: -5px;
 
 }
 .day {
+  width: 40px;
+  height: 35px;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   margin: auto;
   cursor: pointer;
-  font-weight: 200;
+  font-weight: 300;
   border-radius: 50%;
   transition: 0.2s;
-  width: 40px;
-  height: 25px;
+
+  font-size: 18px;
  // padding-top: -25px;
 
 }

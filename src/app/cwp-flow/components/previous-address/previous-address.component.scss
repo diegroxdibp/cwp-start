@@ -8,45 +8,83 @@
   @media (min-width: $breakpoint-sm) {
     max-width: 448px;
     margin: 0 auto;
-    padding: 32px 0 0 0;
+    //padding: 32px 0 0 0;
+    .input-field-street {
+      display: inline-block;
+      width: 73%; // Ajuste para ocupar 100% da largura na tela pequena
+    }
+
+    .input-field-doorNumber {
+      display: inline-block;
+      //width: 81px;
+      width: calc(26% - 4px); // Ajuste para 50% da largura na tela pequena, considerando a margem
+    }
   }
 
   // Media query for desktops
   @media (min-width: $breakpoint-md) {
     max-width: 448px;
     margin: 0 auto;
-  }
+    .input-field-street {
+      display: inline-block;
+      width: 77.5%; // Reset para a largura original
+    }
 
+    .input-field-doorNumber {
+      display: inline-block;
+      width: calc(25% - 4px); // Reset para a largura original
+    }
+  }
+ // Media query for large screens
+ @media (min-width: $breakpoint-mmd) {
+  padding: 40px 64px 64px 40px;
+  margin: 0;
+  .input-field-street {
+    display: inline-block;
+    //width: 359px;
+    width: 76%;
+  }
+  .input-field-doorNumber {
+    display: inline-block;
+    //width: 80px;
+    width: calc(22.5% - 4px);
+
+  }
+  
+}
   // Media query for large screens
   @media (min-width: $breakpoint-lg) {
     padding: 40px 64px 64px 40px;
     margin: 0;
-
     .input-field-street {
       display: inline-block;
-      width: 359px;
+      //width: 359px;
+      width: 79%;
     }
     .input-field-doorNumber {
       display: inline-block;
-      width: 80px;
-      margin-left: 8px;
+      //width: 80px;
+      width: calc(20% - 4px);
+ 
     }
+    
   }
 }
 .input-field-street {
   display: inline-block;
-  width: 237px;
+  width: 72.5%;
+
 }
 .input-field-doorNumber {
   display: inline-block;
-  width: 81px;
-  margin-left: 8px;
+  width: calc(26% - 4px);
+  margin-left:8px
 }
-.subtitle {
-  font-family: $font-family-base;
-  font-size: 21px;
-  font-weight: 300;
-  line-height: 27px;
-  letter-spacing: -0.001em;
-  text-align: left;
+.subtitle{
+font-family: $font-family-base;
+font-size: 21px;
+font-weight: 300;
+line-height: 27px;
+letter-spacing: -0.001em;
+text-align: left;
 }

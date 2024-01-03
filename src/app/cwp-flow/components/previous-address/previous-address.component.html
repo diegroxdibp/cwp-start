@@ -99,8 +99,8 @@
       style="margin-top: -25px"
       *ngIf="
         !CwpFormService.isSubmited.value ||
-        (CwpFormService.CWPForm.get('contactDetails.street')?.valid &&
-          CwpFormService.CWPForm.get('contactDetails.doorNumber')?.valid &&
+        (CwpFormService.CWPForm.get('contactDetails.previousStreet')?.valid &&
+          CwpFormService.CWPForm.get('contactDetails.previousDoorNumber')?.valid &&
           CwpFormService.isSubmited.value)
       "
     >
@@ -110,8 +110,8 @@
     </div>
     <div
       style="margin-top: -25px"
-      *ngIf="(CwpFormService.CWPForm.get('contactDetails.street')?.errors?.['required'] && CwpFormService.isSubmited.value )||
-( CwpFormService.CWPForm.get('contactDetails.doorNumber')?.errors?.['required'] && CwpFormService.isSubmited.value )"
+      *ngIf="(CwpFormService.CWPForm.get('contactDetails.previousStreet')?.errors?.['required'] && CwpFormService.isSubmited.value )||
+( CwpFormService.CWPForm.get('contactDetails.previousDoorNumber')?.errors?.['required'] && CwpFormService.isSubmited.value )"
     >
       <p class="validation">
         Bitte überprüfen Sie die Adresse (z. B. Musterstraße 123).

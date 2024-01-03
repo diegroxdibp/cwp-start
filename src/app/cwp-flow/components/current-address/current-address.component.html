@@ -78,6 +78,7 @@
         >Nr.
       </h1>
       <app-input
+
         id="doorNumber"
         typeInput="number"
         name="doorNumber"
@@ -122,6 +123,7 @@
     </h1>
     <div class="input">
       <input
+      (input)="getValue()"
         id="residentDateSince"
         class="input-field"
         type="text"
