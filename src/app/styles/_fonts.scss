@@ -1,6 +1,63 @@
 @font-face {
-    font-family: 'bnpp-sans';
-    src: url('../../assets/fonts/bnpp-sans/bnpp-sans.woff') format('woff'),
-         url('../../assets/fonts/bnpp-sans/bnpp-sans.eot') format('eot');
-    /* You can include other formats here for better browser compatibility */
-  }
+     font-family: 'bnpp-sans';
+     src: url('../../assets/fonts/bnpp-sans/bnpp-sans.woff') format('woff'),
+          url('../../assets/fonts/bnpp-sans/bnpp-sans.eot') format('eot'),
+          url('../../assets/fonts/bnpp-sans/bnpp-sans.ttf') format('ttf'),
+          url('../../assets/fonts/bnpp-sans/bnpp-sans.svg') format('svg');
+ }
+ 
+ @font-face {
+     font-family: 'bnpp-sans-bold';
+     src: url('../../assets/fonts/bnpp-sans/bnpp-sans-bold.woff') format('woff'),
+          url('../../assets/fonts/bnpp-sans/bnpp-sans-bold.eot') format('eot'),
+          url('../../assets/fonts/bnpp-sans/bnpp-sans-bold.ttf') format('ttf'),
+          url('../../assets/fonts/bnpp-sans/bnpp-sans-bold.svg') format('svg');
+ }
+ 
+ @font-face {
+     font-family: 'bnpp-sans-bold-italic';
+     src: url('../../assets/fonts/bnpp-sans/bnpp-sans-bold-italic.woff') format('woff'),
+          url('../../assets/fonts/bnpp-sans/bnpp-sans-bold-italic.eot') format('eot'),
+          url('../../assets/fonts/bnpp-sans/bnpp-sans-bold-italic.ttf') format('ttf'),
+          url('../../assets/fonts/bnpp-sans/bnpp-sans-bold-italic.svg') format('svg');
+ }
+ 
+ @font-face {
+     font-family: 'bnpp-sans-extrabold';
+     src: url('../../assets/fonts/bnpp-sans/bnpp-sans-extrabold.woff') format('woff'),
+          url('../../assets/fonts/bnpp-sans/bnpp-sans-extrabold.eot') format('eot'),
+          url('../../assets/fonts/bnpp-sans/bnpp-sans-extrabold.ttf') format('ttf'),
+          url('../../assets/fonts/bnpp-sans/bnpp-sans-extrabold.svg') format('svg');
+ }
+ 
+ @font-face {
+     font-family: 'bnpp-sans-extrabold-italic';
+     src: url('../../assets/fonts/bnpp-sans/bnpp-sans-extrabold-italic.woff') format('woff'),
+          url('../../assets/fonts/bnpp-sans/bnpp-sans-extrabold-italic.eot') format('eot'),
+          url('../../assets/fonts/bnpp-sans/bnpp-sans-extrabold-italic.ttf') format('ttf'),
+          url('../../assets/fonts/bnpp-sans/bnpp-sans-extrabold-italic.svg') format('svg');
+ }
+ 
+ @font-face {
+     font-family: 'bnpp-sans-italic';
+     src: url('../../assets/fonts/bnpp-sans/bnpp-sans-italic.woff') format('woff'),
+          url('../../assets/fonts/bnpp-sans/bnpp-sans-italic.eot') format('eot'),
+          url('../../assets/fonts/bnpp-sans/bnpp-sans-italic.ttf') format('ttf'),
+          url('../../assets/fonts/bnpp-sans/bnpp-sans-italic.svg') format('svg');
+ }
+ 
+ @font-face {
+     font-family: 'bnpp-sans-light';
+     src: url('../../assets/fonts/bnpp-sans/bnpp-sans-light.woff') format('woff'),
+          url('../../assets/fonts/bnpp-sans/bnpp-sans-light.eot') format('eot'),
+          url('../../assets/fonts/bnpp-sans/bnpp-sans-light.ttf') format('ttf'),
+          url('../../assets/fonts/bnpp-sans/bnpp-sans-light.svg') format('svg');
+ }
+ 
+ @font-face {
+     font-family: 'bnpp-sans-light-italic';
+     src: url('../../assets/fonts/bnpp-sans/bnpp-sans-light-italic.woff') format('woff'),
+          url('../../assets/fonts/bnpp-sans/bnpp-sans-light-italic.eot') format('eot'),
+          url('../../assets/fonts/bnpp-sans/bnpp-sans-light-italic.ttf') format('ttf'),
+          url('../../assets/fonts/bnpp-sans/bnpp-sans-light-italic.svg') format('svg');
+ }

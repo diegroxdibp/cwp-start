@@ -26,6 +26,7 @@ import {
 import { InputComponent } from './components/input/input.component';
 import { CalendarComponent } from './components/calendar/calendar.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CheckboxComponent } from './components/checkbox/checkbox.component';
 
 const icons = {
   IconCircleCheck,
@@ -52,6 +53,7 @@ const icons = {
     NavigationButtonsComponent,
     InputComponent,
     CalendarComponent,
+    CheckboxComponent,
   ],
   imports: [
     CommonModule,

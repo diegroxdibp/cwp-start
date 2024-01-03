@@ -48,7 +48,7 @@
     </div>
   </div>
 
-  <div class="country-drop-down" *ngIf="countrySelectionIsOpen.value">
+  <div class="drop-down" *ngIf="countrySelectionIsOpen.value">
     <div
       (click)="countryService.selectCountryNationality(country)"
       (click)="toggleCountrySelection()"
@@ -76,7 +76,7 @@
   </p>
 
   <div class="MSQC" *ngIf="nationalityService.isMSQC.value">
-    <input type="checkbox" name="" id="" />
+    <input class="checkbox" type="checkbox" name="" id="" />
     <span class="asterisk">*</span>
     <p class="disclaimer">
       Ich bestätige, den Kredit weder für Transaktionen nach oder aus den
@@ -89,58 +89,120 @@
     class="residence-permit-area"
     *ngIf="nationalityService.requiresResidencePermit.value"
   >
-    <h1 class="label">
-      <span
-        class="asterisk"
-        [ngClass]="{error:CwpFormService.CWPForm.get('personalData.firstName')?.errors?.['required'] && CwpFormService.isSubmited.value}"
-        >*</span
-      >Aufenthaltstitel
-    </h1>
-    <div
-      *ngIf="CwpFormService.CWPForm.get('personalData.firstName')?.errors?.['required'] && CwpFormService.isSubmited.value"
-    ></div>
-    <div
-      class="input-field label"
-      (click)="toggleResidencePermitSelection()"
-      [class.selection-active]="residencePermitSelectionIsOpen.value"
-    >
-      <span class="permit-input-text">{{
-        nationalityService.selectedResidencePermit.value
-      }}</span>
-      <i-tabler
-        *ngIf="!countrySelectionIsOpen.value"
-        name="chevron-down"
-        class="arrow"
-      ></i-tabler>
-
-      <i-tabler
-        *ngIf="countrySelectionIsOpen.value"
-        name="chevron-up"
-        class="arrow"
-      ></i-tabler>
-    </div>
-  </div>
-
-  <div
-    class="residence-permit-drop-down"
-    *ngIf="residencePermitSelectionIsOpen.value"
-  >
-    <div
-      (click)="nationalityService.selectResidencePermit(permit)"
-      (click)="toggleResidencePermitSelection()"
-      class="permit"
-      [class.selected-permit]="
-        nationalityService.selectedResidencePermit.value === permit
-      "
-      *ngFor="let permit of nationalityService.residencePermitValues"
-    >
-      <span class="text">{{ permit }} </span>
-      <i-tabler
-        *ngIf="nationalityService.selectedResidencePermit.value === permit"
-        name="check"
-        class="icon-check"
+    <div class="residence-permit-selection">
+      <h1 class="label">
+        <span
+          class="asterisk"
+          [ngClass]="{error:CwpFormService.CWPForm.get('personalData.firstName')?.errors?.['required'] && CwpFormService.isSubmited.value}"
+          >*</span
+        >Aufenthaltstitel
+      </h1>
+      <div
+        class="input-field label"
+        (click)="toggleResidencePermitSelection()"
+        [class.selection-active]="residencePermitSelectionIsOpen.value"
       >
-      </i-tabler>
+        <span class="permit-input-text">{{
+          nationalityService.selectedResidencePermit.value
+        }}</span>
+        <i-tabler
+          *ngIf="!countrySelectionIsOpen.value"
+          name="chevron-down"
+          class="arrow"
+        ></i-tabler>
+        <i-tabler
+          *ngIf="countrySelectionIsOpen.value"
+          name="chevron-up"
+          class="arrow"
+        ></i-tabler>
+      </div>
+      <p *ngIf="!residencePermitSelectionIsOpen.value" class="tip">Wählen Sie Ihren Aufenthaltstitel aus.</p>
+    </div>
+
+    <div
+      class="drop-down"
+      *ngIf="residencePermitSelectionIsOpen.value"
+    >
+      <div
+        (click)="nationalityService.selectResidencePermit(permit)"
+        (click)="toggleResidencePermitSelection()"
+        class="permit"
+        [class.selected-permit]="
+          nationalityService.selectedResidencePermit.value === permit
+        "
+        *ngFor="let permit of nationalityService.residencePermitValues"
+      >
+        <span class="text">{{ permit }} </span>
+        <i-tabler
+          *ngIf="nationalityService.selectedResidencePermit.value === permit"
+          name="check"
+          class="icon-check"
+        >
+        </i-tabler>
+      </div>
+    </div>
+
+    <div class="date-of-expiry">
+      <div>
+        <h1 class="label">
+          <span
+            class="asterisk"
+            [ngClass]="{error:CwpFormService.CWPForm.get('personalData.birthDate')?.errors?.['required'] 
+      && CwpFormService.isSubmited.value && this.CwpFlowService.ageLessThen18Years.value}"
+            >*</span
+          >
+          Gültig bis
+        </h1>
+        <div class="input">
+          <input
+            id="birthDate"
+            class="input-field"
+            type="text"
+            name="birthDate"
+            mask="d0.M0.0000"
+            [formControl]="CwpFormService.birthDateControl"
+            [ngClass]="{success:CwpFormService.CWPForm.get('personalData.birthDate')?.valid && this.CwpFlowService.ageLessThen18Years.value, 
+         error:CwpFormService.CWPForm.get('personalData.birthDate')?.errors?.['required'] && CwpFormService.isSubmited.value}"
+          />
+          <i-tabler
+            style="margin-right: 34px"
+            *ngIf="CwpFormService.CWPForm.get('personalData.birthDate')?.errors?.['required'] && CwpFormService.isSubmited.value"
+            name="exclamation-circle"
+            class="icon-exclamation"
+          ></i-tabler>
+          <i-tabler
+            style="margin-right: 34px"
+            *ngIf="
+              CwpFormService.CWPForm.get('personalData.birthDate')?.valid &&
+              this.CwpFlowService.ageLessThen18Years.value
+            "
+            name="circle-check"
+            class="icon-check"
+          >
+          </i-tabler>
+          <i-tabler name="calendar" class="icon-calendar"></i-tabler>
+        </div>
+        <div
+          *ngIf="
+            !CwpFormService.isSubmited.value ||
+            (CwpFormService.CWPForm.get('personalData.birthDate')?.valid &&
+              CwpFormService.isSubmited.value)
+          "
+        >
+          <p class="tip">
+            Geben Sie das Ablaufdatum Ihrer befristeten Aufenthaltsgenehmigung
+            an (z. B. 04.2029).
+          </p>
+        </div>
+        <div
+          *ngIf="CwpFormService.CWPForm.get('personalData.birthDate')?.errors?.['required'] && CwpFormService.isSubmited.value && this.CwpFlowService.ageLessThen18Years.value"
+        >
+          <p class="validation">
+            Bitte tragen Sie Ihr Geburtsdatum ein (Sie müssen mindestens 18
+            Jahre alt sein).
+          </p>
+        </div>
+      </div>
     </div>
   </div>
 </div>

@@ -89,7 +89,7 @@
     </div>
   </div>
 
-  <div class="country-drop-down" *ngIf="countrySelectionIsOpen.value">
+  <div class="drop-down" *ngIf="countrySelectionIsOpen.value">
     <div
       (click)="countryService.selectCountryPhone(country)"
       (click)="toggleCountrySelection()"

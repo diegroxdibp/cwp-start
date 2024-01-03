@@ -77,11 +77,15 @@ export class PhoneNumberComponent implements AfterViewChecked {
     // Get the input value
     const inputValue = (event.target as HTMLInputElement).value;
 
-    // Filter out non-numeric characters
-    const numericValue = inputValue.replace(/[^0-9]/g, '');
+    // Check if the value starts with '0' and remove it
+    const numericValue = inputValue.startsWith('0')
+      ? inputValue.substring(1)
+      : inputValue;
 
-    // Limit the length of the input
-    const limitedValue = numericValue.substring(0, this.phoneInputmaxLength);
+    // Filter out non-numeric characters
+    const limitedValue = numericValue
+      .replace(/[^0-9]/g, '')
+      .substring(0, this.phoneInputmaxLength);
 
     // Update the input value
     this.phoneNumberInput!.nativeElement.value = limitedValue;

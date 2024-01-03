@@ -45,4 +45,39 @@
 
 .MSQC {
   display: flex;
+  gap: 2px;
+  margin: 16px 0;
+}
+
+.checkbox {
+  display: flex;
+  width: 24px;
+  height: 24px;
+  padding: 2.4px;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+
+  border-radius: 4px;
+  border: 1px solid $--color-primary-default;
+  background: $--color-primary-default;
+
+  accent-color: $--color-primary-default;
+}
+
+.residence-permit-area {
+  margin-bottom: 24px;
+}
+
+.residence-permit-selection,
+.date-of-expiry {
+  margin-top: 24px;
+}
+
+.description {
+  margin-bottom: 0px;
+}
+
+.tip {
+  margin-bottom: 0px;
 }

@@ -14,7 +14,6 @@ export class ScreenSizeService {
   constructor() {
     this.setupResizeListener();
     this.handleScreenSizeChange();
-    console.log(this.isMobile.value, this.isTablet.value, this.isDesktop.value);
   }
 
   private setupResizeListener(): void {
