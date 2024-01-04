@@ -10,6 +10,7 @@ export class CurrentAddressComponent {
   currentDate = new Date();
   isSubmited: boolean = false;
   visible: boolean = false;
+  less2Years :boolean = false
   year: number | string = 'JJJJ';
   month: number | string = 'MM';
   day: number | string = 'TT';
@@ -81,8 +82,10 @@ export class CurrentAddressComponent {
     // Check if the difference is less than 18 years
     if (differenceInYears < 2) {
       this.CwpFlowService.residentLessThenTwoYears.next(true);
+      this.less2Years = true;
     } else {
       this.CwpFlowService.residentLessThenTwoYears.next(false);
+      this.less2Years = false;
     }
   }
   getValue() {
@@ -103,8 +106,10 @@ export class CurrentAddressComponent {
       const differenceInYears = differenceInMilliseconds / (1000 * 60 * 60 * 24 * 365.25);
       if (differenceInYears < 2) {
         this.CwpFlowService.ageLessThen18Years.next(true);
+        this.less2Years = true;
       } else {
         this.CwpFlowService.ageLessThen18Years.next(false);
+        this.less2Years = false;
       }
     }
   }

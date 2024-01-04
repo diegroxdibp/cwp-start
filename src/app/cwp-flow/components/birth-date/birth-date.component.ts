@@ -3,6 +3,7 @@ import { CwpFlowControlService } from '../../services/cwp-flow-control.service';
 import { CwpFormControlService } from '../../services/cwp-form-control.service';
 import { BsDatepickerConfig } from 'ngx-bootstrap/datepicker';
 import { birthDate } from 'src/app/shared/constants/app.constants';
+import { BehaviorSubject } from 'rxjs';
 @Component({
   selector: 'app-birth-date',
   templateUrl: './birth-date.component.html',
@@ -11,6 +12,7 @@ import { birthDate } from 'src/app/shared/constants/app.constants';
 export class BirthDateComponent {
   isSubmited: boolean = false;
   visible: boolean = false;
+  less18Years :boolean = false
   year: number | string = 'JJJJ';
   month: number | string = 'MM';
   day: number | string = 'TT';
@@ -74,8 +76,11 @@ export class BirthDateComponent {
     // Check if the difference is less than 18 years
     if (differenceInYears < 18) {
       this.CwpFlowService.ageLessThen18Years.next(true);
+     this.less18Years = true;
+     console.log(this.less18Years);
     } else {
       this.CwpFlowService.ageLessThen18Years.next(false);
+      this.less18Years = false;
     }
   }
 
@@ -102,8 +107,11 @@ export class BirthDateComponent {
         differenceInMilliseconds / (1000 * 60 * 60 * 24 * 365.25);
       if (differenceInYears < 18) {
         this.CwpFlowService.ageLessThen18Years.next(true);
+        this.less18Years = true;
+      
       } else {
         this.CwpFlowService.ageLessThen18Years.next(false);
+        this.less18Years = false;
       }
     }
   }
