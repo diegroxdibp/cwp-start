@@ -2,9 +2,10 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { CWPFlowStepsSequence } from '../enums/cwp-flow-steps-sequence.enum';
 import { CWPFlowNavigationButtons } from '../enums/cwp-flow-navigation-buttons.enum copy';
-import { CWPFlowEmploymentRelationship } from '../enums/employment-relationship.enum';
+import { GroupOfProfessions } from '../enums/group-of-professions.enum';
 import { Title } from '@angular/platform-browser';
 import { CWPFlowBlocks } from '../enums/cwp-flow-blocks.enum';
+import { EmploymentStatusService } from 'src/app/shared/services/employment-status.service';
 
 @Injectable({
   providedIn: 'root',
@@ -13,22 +14,24 @@ export class CwpFlowControlService {
   readonly CWPFlowBlocks = CWPFlowBlocks;
   readonly CWPFlowStepsSequence = CWPFlowStepsSequence;
   readonly CWPFlowNavigationButtons = CWPFlowNavigationButtons;
-  readonly CWPFlowEmploymentRelationship = CWPFlowEmploymentRelationship; // Reference to the enum in the component
+  readonly GroupOfProfessions = GroupOfProfessions; // Reference to the enum in the component
   CWPFlowStepActive = new BehaviorSubject<CWPFlowStepsSequence>(
     CWPFlowStepsSequence.contactDetails_phoneNumberPage
   );
   residentLessThenTwoYears = new BehaviorSubject<boolean>(false);
   ageLessThen18Years = new BehaviorSubject<boolean>(false);
-  employmentRelationship =
-    new BehaviorSubject<CWPFlowEmploymentRelationship | null>(null);
 
-  constructor(private titleService: Title) {
+  constructor(
+    private titleService: Title,
+    private employmentStatusService: EmploymentStatusService
+  ) {
     this.CWPFlowStepActive.subscribe((data) =>
       this.titleService.setTitle(this.CWPFlowStepActiveName)
     );
   }
 
   stepForwards(steps: number = 1) {
+    //To previous address page
     if (
       this.CWPFlowStepActive.value ===
         CWPFlowStepsSequence.contactDetails_addressCurrentPage &&
@@ -37,26 +40,59 @@ export class CwpFlowControlService {
       this.toStep(CWPFlowStepsSequence.contactDetails_phoneNumberPage);
       return;
     }
-
+    //To employee page
     if (
       this.CWPFlowStepActive.value ===
         CWPFlowStepsSequence.employmentDetails_employmentRelationtshipPage &&
-      this.employmentRelationship.value ===
-        CWPFlowEmploymentRelationship.executive
+      this.employmentStatusService.currentProfession.value ===
+        GroupOfProfessions.employee
+    ) {
+      this.toStep(CWPFlowStepsSequence.employmentDetails_employee);
+      return;
+    }
+    //To self employed page
+    if (
+      this.CWPFlowStepActive.value ===
+        CWPFlowStepsSequence.employmentDetails_employmentRelationtshipPage &&
+      this.employmentStatusService.currentProfession.value ===
+        GroupOfProfessions.selfEmployed
     ) {
       this.toStep(
-        CWPFlowStepsSequence.employmentDetails_industryTypeAndMajoritySalesCountryPage
+        CWPFlowStepsSequence.employmentDetails_selfEmployed
       );
       return;
     }
-
+    //To executive page
+    if (
+      this.CWPFlowStepActive.value ===
+        CWPFlowStepsSequence.employmentDetails_employmentRelationtshipPage &&
+      this.employmentStatusService.currentProfession.value ===
+        GroupOfProfessions.executive
+    ) {
+      this.toStep(
+        CWPFlowStepsSequence.employmentDetails_executive
+      );
+      return;
+    }
+    //To other employment page
+    //TODO
+    if (
+      this.CWPFlowStepActive.value ===
+        CWPFlowStepsSequence.employmentDetails_employmentRelationtshipPage &&
+      this.employmentStatusService.currentProfession.value ===
+        GroupOfProfessions.executive
+    ) {
+      this.toStep(
+        CWPFlowStepsSequence.employmentDetails_other
+      );
+      return;
+    }
     this.CWPFlowStepActive.next(
       Math.min(
         CWPFlowStepsSequence.overallOverview_summaryPage,
         this.CWPFlowStepActive.value + steps
       )
     );
-    console.log(this.CWPFlowStepActive.value);
   }
 
   stepBackwards() {
@@ -99,12 +135,6 @@ export class CwpFlowControlService {
     return Object.values(CWPFlowStepsSequence).filter(
       (value) => typeof value === 'number'
     ) as number[];
-  }
-
-  get CWPFlowEmploymentRelationshipValuesToArray(): CWPFlowEmploymentRelationship[] {
-    return Object.values(
-      this.CWPFlowEmploymentRelationship
-    ) as CWPFlowEmploymentRelationship[];
   }
 
   CWPFlowStepNameByStepNumber(stepNumber: CWPFlowStepsSequence): string {

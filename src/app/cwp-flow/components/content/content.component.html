@@ -123,28 +123,35 @@
 
   <ng-container
     *ngSwitchCase="
-      CwpFlowService.CWPFlowStepsSequence
-        .employmentDetails_timeWorkingForCurrentEmployerPage
+      CwpFlowService.CWPFlowStepsSequence.employmentDetails_employee
     "
   >
-    <app-time-working-for-current-employer></app-time-working-for-current-employer>
+    <app-employee></app-employee>
   </ng-container>
 
   <ng-container
     *ngSwitchCase="
-      CwpFlowService.CWPFlowStepsSequence
-        .employmentDetails_industryTypeAndMajoritySalesCountryPage
+      CwpFlowService.CWPFlowStepsSequence.employmentDetails_selfEmployed
     "
   >
-  <app-industry-type-and-majority-sales-country></app-industry-type-and-majority-sales-country>
+    <app-self-employed></app-self-employed>
+    <!-- <app-industry-type-and-majority-sales-country></app-industry-type-and-majority-sales-country> -->
   </ng-container>
 
   <ng-container
     *ngSwitchCase="
-      CwpFlowService.CWPFlowStepsSequence.employmentDetails_employerAddressPage
+      CwpFlowService.CWPFlowStepsSequence.employmentDetails_executive
     "
   >
-  <app-employer-address></app-employer-address>
+    <app-executive></app-executive>
+    <!-- <app-employer-address></app-employer-address> -->
+  </ng-container>
+
+  <ng-container
+    *ngSwitchCase="CwpFlowService.CWPFlowStepsSequence.employmentDetails_other"
+  >
+    <app-other></app-other>
+    <!-- <app-employer-address></app-employer-address> -->
   </ng-container>
 
   <ng-container
@@ -152,7 +159,7 @@
       CwpFlowService.CWPFlowStepsSequence.regularExpenses_whoDoYouLiveWithPage
     "
   >
-  <app-who-do-you-live-with></app-who-do-you-live-with>
+    <app-who-do-you-live-with></app-who-do-you-live-with>
   </ng-container>
 
   <ng-container
@@ -161,7 +168,7 @@
         .regularExpenses_haveChildrenWhomYouAreResponsiblePage
     "
   >
-  <app-have-children-whom-you-are-responsible></app-have-children-whom-you-are-responsible>
+    <app-have-children-whom-you-are-responsible></app-have-children-whom-you-are-responsible>
   </ng-container>
 
   <ng-container

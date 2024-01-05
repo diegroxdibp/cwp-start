@@ -14,15 +14,40 @@ import { PhoneNumberComponent } from './components/phone-number/phone-number.com
 import { NationalityComponent } from './components/nationality/nationality.component';
 import { BankDetailsComponent } from './components/bank-deatils/bank-details.component';
 import { EmploymentRelationshipComponent } from './components/employment-relationship/employment-relationship.component';
-import { TimeWorkingForCurrentEmployerComponent } from './components/time-working-for-current-employer/time-working-for-current-employer.component';
 import { IndustryTypeAndMajoritySalesCountryComponent } from './components/industry-type-and-majority-sales-country/industry-type-and-majority-sales-country.component';
 import { EmployerAddressComponent } from './components/employer-address/employer-address.component';
 import { WhoDoYouLiveWithComponent } from './components/who-do-you-live-with/who-do-you-live-with.component';
 import { HaveChildrenWhomYouAreResponsibleComponent } from './components/have-children-whom-you-are-responsible/have-children-whom-you-are-responsible.component';
 import { SummaryComponent } from './components/summary-page/summary.component';
+import { EmployeeComponent } from './components/employee/employee.component';
+import { SelfEmployedComponent } from './components/self-employed/self-employed.component';
+import { ExecutiveComponent } from './components/executive/executive.component';
+import { OtherComponent } from './components/other/other.component';
 
 @NgModule({
-  declarations: [CwpFlowComponent, SalutationAndNameComponent, EmailComponent, ContentComponent, BirthDateComponent, MaritalStatusComponent, CurrentAddressComponent, PreviousAddressComponent, PhoneNumberComponent, NationalityComponent, BankDetailsComponent, EmploymentRelationshipComponent, TimeWorkingForCurrentEmployerComponent, IndustryTypeAndMajoritySalesCountryComponent, EmployerAddressComponent, WhoDoYouLiveWithComponent, HaveChildrenWhomYouAreResponsibleComponent, SummaryComponent],
+  declarations: [
+    CwpFlowComponent,
+    SalutationAndNameComponent,
+    EmailComponent,
+    ContentComponent,
+    BirthDateComponent,
+    MaritalStatusComponent,
+    CurrentAddressComponent,
+    PreviousAddressComponent,
+    PhoneNumberComponent,
+    NationalityComponent,
+    BankDetailsComponent,
+    EmploymentRelationshipComponent,
+    IndustryTypeAndMajoritySalesCountryComponent,
+    EmployerAddressComponent,
+    WhoDoYouLiveWithComponent,
+    HaveChildrenWhomYouAreResponsibleComponent,
+    SummaryComponent,
+    EmployeeComponent,
+    SelfEmployedComponent,
+    ExecutiveComponent,
+    OtherComponent,
+  ],
   imports: [CommonModule, SharedModule, FormsModule, ReactiveFormsModule],
   exports: [CwpFlowComponent],
 })

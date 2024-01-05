@@ -10,7 +10,7 @@ export const COUNTRIES_LIBRARY = [
         "ISO_Code": "276",
         "german_name": "Deutschland ",
         "international_area_code": 49,
-        "length_of_international_area_code_+_00": 4
+        "length_of_international_area_code_+_00": 4,
     },
     {
         "capital": "Warsaw",
@@ -23,7 +23,7 @@ export const COUNTRIES_LIBRARY = [
         "ISO_Code": "616",
         "german_name": "Polen ",
         "international_area_code": 48,
-        "length_of_international_area_code_+_00": 4
+        "length_of_international_area_code_+_00": 4,
     },
     {
         "capital": "Ankara",
@@ -36,7 +36,7 @@ export const COUNTRIES_LIBRARY = [
         "ISO_Code": "792",
         "german_name": "Türkei",
         "international_area_code": 90,
-        "length_of_international_area_code_+_00": 4
+        "length_of_international_area_code_+_00": 4,
     },
     {
         "capital": "Kabul",
@@ -46,10 +46,10 @@ export const COUNTRIES_LIBRARY = [
         "flag_4x3": "flags/4x3/af.svg",
         "iso": true,
         "name": "Afghanistan",
-        "ISO_Code": "004",
+        "ISO_Code": "4",
         "german_name": "Afghanistan ",
         "international_area_code": 93,
-        "length_of_international_area_code_+_00": 4
+        "length_of_international_area_code_+_00": 4,
     },
     {
         "capital": "Tirana",
@@ -59,10 +59,10 @@ export const COUNTRIES_LIBRARY = [
         "flag_4x3": "flags/4x3/al.svg",
         "iso": true,
         "name": "Albania",
-        "ISO_Code": "008",
+        "ISO_Code": "8",
         "german_name": "Albanien ",
         "international_area_code": 355,
-        "length_of_international_area_code_+_00": 5
+        "length_of_international_area_code_+_00": 5,
     },
     {
         "capital": "Algiers",
@@ -72,10 +72,10 @@ export const COUNTRIES_LIBRARY = [
         "flag_4x3": "flags/4x3/dz.svg",
         "iso": true,
         "name": "Algeria",
-        "ISO_Code": "012",
+        "ISO_Code": "12",
         "german_name": "Algerien ",
         "international_area_code": 213,
-        "length_of_international_area_code_+_00": 5
+        "length_of_international_area_code_+_00": 5,
     },
     {
         "capital": "Pago Pago",
@@ -85,10 +85,10 @@ export const COUNTRIES_LIBRARY = [
         "flag_4x3": "flags/4x3/as.svg",
         "iso": true,
         "name": "American Samoa",
-        "ISO_Code": "016",
+        "ISO_Code": "16",
         "german_name": "Amerikanisch Samoa ",
         "international_area_code": 1684,
-        "length_of_international_area_code_+_00": 6
+        "length_of_international_area_code_+_00": 6,
     },
     {
         "capital": "Charlotte Amalie",
@@ -101,7 +101,7 @@ export const COUNTRIES_LIBRARY = [
         "ISO_Code": "850",
         "german_name": "Amerikanische Jungferninseln",
         "international_area_code": 1340,
-        "length_of_international_area_code_+_00": 6
+        "length_of_international_area_code_+_00": 6,
     },
     {
         "capital": "Andorra la Vella",
@@ -111,10 +111,10 @@ export const COUNTRIES_LIBRARY = [
         "flag_4x3": "flags/4x3/ad.svg",
         "iso": true,
         "name": "Andorra",
-        "ISO_Code": "020",
+        "ISO_Code": "20",
         "german_name": "Andorra ",
         "international_area_code": 376,
-        "length_of_international_area_code_+_00": 5
+        "length_of_international_area_code_+_00": 5,
     },
     {
         "capital": "Luanda",
@@ -124,10 +124,10 @@ export const COUNTRIES_LIBRARY = [
         "flag_4x3": "flags/4x3/ao.svg",
         "iso": true,
         "name": "Angola",
-        "ISO_Code": "024",
+        "ISO_Code": "24",
         "german_name": "Angola ",
         "international_area_code": 244,
-        "length_of_international_area_code_+_00": 5
+        "length_of_international_area_code_+_00": 5,
     },
     {
         "capital": "The Valley",
@@ -140,7 +140,7 @@ export const COUNTRIES_LIBRARY = [
         "ISO_Code": "660",
         "german_name": "Anguilla ",
         "international_area_code": 1264,
-        "length_of_international_area_code_+_00": 6
+        "length_of_international_area_code_+_00": 6,
     },
     {
         "code": "aq",
@@ -148,10 +148,10 @@ export const COUNTRIES_LIBRARY = [
         "flag_4x3": "flags/4x3/aq.svg",
         "iso": true,
         "name": "Antarctica",
-        "ISO_Code": "010",
+        "ISO_Code": "10",
         "german_name": "Antarktis ",
         "international_area_code": 672,
-        "length_of_international_area_code_+_00": 5
+        "length_of_international_area_code_+_00": 5,
     },
     {
         "capital": "St. John's",
@@ -161,10 +161,10 @@ export const COUNTRIES_LIBRARY = [
         "flag_4x3": "flags/4x3/ag.svg",
         "iso": true,
         "name": "Antigua and Barbuda",
-        "ISO_Code": "028",
+        "ISO_Code": "28",
         "german_name": "Antigua and Barbuda ",
         "international_area_code": 1268,
-        "length_of_international_area_code_+_00": 6
+        "length_of_international_area_code_+_00": 6,
     },
     {
         "capital": "Buenos Aires",
@@ -174,10 +174,10 @@ export const COUNTRIES_LIBRARY = [
         "flag_4x3": "flags/4x3/ar.svg",
         "iso": true,
         "name": "Argentina",
-        "ISO_Code": "032",
+        "ISO_Code": "32",
         "german_name": "Argentinien ",
         "international_area_code": 54,
-        "length_of_international_area_code_+_00": 4
+        "length_of_international_area_code_+_00": 4,
     },
     {
         "capital": "Yerevan",
@@ -187,10 +187,10 @@ export const COUNTRIES_LIBRARY = [
         "flag_4x3": "flags/4x3/am.svg",
         "iso": true,
         "name": "Armenia",
-        "ISO_Code": "051",
+        "ISO_Code": "51",
         "german_name": "Armenien ",
         "international_area_code": 374,
-        "length_of_international_area_code_+_00": 5
+        "length_of_international_area_code_+_00": 5,
     },
     {
         "capital": "Oranjestad",
@@ -203,7 +203,7 @@ export const COUNTRIES_LIBRARY = [
         "ISO_Code": "533",
         "german_name": "Aruba ",
         "international_area_code": 297,
-        "length_of_international_area_code_+_00": 5
+        "length_of_international_area_code_+_00": 5,
     },
     {
         "capital": "Baku",
@@ -213,10 +213,10 @@ export const COUNTRIES_LIBRARY = [
         "flag_4x3": "flags/4x3/az.svg",
         "iso": true,
         "name": "Azerbaijan",
-        "ISO_Code": "031",
+        "ISO_Code": "31",
         "german_name": "Aserbaidschan ",
         "international_area_code": 994,
-        "length_of_international_area_code_+_00": 5
+        "length_of_international_area_code_+_00": 5,
     },
     {
         "capital": "Canberra",
@@ -226,10 +226,10 @@ export const COUNTRIES_LIBRARY = [
         "flag_4x3": "flags/4x3/au.svg",
         "iso": true,
         "name": "Australia",
-        "ISO_Code": "036",
+        "ISO_Code": "36",
         "german_name": "Australien ",
         "international_area_code": 61,
-        "length_of_international_area_code_+_00": 4
+        "length_of_international_area_code_+_00": 4,
     },
     {
         "capital": "Nassau",
@@ -239,10 +239,10 @@ export const COUNTRIES_LIBRARY = [
         "flag_4x3": "flags/4x3/bs.svg",
         "iso": true,
         "name": "Bahamas",
-        "ISO_Code": "044",
+        "ISO_Code": "44",
         "german_name": "Bahamas ",
         "international_area_code": 1242,
-        "length_of_international_area_code_+_00": 6
+        "length_of_international_area_code_+_00": 6,
     },
     {
         "capital": "Manama",
@@ -252,10 +252,10 @@ export const COUNTRIES_LIBRARY = [
         "flag_4x3": "flags/4x3/bh.svg",
         "iso": true,
         "name": "Bahrain",
-        "ISO_Code": "048",
+        "ISO_Code": "48",
         "german_name": "Bahrain ",
         "international_area_code": 973,
-        "length_of_international_area_code_+_00": 5
+        "length_of_international_area_code_+_00": 5,
     },
     {
         "capital": "Dhaka",
@@ -265,10 +265,10 @@ export const COUNTRIES_LIBRARY = [
         "flag_4x3": "flags/4x3/bd.svg",
         "iso": true,
         "name": "Bangladesh",
-        "ISO_Code": "050",
+        "ISO_Code": "50",
         "german_name": "Bangladesh ",
         "international_area_code": 880,
-        "length_of_international_area_code_+_00": 5
+        "length_of_international_area_code_+_00": 5,
     },
     {
         "capital": "Bridgetown",
@@ -278,10 +278,10 @@ export const COUNTRIES_LIBRARY = [
         "flag_4x3": "flags/4x3/bb.svg",
         "iso": true,
         "name": "Barbados",
-        "ISO_Code": "052",
+        "ISO_Code": "52",
         "german_name": "Barbados ",
         "international_area_code": 1246,
-        "length_of_international_area_code_+_00": 6
+        "length_of_international_area_code_+_00": 6,
     },
     {
         "capital": "Minsk",
@@ -294,7 +294,7 @@ export const COUNTRIES_LIBRARY = [
         "ISO_Code": "112",
         "german_name": "Belarus (Weissrussland)",
         "international_area_code": 375,
-        "length_of_international_area_code_+_00": 5
+        "length_of_international_area_code_+_00": 5,
     },
     {
         "capital": "Brussels",
@@ -304,10 +304,10 @@ export const COUNTRIES_LIBRARY = [
         "flag_4x3": "flags/4x3/be.svg",
         "iso": true,
         "name": "Belgium",
-        "ISO_Code": "056",
+        "ISO_Code": "56",
         "german_name": "Belgien",
         "international_area_code": 32,
-        "length_of_international_area_code_+_00": 4
+        "length_of_international_area_code_+_00": 4,
     },
     {
         "capital": "Belmopan",
@@ -317,10 +317,10 @@ export const COUNTRIES_LIBRARY = [
         "flag_4x3": "flags/4x3/bz.svg",
         "iso": true,
         "name": "Belize",
-        "ISO_Code": "084",
+        "ISO_Code": "84",
         "german_name": "Belize ",
         "international_area_code": 501,
-        "length_of_international_area_code_+_00": 5
+        "length_of_international_area_code_+_00": 5,
     },
     {
         "capital": "Porto-Novo",
@@ -333,7 +333,7 @@ export const COUNTRIES_LIBRARY = [
         "ISO_Code": "204",
         "german_name": "Benin ",
         "international_area_code": 229,
-        "length_of_international_area_code_+_00": 5
+        "length_of_international_area_code_+_00": 5,
     },
     {
         "capital": "Hamilton",
@@ -343,10 +343,10 @@ export const COUNTRIES_LIBRARY = [
         "flag_4x3": "flags/4x3/bm.svg",
         "iso": true,
         "name": "Bermuda",
-        "ISO_Code": "060",
+        "ISO_Code": "60",
         "german_name": "Bermuda ",
         "international_area_code": 1441,
-        "length_of_international_area_code_+_00": 6
+        "length_of_international_area_code_+_00": 6,
     },
     {
         "capital": "Thimphu",
@@ -356,10 +356,10 @@ export const COUNTRIES_LIBRARY = [
         "flag_4x3": "flags/4x3/bt.svg",
         "iso": true,
         "name": "Bhutan",
-        "ISO_Code": "068",
+        "ISO_Code": "68",
         "german_name": "Bhutan ",
         "international_area_code": 975,
-        "length_of_international_area_code_+_00": 5
+        "length_of_international_area_code_+_00": 5,
     },
     {
         "capital": "Sucre",
@@ -369,10 +369,10 @@ export const COUNTRIES_LIBRARY = [
         "flag_4x3": "flags/4x3/bo.svg",
         "iso": true,
         "name": "Bolivia",
-        "ISO_Code": "068",
+        "ISO_Code": "68",
         "german_name": "Bhutan ",
         "international_area_code": 591,
-        "length_of_international_area_code_+_00": 5
+        "length_of_international_area_code_+_00": 5,
     },
     {
         "capital": "Sarajevo",
@@ -382,10 +382,10 @@ export const COUNTRIES_LIBRARY = [
         "flag_4x3": "flags/4x3/ba.svg",
         "iso": true,
         "name": "Bosnia and Herzegovina",
-        "ISO_Code": "070",
+        "ISO_Code": "70",
         "german_name": "Bosnien und Herzegowina",
         "international_area_code": 387,
-        "length_of_international_area_code_+_00": 5
+        "length_of_international_area_code_+_00": 5,
     },
     {
         "capital": "Gaborone",
@@ -395,10 +395,10 @@ export const COUNTRIES_LIBRARY = [
         "flag_4x3": "flags/4x3/bw.svg",
         "iso": true,
         "name": "Botswana",
-        "ISO_Code": "072",
+        "ISO_Code": "72",
         "german_name": "Botswana ",
         "international_area_code": 267,
-        "length_of_international_area_code_+_00": 5
+        "length_of_international_area_code_+_00": 5,
     },
     {
         "code": "bv",
@@ -406,10 +406,10 @@ export const COUNTRIES_LIBRARY = [
         "flag_4x3": "flags/4x3/bv.svg",
         "iso": true,
         "name": "Bouvet Island",
-        "ISO_Code": "074",
+        "ISO_Code": "74",
         "german_name": "Bouvetinsel",
         "international_area_code": 47,
-        "length_of_international_area_code_+_00": 4
+        "length_of_international_area_code_+_00": 4,
     },
     {
         "capital": "Brasília",
@@ -419,10 +419,10 @@ export const COUNTRIES_LIBRARY = [
         "flag_4x3": "flags/4x3/br.svg",
         "iso": true,
         "name": "Brazil",
-        "ISO_Code": "076",
+        "ISO_Code": "76",
         "german_name": "Brasilien",
         "international_area_code": 5,
-        "length_of_international_area_code_+_00": 4
+        "length_of_international_area_code_+_00": 4,
     },
     {
         "capital": "Road Town",
@@ -432,10 +432,10 @@ export const COUNTRIES_LIBRARY = [
         "flag_4x3": "flags/4x3/vg.svg",
         "iso": true,
         "name": "Virgin Islands (British)",
-        "ISO_Code": "092",
+        "ISO_Code": "92",
         "german_name": "Britische Jungferninseln",
         "international_area_code": 1284,
-        "length_of_international_area_code_+_00": 6
+        "length_of_international_area_code_+_00": 6,
     },
     {
         "capital": "Diego Garcia",
@@ -445,10 +445,10 @@ export const COUNTRIES_LIBRARY = [
         "flag_4x3": "flags/4x3/io.svg",
         "iso": true,
         "name": "British Indian Ocean Territory",
-        "ISO_Code": "086",
+        "ISO_Code": "86",
         "german_name": "Britisches Territorium im Indischen Ozean",
         "international_area_code": 246,
-        "length_of_international_area_code_+_00": 6
+        "length_of_international_area_code_+_00": 6,
     },
     {
         "capital": "Bandar Seri Begawan",
@@ -458,10 +458,10 @@ export const COUNTRIES_LIBRARY = [
         "flag_4x3": "flags/4x3/bn.svg",
         "iso": true,
         "name": "Brunei Darussalam",
-        "ISO_Code": "096",
+        "ISO_Code": "96",
         "german_name": "Brunei",
         "international_area_code": 673,
-        "length_of_international_area_code_+_00": 5
+        "length_of_international_area_code_+_00": 5,
     },
     {
         "capital": "Sofia",
@@ -474,7 +474,7 @@ export const COUNTRIES_LIBRARY = [
         "ISO_Code": "100",
         "german_name": "Bulgarien",
         "international_area_code": 359,
-        "length_of_international_area_code_+_00": 5
+        "length_of_international_area_code_+_00": 5,
     },
     {
         "capital": "Ouagadougou",
@@ -487,7 +487,7 @@ export const COUNTRIES_LIBRARY = [
         "ISO_Code": "854",
         "german_name": "Burkina Faso ",
         "international_area_code": 226,
-        "length_of_international_area_code_+_00": 5
+        "length_of_international_area_code_+_00": 5,
     },
     {
         "capital": "Bujumbura",
@@ -500,7 +500,7 @@ export const COUNTRIES_LIBRARY = [
         "ISO_Code": "108",
         "german_name": "Burundi ",
         "international_area_code": 257,
-        "length_of_international_area_code_+_00": 5
+        "length_of_international_area_code_+_00": 5,
     },
     {
         "capital": "Santiago",
@@ -513,7 +513,7 @@ export const COUNTRIES_LIBRARY = [
         "ISO_Code": "152",
         "german_name": "Chile ",
         "international_area_code": 56,
-        "length_of_international_area_code_+_00": 4
+        "length_of_international_area_code_+_00": 4,
     },
     {
         "capital": "Beijing",
@@ -526,7 +526,7 @@ export const COUNTRIES_LIBRARY = [
         "ISO_Code": "156",
         "german_name": "China ",
         "international_area_code": 86,
-        "length_of_international_area_code_+_00": 4
+        "length_of_international_area_code_+_00": 4,
     },
     {
         "capital": "Avarua",
@@ -539,7 +539,7 @@ export const COUNTRIES_LIBRARY = [
         "ISO_Code": "184",
         "german_name": "Cookinseln",
         "international_area_code": 682,
-        "length_of_international_area_code_+_00": 5
+        "length_of_international_area_code_+_00": 5,
     },
     {
         "capital": "San José",
@@ -552,7 +552,7 @@ export const COUNTRIES_LIBRARY = [
         "ISO_Code": "188",
         "german_name": "Costa Rica ",
         "international_area_code": 506,
-        "length_of_international_area_code_+_00": 5
+        "length_of_international_area_code_+_00": 5,
     },
     {
         "capital": "Yamoussoukro",
@@ -565,7 +565,7 @@ export const COUNTRIES_LIBRARY = [
         "ISO_Code": "384",
         "german_name": "Cote de Ivoire",
         "international_area_code": 225,
-        "length_of_international_area_code_+_00": 5
+        "length_of_international_area_code_+_00": 5,
     },
     {
         "capital": "Roseau",
@@ -578,7 +578,7 @@ export const COUNTRIES_LIBRARY = [
         "ISO_Code": "212",
         "german_name": "Dominica ",
         "international_area_code": 1767,
-        "length_of_international_area_code_+_00": 6
+        "length_of_international_area_code_+_00": 6,
     },
     {
         "capital": "Santo Domingo",
@@ -591,7 +591,7 @@ export const COUNTRIES_LIBRARY = [
         "ISO_Code": "214",
         "german_name": "Dominikanische Republik",
         "international_area_code": 1809,
-        "length_of_international_area_code_+_00": 6
+        "length_of_international_area_code_+_00": 6,
     },
     {
         "capital": "Djibouti",
@@ -604,7 +604,7 @@ export const COUNTRIES_LIBRARY = [
         "ISO_Code": "262",
         "german_name": "Dschibuti",
         "international_area_code": 253,
-        "length_of_international_area_code_+_00": 5
+        "length_of_international_area_code_+_00": 5,
     },
     {
         "capital": "Copenhagen",
@@ -617,7 +617,7 @@ export const COUNTRIES_LIBRARY = [
         "ISO_Code": "208",
         "german_name": "Dänemark",
         "international_area_code": 45,
-        "length_of_international_area_code_+_00": 4
+        "length_of_international_area_code_+_00": 4,
     },
     {
         "capital": "Quito",
@@ -630,7 +630,7 @@ export const COUNTRIES_LIBRARY = [
         "ISO_Code": "218",
         "german_name": "Ecuador ",
         "international_area_code": 593,
-        "length_of_international_area_code_+_00": 5
+        "length_of_international_area_code_+_00": 5,
     },
     {
         "capital": "San Salvador",
@@ -643,7 +643,7 @@ export const COUNTRIES_LIBRARY = [
         "ISO_Code": "222",
         "german_name": "El Salvador ",
         "international_area_code": 503,
-        "length_of_international_area_code_+_00": 5
+        "length_of_international_area_code_+_00": 5,
     },
     {
         "capital": "Asmara",
@@ -656,7 +656,7 @@ export const COUNTRIES_LIBRARY = [
         "ISO_Code": "232",
         "german_name": "Eritrea ",
         "international_area_code": 291,
-        "length_of_international_area_code_+_00": 5
+        "length_of_international_area_code_+_00": 5,
     },
     {
         "capital": "Tallinn",
@@ -669,7 +669,7 @@ export const COUNTRIES_LIBRARY = [
         "ISO_Code": "233",
         "german_name": "Estland ",
         "international_area_code": 372,
-        "length_of_international_area_code_+_00": 5
+        "length_of_international_area_code_+_00": 5,
     },
     {
         "capital": "Stanley",
@@ -682,7 +682,7 @@ export const COUNTRIES_LIBRARY = [
         "ISO_Code": "238",
         "german_name": "Falklandinseln",
         "international_area_code": 500,
-        "length_of_international_area_code_+_00": 5
+        "length_of_international_area_code_+_00": 5,
     },
     {
         "capital": "Suva",
@@ -695,7 +695,7 @@ export const COUNTRIES_LIBRARY = [
         "ISO_Code": "242",
         "german_name": "Fidschi",
         "international_area_code": 679,
-        "length_of_international_area_code_+_00": 5
+        "length_of_international_area_code_+_00": 5,
     },
     {
         "capital": "Helsinki",
@@ -708,7 +708,7 @@ export const COUNTRIES_LIBRARY = [
         "ISO_Code": "246",
         "german_name": "Finnland",
         "international_area_code": 358,
-        "length_of_international_area_code_+_00": 5
+        "length_of_international_area_code_+_00": 5,
     },
     {
         "capital": "Paris",
@@ -721,7 +721,7 @@ export const COUNTRIES_LIBRARY = [
         "ISO_Code": "250",
         "german_name": "Frankreich",
         "international_area_code": 33,
-        "length_of_international_area_code_+_00": 5
+        "length_of_international_area_code_+_00": 5,
     },
     {
         "capital": "Papeete",
@@ -734,7 +734,7 @@ export const COUNTRIES_LIBRARY = [
         "ISO_Code": "258",
         "german_name": "Französisch-Polynesien",
         "international_area_code": 690,
-        "length_of_international_area_code_+_00": 4
+        "length_of_international_area_code_+_00": 4,
     },
     {
         "capital": "Saint Pierre",
@@ -747,7 +747,7 @@ export const COUNTRIES_LIBRARY = [
         "ISO_Code": "260",
         "german_name": "Französische Süd- und Antarktisgebiete",
         "international_area_code": 262,
-        "length_of_international_area_code_+_00": 5
+        "length_of_international_area_code_+_00": 5,
     },
     {
         "capital": "Tórshavn",
@@ -760,7 +760,7 @@ export const COUNTRIES_LIBRARY = [
         "ISO_Code": "234",
         "german_name": "Färöer",
         "international_area_code": 298,
-        "length_of_international_area_code_+_00": 5
+        "length_of_international_area_code_+_00": 5,
     },
     {
         "capital": "Libreville",
@@ -773,7 +773,7 @@ export const COUNTRIES_LIBRARY = [
         "ISO_Code": "266",
         "german_name": "Gabun",
         "international_area_code": 241,
-        "length_of_international_area_code_+_00": 5
+        "length_of_international_area_code_+_00": 5,
     },
     {
         "capital": "Banjul",
@@ -786,7 +786,7 @@ export const COUNTRIES_LIBRARY = [
         "ISO_Code": "270",
         "german_name": "Gambia",
         "international_area_code": 220,
-        "length_of_international_area_code_+_00": 5
+        "length_of_international_area_code_+_00": 5,
     },
     {
         "capital": "Tbilisi",
@@ -799,7 +799,7 @@ export const COUNTRIES_LIBRARY = [
         "ISO_Code": "268",
         "german_name": "Georgien",
         "international_area_code": 995,
-        "length_of_international_area_code_+_00": 5
+        "length_of_international_area_code_+_00": 5,
     },
     {
         "capital": "Accra",
@@ -812,7 +812,7 @@ export const COUNTRIES_LIBRARY = [
         "ISO_Code": "288",
         "german_name": "Ghana ",
         "international_area_code": 233,
-        "length_of_international_area_code_+_00": 5
+        "length_of_international_area_code_+_00": 5,
     },
     {
         "capital": "Gibraltar",
@@ -825,7 +825,7 @@ export const COUNTRIES_LIBRARY = [
         "ISO_Code": "292",
         "german_name": "Gibraltar ",
         "international_area_code": 350,
-        "length_of_international_area_code_+_00": 5
+        "length_of_international_area_code_+_00": 5,
     },
     {
         "capital": "St. George's",
@@ -838,7 +838,7 @@ export const COUNTRIES_LIBRARY = [
         "ISO_Code": "308",
         "german_name": "Grenada ",
         "international_area_code": 1473,
-        "length_of_international_area_code_+_00": 6
+        "length_of_international_area_code_+_00": 6,
     },
     {
         "capital": "Athens",
@@ -851,7 +851,7 @@ export const COUNTRIES_LIBRARY = [
         "ISO_Code": "300",
         "german_name": "Griechenland",
         "international_area_code": 30,
-        "length_of_international_area_code_+_00": 4
+        "length_of_international_area_code_+_00": 4,
     },
     {
         "capital": "Nuuk",
@@ -864,7 +864,7 @@ export const COUNTRIES_LIBRARY = [
         "ISO_Code": "304",
         "german_name": "Grönland",
         "international_area_code": 299,
-        "length_of_international_area_code_+_00": 5
+        "length_of_international_area_code_+_00": 5,
     },
     {
         "capital": "Hagåtña",
@@ -877,7 +877,7 @@ export const COUNTRIES_LIBRARY = [
         "ISO_Code": "316",
         "german_name": "Guam ",
         "international_area_code": 1671,
-        "length_of_international_area_code_+_00": 6
+        "length_of_international_area_code_+_00": 6,
     },
     {
         "capital": "Guatemala City",
@@ -890,7 +890,7 @@ export const COUNTRIES_LIBRARY = [
         "ISO_Code": "320",
         "german_name": "Guatemala ",
         "international_area_code": 502,
-        "length_of_international_area_code_+_00": 5
+        "length_of_international_area_code_+_00": 5,
     },
     {
         "capital": "Saint Peter Port",
@@ -903,7 +903,7 @@ export const COUNTRIES_LIBRARY = [
         "ISO_Code": "831",
         "german_name": "Guernsey ",
         "international_area_code": 441481,
-        "length_of_international_area_code_+_00": 8
+        "length_of_international_area_code_+_00": 8,
     },
     {
         "capital": "Conakry",
@@ -916,7 +916,7 @@ export const COUNTRIES_LIBRARY = [
         "ISO_Code": "324",
         "german_name": "Guinea ",
         "international_area_code": 224,
-        "length_of_international_area_code_+_00": 5
+        "length_of_international_area_code_+_00": 5,
     },
     {
         "capital": "Bissau",
@@ -929,7 +929,7 @@ export const COUNTRIES_LIBRARY = [
         "ISO_Code": "624",
         "german_name": "Guinea-Bissau ",
         "international_area_code": 245,
-        "length_of_international_area_code_+_00": 5
+        "length_of_international_area_code_+_00": 5,
     },
     {
         "capital": "Georgetown",
@@ -942,7 +942,7 @@ export const COUNTRIES_LIBRARY = [
         "ISO_Code": "328",
         "german_name": "Guyana ",
         "international_area_code": 592,
-        "length_of_international_area_code_+_00": 5
+        "length_of_international_area_code_+_00": 5,
     },
     {
         "capital": "Port-au-Prince",
@@ -955,7 +955,7 @@ export const COUNTRIES_LIBRARY = [
         "ISO_Code": "332",
         "german_name": "Haiti ",
         "international_area_code": 509,
-        "length_of_international_area_code_+_00": 5
+        "length_of_international_area_code_+_00": 5,
     },
     {
         "code": "hm",
@@ -966,7 +966,7 @@ export const COUNTRIES_LIBRARY = [
         "ISO_Code": "334",
         "german_name": "Heard and McDonald Inseln",
         "international_area_code": 672,
-        "length_of_international_area_code_+_00": 5
+        "length_of_international_area_code_+_00": 5,
     },
     {
         "capital": "Tegucigalpa",
@@ -979,7 +979,7 @@ export const COUNTRIES_LIBRARY = [
         "ISO_Code": "340",
         "german_name": "Honduras ",
         "international_area_code": 504,
-        "length_of_international_area_code_+_00": 5
+        "length_of_international_area_code_+_00": 5,
     },
     {
         "capital": "New Delhi",
@@ -992,7 +992,7 @@ export const COUNTRIES_LIBRARY = [
         "ISO_Code": "356",
         "german_name": "Indien ",
         "international_area_code": 91,
-        "length_of_international_area_code_+_00": 4
+        "length_of_international_area_code_+_00": 4,
     },
     {
         "capital": "Jakarta",
@@ -1005,7 +1005,7 @@ export const COUNTRIES_LIBRARY = [
         "ISO_Code": "360",
         "german_name": "Indonesien",
         "international_area_code": 62,
-        "length_of_international_area_code_+_00": 4
+        "length_of_international_area_code_+_00": 4,
     },
     {
         "capital": "Douglas",
@@ -1018,7 +1018,7 @@ export const COUNTRIES_LIBRARY = [
         "ISO_Code": "833",
         "german_name": "Insel Man",
         "international_area_code": 441624,
-        "length_of_international_area_code_+_00": 8
+        "length_of_international_area_code_+_00": 8,
     },
     {
         "capital": "Baghdad",
@@ -1031,7 +1031,7 @@ export const COUNTRIES_LIBRARY = [
         "ISO_Code": "368",
         "german_name": "Irak",
         "international_area_code": 964,
-        "length_of_international_area_code_+_00": 5
+        "length_of_international_area_code_+_00": 5,
     },
     {
         "capital": "Tehran",
@@ -1044,7 +1044,7 @@ export const COUNTRIES_LIBRARY = [
         "ISO_Code": "364",
         "german_name": "Iran ",
         "international_area_code": 98,
-        "length_of_international_area_code_+_00": 4
+        "length_of_international_area_code_+_00": 4,
     },
     {
         "capital": "Dublin",
@@ -1057,7 +1057,7 @@ export const COUNTRIES_LIBRARY = [
         "ISO_Code": "372",
         "german_name": "Irland",
         "international_area_code": 353,
-        "length_of_international_area_code_+_00": 5
+        "length_of_international_area_code_+_00": 5,
     },
     {
         "capital": "Reykjavik",
@@ -1070,7 +1070,7 @@ export const COUNTRIES_LIBRARY = [
         "ISO_Code": "352",
         "german_name": "Island",
         "international_area_code": 354,
-        "length_of_international_area_code_+_00": 5
+        "length_of_international_area_code_+_00": 5,
     },
     {
         "capital": "Jerusalem",
@@ -1083,7 +1083,7 @@ export const COUNTRIES_LIBRARY = [
         "ISO_Code": "376",
         "german_name": "Israel ",
         "international_area_code": 972,
-        "length_of_international_area_code_+_00": 5
+        "length_of_international_area_code_+_00": 5,
     },
     {
         "capital": "Rome",
@@ -1096,7 +1096,7 @@ export const COUNTRIES_LIBRARY = [
         "ISO_Code": "380",
         "german_name": "Italien",
         "international_area_code": 39,
-        "length_of_international_area_code_+_00": 4
+        "length_of_international_area_code_+_00": 4,
     },
     {
         "capital": "Kingston",
@@ -1109,7 +1109,7 @@ export const COUNTRIES_LIBRARY = [
         "ISO_Code": "388",
         "german_name": "Jamaika",
         "international_area_code": 1876,
-        "length_of_international_area_code_+_00": 6
+        "length_of_international_area_code_+_00": 6,
     },
     {
         "capital": "Tokyo",
@@ -1122,7 +1122,7 @@ export const COUNTRIES_LIBRARY = [
         "ISO_Code": "392",
         "german_name": "Japan ",
         "international_area_code": 81,
-        "length_of_international_area_code_+_00": 4
+        "length_of_international_area_code_+_00": 4,
     },
     {
         "capital": "Sana'a",
@@ -1135,7 +1135,7 @@ export const COUNTRIES_LIBRARY = [
         "ISO_Code": "887",
         "german_name": "Jemen",
         "international_area_code": 967,
-        "length_of_international_area_code_+_00": 5
+        "length_of_international_area_code_+_00": 5,
     },
     {
         "capital": "Saint Helier",
@@ -1148,7 +1148,7 @@ export const COUNTRIES_LIBRARY = [
         "ISO_Code": "832",
         "german_name": "Jersey ",
         "international_area_code": 441534,
-        "length_of_international_area_code_+_00": 8
+        "length_of_international_area_code_+_00": 8,
     },
     {
         "capital": "Amman",
@@ -1161,7 +1161,124 @@ export const COUNTRIES_LIBRARY = [
         "ISO_Code": "400",
         "german_name": "Jordanien",
         "international_area_code": 962,
-        "length_of_international_area_code_+_00": 5
+        "length_of_international_area_code_+_00": 5,
+    },
+    {
+        "capital": "George Town",
+        "code": "ky",
+        "continent": "North America",
+        "flag_1x1": "flags/1x1/ky.svg",
+        "flag_4x3": "flags/4x3/ky.svg",
+        "iso": true,
+        "name": "Cayman Islands",
+        "ISO_Code": "136",
+        "german_name": "Kaimaninseln",
+        "international_area_code": 1345,
+        "length_of_international_area_code_+_00": 6,
+    },
+    {
+        "capital": "Phnom Penh",
+        "code": "kh",
+        "continent": "Asia",
+        "flag_1x1": "flags/1x1/kh.svg",
+        "flag_4x3": "flags/4x3/kh.svg",
+        "iso": true,
+        "name": "Cambodia",
+        "ISO_Code": "116",
+        "german_name": "Kambodscha",
+        "international_area_code": 855,
+        "length_of_international_area_code_+_00": 5,
+    },
+    {
+        "capital": "Yaoundé",
+        "code": "cm",
+        "continent": "Africa",
+        "flag_1x1": "flags/1x1/cm.svg",
+        "flag_4x3": "flags/4x3/cm.svg",
+        "iso": true,
+        "name": "Cameroon",
+        "ISO_Code": "120",
+        "german_name": "Kamerun",
+        "international_area_code": 236,
+        "length_of_international_area_code_+_00": 5,
+    },
+    {
+        "capital": "Ottawa",
+        "code": "ca",
+        "continent": "North America",
+        "flag_1x1": "flags/1x1/ca.svg",
+        "flag_4x3": "flags/4x3/ca.svg",
+        "iso": true,
+        "name": "Canada",
+        "ISO_Code": "124",
+        "german_name": "Kanada",
+        "international_area_code": 1,
+        "length_of_international_area_code_+_00": 3,
+    },
+    {
+        "capital": "Praia",
+        "code": "cv",
+        "continent": "Africa",
+        "flag_1x1": "flags/1x1/cv.svg",
+        "flag_4x3": "flags/4x3/cv.svg",
+        "iso": true,
+        "name": "Cabo Verde",
+        "ISO_Code": "132",
+        "german_name": "Kap Verde",
+        "international_area_code": 238,
+        "length_of_international_area_code_+_00": 5,
+    },
+    {
+        "capital": "Astana",
+        "code": "kz",
+        "continent": "Asia",
+        "flag_1x1": "flags/1x1/kz.svg",
+        "flag_4x3": "flags/4x3/kz.svg",
+        "iso": true,
+        "name": "Kazakhstan",
+        "ISO_Code": "398",
+        "german_name": "Kasachstan",
+        "international_area_code": 7,
+        "length_of_international_area_code_+_00": 3,
+    },
+    {
+        "capital": "Doha",
+        "code": "qa",
+        "continent": "Asia",
+        "flag_1x1": "flags/1x1/qa.svg",
+        "flag_4x3": "flags/4x3/qa.svg",
+        "iso": true,
+        "name": "Qatar",
+        "ISO_Code": "634",
+        "german_name": "Katar",
+        "international_area_code": 974,
+        "length_of_international_area_code_+_00": 5,
+    },
+    {
+        "capital": "Nairobi",
+        "code": "ke",
+        "continent": "Africa",
+        "flag_1x1": "flags/1x1/ke.svg",
+        "flag_4x3": "flags/4x3/ke.svg",
+        "iso": true,
+        "name": "Kenya",
+        "ISO_Code": "404",
+        "german_name": "Kenia",
+        "international_area_code": 254,
+        "length_of_international_area_code_+_00": 5,
+    },
+    {
+        "capital": "Bishkek",
+        "code": "kg",
+        "continent": "Asia",
+        "flag_1x1": "flags/1x1/kg.svg",
+        "flag_4x3": "flags/4x3/kg.svg",
+        "iso": true,
+        "name": "Kyrgyzstan",
+        "ISO_Code": "417",
+        "german_name": "Kirgisistan",
+        "international_area_code": 996,
+        "length_of_international_area_code_+_00": 5,
     },
     {
         "capital": "South Tarawa",
@@ -1172,9 +1289,61 @@ export const COUNTRIES_LIBRARY = [
         "iso": true,
         "name": "Kiribati",
         "ISO_Code": "296",
-        "german_name": "Kiribati ",
+        "german_name": "Kiribati",
         "international_area_code": 686,
-        "length_of_international_area_code_+_00": 5
+        "length_of_international_area_code_+_00": 5,
+    },
+    {
+        "capital": "West Island",
+        "code": "cc",
+        "continent": "Asia",
+        "flag_1x1": "flags/1x1/cc.svg",
+        "flag_4x3": "flags/4x3/cc.svg",
+        "iso": true,
+        "name": "Cocos (Keeling) Islands",
+        "ISO_Code": "166",
+        "german_name": "Kokosinseln (Keeling)",
+        "international_area_code": 61,
+        "length_of_international_area_code_+_00": 4,
+    },
+    {
+        "capital": "Bogotá",
+        "code": "co",
+        "continent": "South America",
+        "flag_1x1": "flags/1x1/co.svg",
+        "flag_4x3": "flags/4x3/co.svg",
+        "iso": true,
+        "name": "Colombia",
+        "ISO_Code": "170",
+        "german_name": "Kolumbien",
+        "international_area_code": 57,
+        "length_of_international_area_code_+_00": 4,
+    },
+    {
+        "capital": "Brazzaville",
+        "code": "cg",
+        "continent": "Africa",
+        "flag_1x1": "flags/1x1/cg.svg",
+        "flag_4x3": "flags/4x3/cg.svg",
+        "iso": true,
+        "name": "Republic of the Congo",
+        "ISO_Code": "178",
+        "german_name": "Kongo - Brazzaville ",
+        "international_area_code": 242,
+        "length_of_international_area_code_+_00": 5,
+    },
+    {
+        "capital": "Kinshasa",
+        "code": "cd",
+        "continent": "Africa",
+        "flag_1x1": "flags/1x1/cd.svg",
+        "flag_4x3": "flags/4x3/cd.svg",
+        "iso": true,
+        "name": "Democratic Republic of the Congo",
+        "ISO_Code": "180",
+        "german_name": "Kongo, Demokratische Republik ",
+        "international_area_code": 243,
+        "length_of_international_area_code_+_00": 5,
     },
     {
         "capital": "Pristina",
@@ -1187,7 +1356,33 @@ export const COUNTRIES_LIBRARY = [
         "ISO_Code": "900",
         "german_name": "Kosovo ",
         "international_area_code": 383,
-        "length_of_international_area_code_+_00": 5
+        "length_of_international_area_code_+_00": 5,
+    },
+    {
+        "capital": "Zagreb",
+        "code": "hr",
+        "continent": "Europe",
+        "flag_1x1": "flags/1x1/hr.svg",
+        "flag_4x3": "flags/4x3/hr.svg",
+        "iso": true,
+        "name": "Croatia",
+        "ISO_Code": "191",
+        "german_name": "Kroatien",
+        "international_area_code": 385,
+        "length_of_international_area_code_+_00": 5,
+    },
+    {
+        "capital": "Havana",
+        "code": "cu",
+        "continent": "North America",
+        "flag_1x1": "flags/1x1/cu.svg",
+        "flag_4x3": "flags/4x3/cu.svg",
+        "iso": true,
+        "name": "Cuba",
+        "ISO_Code": "192",
+        "german_name": "Kuba",
+        "international_area_code": 53,
+        "length_of_international_area_code_+_00": 4,
     },
     {
         "capital": "Kuwait City",
@@ -1200,7 +1395,7 @@ export const COUNTRIES_LIBRARY = [
         "ISO_Code": "414",
         "german_name": "Kuwait ",
         "international_area_code": 965,
-        "length_of_international_area_code_+_00": 5
+        "length_of_international_area_code_+_00": 5,
     },
     {
         "capital": "Vientiane",
@@ -1213,7 +1408,7 @@ export const COUNTRIES_LIBRARY = [
         "ISO_Code": "418",
         "german_name": "Laos ",
         "international_area_code": 856,
-        "length_of_international_area_code_+_00": 5
+        "length_of_international_area_code_+_00": 5,
     },
     {
         "capital": "Maseru",
@@ -1226,7 +1421,33 @@ export const COUNTRIES_LIBRARY = [
         "ISO_Code": "426",
         "german_name": "Lesotho ",
         "international_area_code": 266,
-        "length_of_international_area_code_+_00": 5
+        "length_of_international_area_code_+_00": 5,
+    },
+    {
+        "capital": "Riga",
+        "code": "lv",
+        "continent": "Europe",
+        "flag_1x1": "flags/1x1/lv.svg",
+        "flag_4x3": "flags/4x3/lv.svg",
+        "iso": true,
+        "name": "Latvia",
+        "ISO_Code": "428",
+        "german_name": "Lettland",
+        "international_area_code": 371,
+        "length_of_international_area_code_+_00": 5,
+    },
+    {
+        "capital": "Beirut",
+        "code": "lb",
+        "continent": "Asia",
+        "flag_1x1": "flags/1x1/lb.svg",
+        "flag_4x3": "flags/4x3/lb.svg",
+        "iso": true,
+        "name": "Lebanon",
+        "ISO_Code": "422",
+        "german_name": "Libanon",
+        "international_area_code": 961,
+        "length_of_international_area_code_+_00": 5,
     },
     {
         "capital": "Monrovia",
@@ -1239,7 +1460,20 @@ export const COUNTRIES_LIBRARY = [
         "ISO_Code": "430",
         "german_name": "Liberia ",
         "international_area_code": 231,
-        "length_of_international_area_code_+_00": 5
+        "length_of_international_area_code_+_00": 5,
+    },
+    {
+        "capital": "Tripoli",
+        "code": "ly",
+        "continent": "Africa",
+        "flag_1x1": "flags/1x1/ly.svg",
+        "flag_4x3": "flags/4x3/ly.svg",
+        "iso": true,
+        "name": "Libya",
+        "ISO_Code": "434",
+        "german_name": "Libyen",
+        "international_area_code": 218,
+        "length_of_international_area_code_+_00": 5,
     },
     {
         "capital": "Vaduz",
@@ -1252,7 +1486,33 @@ export const COUNTRIES_LIBRARY = [
         "ISO_Code": "438",
         "german_name": "Liechtenstein ",
         "international_area_code": 423,
-        "length_of_international_area_code_+_00": 5
+        "length_of_international_area_code_+_00": 5,
+    },
+    {
+        "capital": "Vilnius",
+        "code": "lt",
+        "continent": "Europe",
+        "flag_1x1": "flags/1x1/lt.svg",
+        "flag_4x3": "flags/4x3/lt.svg",
+        "iso": true,
+        "name": "Lithuania",
+        "ISO_Code": "440",
+        "german_name": "Litauen",
+        "international_area_code": 370,
+        "length_of_international_area_code_+_00": 5,
+    },
+    {
+        "capital": "Luxembourg City",
+        "code": "lu",
+        "continent": "Europe",
+        "flag_1x1": "flags/1x1/lu.svg",
+        "flag_4x3": "flags/4x3/lu.svg",
+        "iso": true,
+        "name": "Luxembourg",
+        "ISO_Code": "442",
+        "german_name": "Luxemburg",
+        "international_area_code": 352,
+        "length_of_international_area_code_+_00": 5,
     },
     {
         "capital": "Macau",
@@ -1265,7 +1525,20 @@ export const COUNTRIES_LIBRARY = [
         "ISO_Code": "446",
         "german_name": "Macau ",
         "international_area_code": 853,
-        "length_of_international_area_code_+_00": 5
+        "length_of_international_area_code_+_00": 5,
+    },
+    {
+        "capital": "Antananarivo",
+        "code": "mg",
+        "continent": "Africa",
+        "flag_1x1": "flags/1x1/mg.svg",
+        "flag_4x3": "flags/4x3/mg.svg",
+        "iso": true,
+        "name": "Madagascar",
+        "ISO_Code": "450",
+        "german_name": "Madagaskar",
+        "international_area_code": 261,
+        "length_of_international_area_code_+_00": 5,
     },
     {
         "capital": "Lilongwe",
@@ -1278,7 +1551,7 @@ export const COUNTRIES_LIBRARY = [
         "ISO_Code": "454",
         "german_name": "Malawi ",
         "international_area_code": 265,
-        "length_of_international_area_code_+_00": 5
+        "length_of_international_area_code_+_00": 5,
     },
     {
         "capital": "Kuala Lumpur",
@@ -1291,7 +1564,20 @@ export const COUNTRIES_LIBRARY = [
         "ISO_Code": "458",
         "german_name": "Malaysia ",
         "international_area_code": 60,
-        "length_of_international_area_code_+_00": 4
+        "length_of_international_area_code_+_00": 4,
+    },
+    {
+        "capital": "Malé",
+        "code": "mv",
+        "continent": "Asia",
+        "flag_1x1": "flags/1x1/mv.svg",
+        "flag_4x3": "flags/4x3/mv.svg",
+        "iso": true,
+        "name": "Maldives",
+        "ISO_Code": "462",
+        "german_name": "Malediven",
+        "international_area_code": 960,
+        "length_of_international_area_code_+_00": 5,
     },
     {
         "capital": "Bamako",
@@ -1304,7 +1590,7 @@ export const COUNTRIES_LIBRARY = [
         "ISO_Code": "466",
         "german_name": "Mali ",
         "international_area_code": 223,
-        "length_of_international_area_code_+_00": 5
+        "length_of_international_area_code_+_00": 5,
     },
     {
         "capital": "Valletta",
@@ -1317,7 +1603,33 @@ export const COUNTRIES_LIBRARY = [
         "ISO_Code": "470",
         "german_name": "Malta ",
         "international_area_code": 356,
-        "length_of_international_area_code_+_00": 5
+        "length_of_international_area_code_+_00": 5,
+    },
+    {
+        "capital": "Rabat",
+        "code": "ma",
+        "continent": "Africa",
+        "flag_1x1": "flags/1x1/ma.svg",
+        "flag_4x3": "flags/4x3/ma.svg",
+        "iso": true,
+        "name": "Morocco",
+        "ISO_Code": "504",
+        "german_name": "Marokko",
+        "international_area_code": 212,
+        "length_of_international_area_code_+_00": 5,
+    },
+    {
+        "capital": "Majuro",
+        "code": "mh",
+        "continent": "Oceania",
+        "flag_1x1": "flags/1x1/mh.svg",
+        "flag_4x3": "flags/4x3/mh.svg",
+        "iso": true,
+        "name": "Marshall Islands",
+        "ISO_Code": "584",
+        "german_name": "Marshall Inseln",
+        "international_area_code": 692,
+        "length_of_international_area_code_+_00": 5,
     },
     {
         "capital": "Fort-de-France",
@@ -1330,7 +1642,20 @@ export const COUNTRIES_LIBRARY = [
         "ISO_Code": "474",
         "german_name": "Martinique ",
         "international_area_code": 596,
-        "length_of_international_area_code_+_00": 5
+        "length_of_international_area_code_+_00": 5,
+    },
+    {
+        "capital": "Nouakchott",
+        "code": "mr",
+        "continent": "Africa",
+        "flag_1x1": "flags/1x1/mr.svg",
+        "flag_4x3": "flags/4x3/mr.svg",
+        "iso": true,
+        "name": "Mauritania",
+        "ISO_Code": "478",
+        "german_name": "Mauritanien",
+        "international_area_code": 222,
+        "length_of_international_area_code_+_00": 5,
     },
     {
         "capital": "Port Louis",
@@ -1343,7 +1668,7 @@ export const COUNTRIES_LIBRARY = [
         "ISO_Code": "480",
         "german_name": "Mauritius ",
         "international_area_code": 230,
-        "length_of_international_area_code_+_00": 5
+        "length_of_international_area_code_+_00": 5,
     },
     {
         "capital": "Mamoudzou",
@@ -1356,7 +1681,72 @@ export const COUNTRIES_LIBRARY = [
         "ISO_Code": "175",
         "german_name": "Mayotte ",
         "international_area_code": 262,
-        "length_of_international_area_code_+_00": 5
+        "length_of_international_area_code_+_00": 5,
+    },
+    {
+        "capital": "Mexico City",
+        "code": "mx",
+        "continent": "North America",
+        "flag_1x1": "flags/1x1/mx.svg",
+        "flag_4x3": "flags/4x3/mx.svg",
+        "iso": true,
+        "name": "Mexico",
+        "ISO_Code": "484",
+        "german_name": "Mexiko",
+        "international_area_code": 52,
+        "length_of_international_area_code_+_00": 4,
+    },
+    {
+        "capital": "Palikir",
+        "code": "fm",
+        "continent": "Oceania",
+        "flag_1x1": "flags/1x1/fm.svg",
+        "flag_4x3": "flags/4x3/fm.svg",
+        "iso": true,
+        "name": "Federated States of Micronesia",
+        "ISO_Code": "583",
+        "german_name": "Mikronesien",
+        "international_area_code": 691,
+        "length_of_international_area_code_+_00": 5,
+    },
+    {
+        "capital": "Chișinău",
+        "code": "md",
+        "continent": "Europe",
+        "flag_1x1": "flags/1x1/md.svg",
+        "flag_4x3": "flags/4x3/md.svg",
+        "iso": true,
+        "name": "Moldova",
+        "ISO_Code": "498",
+        "german_name": "Moldawien ",
+        "international_area_code": 373,
+        "length_of_international_area_code_+_00": 5,
+    },
+    {
+        "capital": "Chișinău",
+        "code": "md",
+        "continent": "Europe",
+        "flag_1x1": "flags/1x1/md.svg",
+        "flag_4x3": "flags/4x3/md.svg",
+        "iso": true,
+        "name": "Moldova",
+        "ISO_Code": "498",
+        "german_name": "Moldawien ",
+        "international_area_code": 373,
+        "length_of_international_area_code_+_00": 5,
+    },
+    {
+        "capital": "Ulaanbaatar",
+        "code": "mn",
+        "continent": "Asia",
+        "flag_1x1": "flags/1x1/mn.svg",
+        "flag_4x3": "flags/4x3/mn.svg",
+        "iso": true,
+        "name": "Mongolia",
+        "ISO_Code": "496",
+        "german_name": "Mongolei",
+        "international_area_code": 976,
+        "length_of_international_area_code_+_00": 5,
     },
     {
         "capital": "Podgorica",
@@ -1369,7 +1759,7 @@ export const COUNTRIES_LIBRARY = [
         "ISO_Code": "499",
         "german_name": "Montenegro ",
         "international_area_code": 382,
-        "length_of_international_area_code_+_00": 5
+        "length_of_international_area_code_+_00": 5,
     },
     {
         "capital": "Little Bay, Brades, Plymouth",
@@ -1382,7 +1772,7 @@ export const COUNTRIES_LIBRARY = [
         "ISO_Code": "500",
         "german_name": "Montserrat ",
         "international_area_code": 1664,
-        "length_of_international_area_code_+_00": 6
+        "length_of_international_area_code_+_00": 6,
     },
     {
         "capital": "Naypyidaw",
@@ -1395,7 +1785,33 @@ export const COUNTRIES_LIBRARY = [
         "ISO_Code": "104",
         "german_name": "Myanmar ",
         "international_area_code": 95,
-        "length_of_international_area_code_+_00": 4
+        "length_of_international_area_code_+_00": 4,
+    },
+    {
+        "capital": "Maputo",
+        "code": "mz",
+        "continent": "Africa",
+        "flag_1x1": "flags/1x1/mz.svg",
+        "flag_4x3": "flags/4x3/mz.svg",
+        "iso": true,
+        "name": "Mozambique",
+        "ISO_Code": "508",
+        "german_name": "Mosambik",
+        "international_area_code": 258,
+        "length_of_international_area_code_+_00": 5,
+    },
+    {
+        "capital": "Naypyidaw",
+        "code": "mm",
+        "continent": "Asia",
+        "flag_1x1": "flags/1x1/mm.svg",
+        "flag_4x3": "flags/4x3/mm.svg",
+        "iso": true,
+        "name": "Myanmar",
+        "ISO_Code": "104",
+        "german_name": "Myanmar",
+        "international_area_code": 95,
+        "length_of_international_area_code_+_00": 4,
     },
     {
         "capital": "Windhoek",
@@ -1408,7 +1824,7 @@ export const COUNTRIES_LIBRARY = [
         "ISO_Code": "516",
         "german_name": "Namibia ",
         "international_area_code": 264,
-        "length_of_international_area_code_+_00": 5
+        "length_of_international_area_code_+_00": 5,
     },
     {
         "capital": "Yaren District",
@@ -1421,7 +1837,7 @@ export const COUNTRIES_LIBRARY = [
         "ISO_Code": "520",
         "german_name": "Nauru ",
         "international_area_code": 674,
-        "length_of_international_area_code_+_00": 5
+        "length_of_international_area_code_+_00": 5,
     },
     {
         "capital": "Kathmandu",
@@ -1434,7 +1850,33 @@ export const COUNTRIES_LIBRARY = [
         "ISO_Code": "524",
         "german_name": "Nepal ",
         "international_area_code": 977,
-        "length_of_international_area_code_+_00": 5
+        "length_of_international_area_code_+_00": 5,
+    },
+    {
+        "capital": "Nouméa",
+        "code": "nc",
+        "continent": "Oceania",
+        "flag_1x1": "flags/1x1/nc.svg",
+        "flag_4x3": "flags/4x3/nc.svg",
+        "iso": true,
+        "name": "New Caledonia",
+        "ISO_Code": "540",
+        "german_name": "Neukaledonien",
+        "international_area_code": 687,
+        "length_of_international_area_code_+_00": 5,
+    },
+    {
+        "capital": "Wellington",
+        "code": "nz",
+        "continent": "Oceania",
+        "flag_1x1": "flags/1x1/nz.svg",
+        "flag_4x3": "flags/4x3/nz.svg",
+        "iso": true,
+        "name": "New Zealand",
+        "ISO_Code": "554",
+        "german_name": "Neuseeland",
+        "international_area_code": 64,
+        "length_of_international_area_code_+_00": 4,
     },
     {
         "capital": "Managua",
@@ -1447,7 +1889,20 @@ export const COUNTRIES_LIBRARY = [
         "ISO_Code": "558",
         "german_name": "Nicaragua ",
         "international_area_code": 505,
-        "length_of_international_area_code_+_00": 5
+        "length_of_international_area_code_+_00": 5,
+    },
+    {
+        "capital": "Amsterdam",
+        "code": "nl",
+        "continent": "Europe",
+        "flag_1x1": "flags/1x1/nl.svg",
+        "flag_4x3": "flags/4x3/nl.svg",
+        "iso": true,
+        "name": "Netherlands",
+        "ISO_Code": "528",
+        "german_name": "Niederlande ",
+        "international_area_code": 31,
+        "length_of_international_area_code_+_00": 4,
     },
     {
         "capital": "Niamey",
@@ -1460,7 +1915,7 @@ export const COUNTRIES_LIBRARY = [
         "ISO_Code": "562",
         "german_name": "Niger ",
         "international_area_code": 227,
-        "length_of_international_area_code_+_00": 5
+        "length_of_international_area_code_+_00": 5,
     },
     {
         "capital": "Abuja",
@@ -1473,7 +1928,7 @@ export const COUNTRIES_LIBRARY = [
         "ISO_Code": "566",
         "german_name": "Nigeria ",
         "international_area_code": 234,
-        "length_of_international_area_code_+_00": 5
+        "length_of_international_area_code_+_00": 5,
     },
     {
         "capital": "Alofi",
@@ -1486,7 +1941,72 @@ export const COUNTRIES_LIBRARY = [
         "ISO_Code": "570",
         "german_name": "Niue ",
         "international_area_code": 683,
-        "length_of_international_area_code_+_00": 5
+        "length_of_international_area_code_+_00": 5,
+    },
+    {
+        "capital": "Pyongyang",
+        "code": "kp",
+        "continent": "Asia",
+        "flag_1x1": "flags/1x1/kp.svg",
+        "flag_4x3": "flags/4x3/kp.svg",
+        "iso": true,
+        "name": "North Korea",
+        "ISO_Code": "408",
+        "german_name": "Nordkorea",
+        "international_area_code": 850,
+        "length_of_international_area_code_+_00": 5,
+    },
+    {
+        "capital": "Skopje",
+        "code": "mk",
+        "continent": "Europe",
+        "flag_1x1": "flags/1x1/mk.svg",
+        "flag_4x3": "flags/4x3/mk.svg",
+        "iso": true,
+        "name": "North Macedonia",
+        "ISO_Code": "807",
+        "german_name": "Nordmazedonien",
+        "international_area_code": 389,
+        "length_of_international_area_code_+_00": 5,
+    },
+    {
+        "capital": "Kingston",
+        "code": "nf",
+        "continent": "Oceania",
+        "flag_1x1": "flags/1x1/nf.svg",
+        "flag_4x3": "flags/4x3/nf.svg",
+        "iso": true,
+        "name": "Norfolk Island",
+        "ISO_Code": "574",
+        "german_name": "Norfolk Insel",
+        "international_area_code": 672,
+        "length_of_international_area_code_+_00": 5,
+    },
+    {
+        "capital": "Oslo",
+        "code": "no",
+        "continent": "Europe",
+        "flag_1x1": "flags/1x1/no.svg",
+        "flag_4x3": "flags/4x3/no.svg",
+        "iso": true,
+        "name": "Norway",
+        "ISO_Code": "578",
+        "german_name": "Norwegen",
+        "international_area_code": 47,
+        "length_of_international_area_code_+_00": 4,
+    },
+    {
+        "capital": "Saipan",
+        "code": "mp",
+        "continent": "Oceania",
+        "flag_1x1": "flags/1x1/mp.svg",
+        "flag_4x3": "flags/4x3/mp.svg",
+        "iso": true,
+        "name": "Northern Mariana Islands",
+        "ISO_Code": "580",
+        "german_name": "Nördliche Marianen",
+        "international_area_code": 1670,
+        "length_of_international_area_code_+_00": 6,
     },
     {
         "capital": "Muscat",
@@ -1499,7 +2019,20 @@ export const COUNTRIES_LIBRARY = [
         "ISO_Code": "512",
         "german_name": "Oman ",
         "international_area_code": 968,
-        "length_of_international_area_code_+_00": 5
+        "length_of_international_area_code_+_00": 5,
+    },
+    {
+        "capital": "Dili",
+        "code": "tl",
+        "continent": "Asia",
+        "flag_1x1": "flags/1x1/tl.svg",
+        "flag_4x3": "flags/4x3/tl.svg",
+        "iso": true,
+        "name": "Timor-Leste",
+        "ISO_Code": "626",
+        "german_name": "Osttimor",
+        "international_area_code": 670,
+        "length_of_international_area_code_+_00": 5,
     },
     {
         "capital": "Islamabad",
@@ -1512,7 +2045,7 @@ export const COUNTRIES_LIBRARY = [
         "ISO_Code": "586",
         "german_name": "Pakistan ",
         "international_area_code": 92,
-        "length_of_international_area_code_+_00": 4
+        "length_of_international_area_code_+_00": 4,
     },
     {
         "capital": "Ngerulmud",
@@ -1525,7 +2058,7 @@ export const COUNTRIES_LIBRARY = [
         "ISO_Code": "585",
         "german_name": "Palau ",
         "international_area_code": 680,
-        "length_of_international_area_code_+_00": 5
+        "length_of_international_area_code_+_00": 5,
     },
     {
         "capital": "Panama City",
@@ -1538,7 +2071,20 @@ export const COUNTRIES_LIBRARY = [
         "ISO_Code": "591",
         "german_name": "Panama ",
         "international_area_code": 507,
-        "length_of_international_area_code_+_00": 5
+        "length_of_international_area_code_+_00": 5,
+    },
+    {
+        "capital": "Port Moresby",
+        "code": "pg",
+        "continent": "Oceania",
+        "flag_1x1": "flags/1x1/pg.svg",
+        "flag_4x3": "flags/4x3/pg.svg",
+        "iso": true,
+        "name": "Papua New Guinea",
+        "ISO_Code": "598",
+        "german_name": "Papua Neuguinea",
+        "international_area_code": 675,
+        "length_of_international_area_code_+_00": 5,
     },
     {
         "capital": "Asunción",
@@ -1551,7 +2097,7 @@ export const COUNTRIES_LIBRARY = [
         "ISO_Code": "600",
         "german_name": "Paraguay ",
         "international_area_code": 595,
-        "length_of_international_area_code_+_00": 5
+        "length_of_international_area_code_+_00": 5,
     },
     {
         "capital": "Lima",
@@ -1564,7 +2110,33 @@ export const COUNTRIES_LIBRARY = [
         "ISO_Code": "604",
         "german_name": "Peru ",
         "international_area_code": 51,
-        "length_of_international_area_code_+_00": 4
+        "length_of_international_area_code_+_00": 4,
+    },
+    {
+        "capital": "Manila",
+        "code": "ph",
+        "continent": "Asia",
+        "flag_1x1": "flags/1x1/ph.svg",
+        "flag_4x3": "flags/4x3/ph.svg",
+        "iso": true,
+        "name": "Philippines",
+        "ISO_Code": "608",
+        "german_name": "Philippinen",
+        "international_area_code": 63,
+        "length_of_international_area_code_+_00": 4,
+    },
+    {
+        "capital": "Adamstown",
+        "code": "pn",
+        "continent": "Oceania",
+        "flag_1x1": "flags/1x1/pn.svg",
+        "flag_4x3": "flags/4x3/pn.svg",
+        "iso": true,
+        "name": "Pitcairn",
+        "ISO_Code": "612",
+        "german_name": "Pitcairn Inseln",
+        "international_area_code": 64,
+        "length_of_international_area_code_+_00": 4,
     },
     {
         "capital": "Lisbon",
@@ -1577,7 +2149,7 @@ export const COUNTRIES_LIBRARY = [
         "ISO_Code": "620",
         "german_name": "Portugal ",
         "international_area_code": 351,
-        "length_of_international_area_code_+_00": 5
+        "length_of_international_area_code_+_00": 5,
     },
     {
         "capital": "San Juan",
@@ -1590,7 +2162,59 @@ export const COUNTRIES_LIBRARY = [
         "ISO_Code": "630",
         "german_name": "Puerto Rico ",
         "international_area_code": 1787,
-        "length_of_international_area_code_+_00": 6
+        "length_of_international_area_code_+_00": 6,
+    },
+    {
+        "capital": "Kigali",
+        "code": "rw",
+        "continent": "Africa",
+        "flag_1x1": "flags/1x1/rw.svg",
+        "flag_4x3": "flags/4x3/rw.svg",
+        "iso": true,
+        "name": "Rwanda",
+        "ISO_Code": "646",
+        "german_name": "Ruanda",
+        "international_area_code": 250,
+        "length_of_international_area_code_+_00": 5,
+    },
+    {
+        "capital": "Bucharest",
+        "code": "ro",
+        "continent": "Europe",
+        "flag_1x1": "flags/1x1/ro.svg",
+        "flag_4x3": "flags/4x3/ro.svg",
+        "iso": true,
+        "name": "Romania",
+        "ISO_Code": "642",
+        "german_name": "Rumänien",
+        "international_area_code": 40,
+        "length_of_international_area_code_+_00": 4,
+    },
+    {
+        "capital": "Moscow",
+        "code": "ru",
+        "continent": "Europe",
+        "flag_1x1": "flags/1x1/ru.svg",
+        "flag_4x3": "flags/4x3/ru.svg",
+        "iso": true,
+        "name": "Russia",
+        "ISO_Code": "643",
+        "german_name": "Russische Föderation ",
+        "international_area_code": 7,
+        "length_of_international_area_code_+_00": 3,
+    },
+    {
+        "capital": "Lusaka",
+        "code": "zm",
+        "continent": "Africa",
+        "flag_1x1": "flags/1x1/zm.svg",
+        "flag_4x3": "flags/4x3/zm.svg",
+        "iso": true,
+        "name": "Zambia",
+        "ISO_Code": "894",
+        "german_name": "Sambia",
+        "international_area_code": 260,
+        "length_of_international_area_code_+_00": 5,
     },
     {
         "capital": "Apia",
@@ -1603,7 +2227,7 @@ export const COUNTRIES_LIBRARY = [
         "ISO_Code": "882",
         "german_name": "Samoa ",
         "international_area_code": 685,
-        "length_of_international_area_code_+_00": 5
+        "length_of_international_area_code_+_00": 5,
     },
     {
         "capital": "San Marino",
@@ -1616,7 +2240,46 @@ export const COUNTRIES_LIBRARY = [
         "ISO_Code": "674",
         "german_name": "San Marino ",
         "international_area_code": 378,
-        "length_of_international_area_code_+_00": 5
+        "length_of_international_area_code_+_00": 5,
+    },
+    {
+        "capital": "Riyadh",
+        "code": "sa",
+        "continent": "Asia",
+        "flag_1x1": "flags/1x1/sa.svg",
+        "flag_4x3": "flags/4x3/sa.svg",
+        "iso": true,
+        "name": "Saudi Arabia",
+        "ISO_Code": "682",
+        "german_name": "Saudi Arabien",
+        "international_area_code": 966,
+        "length_of_international_area_code_+_00": 5,
+    },
+    {
+        "capital": "Stockholm",
+        "code": "se",
+        "continent": "Europe",
+        "flag_1x1": "flags/1x1/se.svg",
+        "flag_4x3": "flags/4x3/se.svg",
+        "iso": true,
+        "name": "Sweden",
+        "ISO_Code": "752",
+        "german_name": "Schweden",
+        "international_area_code": 46,
+        "length_of_international_area_code_+_00": 4,
+    },
+    {
+        "capital": "Bern",
+        "code": "ch",
+        "continent": "Europe",
+        "flag_1x1": "flags/1x1/ch.svg",
+        "flag_4x3": "flags/4x3/ch.svg",
+        "iso": true,
+        "name": "Switzerland",
+        "ISO_Code": "756",
+        "german_name": "Schweiz",
+        "international_area_code": 41,
+        "length_of_international_area_code_+_00": 4,
     },
     {
         "capital": "Dakar",
@@ -1629,7 +2292,33 @@ export const COUNTRIES_LIBRARY = [
         "ISO_Code": "686",
         "german_name": "Senegal ",
         "international_area_code": 221,
-        "length_of_international_area_code_+_00": 5
+        "length_of_international_area_code_+_00": 5,
+    },
+    {
+        "capital": "Belgrade",
+        "code": "rs",
+        "continent": "Europe",
+        "flag_1x1": "flags/1x1/rs.svg",
+        "flag_4x3": "flags/4x3/rs.svg",
+        "iso": true,
+        "name": "Serbia",
+        "ISO_Code": "688",
+        "german_name": "Serbien",
+        "international_area_code": 381,
+        "length_of_international_area_code_+_00": 5,
+    },
+    {
+        "capital": "Victoria",
+        "code": "sc",
+        "continent": "Africa",
+        "flag_1x1": "flags/1x1/sc.svg",
+        "flag_4x3": "flags/4x3/sc.svg",
+        "iso": true,
+        "name": "Seychelles",
+        "ISO_Code": "690",
+        "german_name": "Seychellen",
+        "international_area_code": 248,
+        "length_of_international_area_code_+_00": 5,
     },
     {
         "capital": "Freetown",
@@ -1642,7 +2331,72 @@ export const COUNTRIES_LIBRARY = [
         "ISO_Code": "694",
         "german_name": "Sierra Leone ",
         "international_area_code": 232,
-        "length_of_international_area_code_+_00": 5
+        "length_of_international_area_code_+_00": 5,
+    },
+    {
+        "capital": "Harare",
+        "code": "zw",
+        "continent": "Africa",
+        "flag_1x1": "flags/1x1/zw.svg",
+        "flag_4x3": "flags/4x3/zw.svg",
+        "iso": true,
+        "name": "Zimbabwe",
+        "ISO_Code": "716",
+        "german_name": "Simbabwe",
+        "international_area_code": 263,
+        "length_of_international_area_code_+_00": 5,
+    },
+    {
+        "capital": "Singapore",
+        "code": "sg",
+        "continent": "Asia",
+        "flag_1x1": "flags/1x1/sg.svg",
+        "flag_4x3": "flags/4x3/sg.svg",
+        "iso": true,
+        "name": "Singapore",
+        "ISO_Code": "702",
+        "german_name": "Singapur",
+        "international_area_code": 65,
+        "length_of_international_area_code_+_00": 4,
+    },
+    {
+        "capital": "Bratislava",
+        "code": "sk",
+        "continent": "Europe",
+        "flag_1x1": "flags/1x1/sk.svg",
+        "flag_4x3": "flags/4x3/sk.svg",
+        "iso": true,
+        "name": "Slovakia",
+        "ISO_Code": "703",
+        "german_name": "Slowakei ",
+        "international_area_code": 421,
+        "length_of_international_area_code_+_00": 5,
+    },
+    {
+        "capital": "Bratislava",
+        "code": "sk",
+        "continent": "Europe",
+        "flag_1x1": "flags/1x1/sk.svg",
+        "flag_4x3": "flags/4x3/sk.svg",
+        "iso": true,
+        "name": "Slovakia",
+        "ISO_Code": "703",
+        "german_name": "Slowakei ",
+        "international_area_code": 421,
+        "length_of_international_area_code_+_00": 5,
+    },
+    {
+        "capital": "Ljubljana",
+        "code": "si",
+        "continent": "Europe",
+        "flag_1x1": "flags/1x1/si.svg",
+        "flag_4x3": "flags/4x3/si.svg",
+        "iso": true,
+        "name": "Slovenia",
+        "ISO_Code": "705",
+        "german_name": "Slowenien",
+        "international_area_code": 386,
+        "length_of_international_area_code_+_00": 5,
     },
     {
         "capital": "Mogadishu",
@@ -1653,9 +2407,22 @@ export const COUNTRIES_LIBRARY = [
         "iso": true,
         "name": "Somalia",
         "ISO_Code": "706",
-        "german_name": "Somalia ",
+        "german_name": "Somalia",
         "international_area_code": 252,
-        "length_of_international_area_code_+_00": 5
+        "length_of_international_area_code_+_00": 5,
+    },
+    {
+        "capital": "Madrid",
+        "code": "es",
+        "continent": "Europe",
+        "flag_1x1": "flags/1x1/es.svg",
+        "flag_4x3": "flags/4x3/es.svg",
+        "iso": true,
+        "name": "Spain",
+        "ISO_Code": "724",
+        "german_name": "Spanien",
+        "international_area_code": 34,
+        "length_of_international_area_code_+_00": 4,
     },
     {
         "capital": "Sri Jayawardenepura Kotte, Colombo",
@@ -1668,7 +2435,85 @@ export const COUNTRIES_LIBRARY = [
         "ISO_Code": "144",
         "german_name": "Sri Lanka ",
         "international_area_code": 94,
-        "length_of_international_area_code_+_00": 4
+        "length_of_international_area_code_+_00": 4,
+    },
+    {
+        "capital": "Jamestown",
+        "code": "sh",
+        "continent": "Africa",
+        "flag_1x1": "flags/1x1/sh.svg",
+        "flag_4x3": "flags/4x3/sh.svg",
+        "iso": true,
+        "name": "Saint Helena, Ascension and Tristan da Cunha",
+        "ISO_Code": "654",
+        "german_name": "St. Helena",
+        "international_area_code": 290,
+        "length_of_international_area_code_+_00": 5,
+    },
+    {
+        "capital": "Basseterre",
+        "code": "kn",
+        "continent": "North America",
+        "flag_1x1": "flags/1x1/kn.svg",
+        "flag_4x3": "flags/4x3/kn.svg",
+        "iso": true,
+        "name": "Saint Kitts and Nevis",
+        "ISO_Code": "659",
+        "german_name": "St. Kitts and Nevis ",
+        "international_area_code": 1869,
+        "length_of_international_area_code_+_00": 6,
+    },
+    {
+        "capital": "Castries",
+        "code": "lc",
+        "continent": "North America",
+        "flag_1x1": "flags/1x1/lc.svg",
+        "flag_4x3": "flags/4x3/lc.svg",
+        "iso": true,
+        "name": "Saint Lucia",
+        "ISO_Code": "662",
+        "german_name": "St. Lucia",
+        "international_area_code": 1758,
+        "length_of_international_area_code_+_00": 6,
+    },
+    {
+        "capital": "Saint-Pierre",
+        "code": "pm",
+        "continent": "North America",
+        "flag_1x1": "flags/1x1/pm.svg",
+        "flag_4x3": "flags/4x3/pm.svg",
+        "iso": true,
+        "name": "Saint Pierre and Miquelon",
+        "ISO_Code": "666",
+        "german_name": "St. Pierre and Miquelon ",
+        "international_area_code": 508,
+        "length_of_international_area_code_+_00": 5,
+    },
+    {
+        "capital": "Kingstown",
+        "code": "vc",
+        "continent": "North America",
+        "flag_1x1": "flags/1x1/vc.svg",
+        "flag_4x3": "flags/4x3/vc.svg",
+        "iso": true,
+        "name": "Saint Vincent and the Grenadines",
+        "ISO_Code": "670",
+        "german_name": "St. Vincent and Grenadinen",
+        "international_area_code": 1784,
+        "length_of_international_area_code_+_00": 6,
+    },
+    {
+        "capital": "Ramallah",
+        "code": "ps",
+        "continent": "Asia",
+        "flag_1x1": "flags/1x1/ps.svg",
+        "flag_4x3": "flags/4x3/ps.svg",
+        "iso": true,
+        "name": "State of Palestine",
+        "ISO_Code": "275",
+        "german_name": "Staat Palästina",
+        "international_area_code": 970,
+        "length_of_international_area_code_+_00": 5,
     },
     {
         "capital": "Khartoum",
@@ -1681,7 +2526,7 @@ export const COUNTRIES_LIBRARY = [
         "ISO_Code": "729",
         "german_name": "Sudan ",
         "international_area_code": 249,
-        "length_of_international_area_code_+_00": 5
+        "length_of_international_area_code_+_00": 5,
     },
     {
         "capital": "Paramaribo",
@@ -1694,7 +2539,98 @@ export const COUNTRIES_LIBRARY = [
         "ISO_Code": "740",
         "german_name": "Suriname ",
         "international_area_code": 597,
-        "length_of_international_area_code_+_00": 5
+        "length_of_international_area_code_+_00": 5,
+    },
+    {
+        "capital": "Lobamba, Mbabane",
+        "code": "sz",
+        "continent": "Africa",
+        "flag_1x1": "flags/1x1/sz.svg",
+        "flag_4x3": "flags/4x3/sz.svg",
+        "iso": true,
+        "name": "Eswatini",
+        "ISO_Code": "748",
+        "german_name": "Swasiland",
+        "international_area_code": 268,
+        "length_of_international_area_code_+_00": 5,
+    },
+    {
+        "capital": "Damascus",
+        "code": "sy",
+        "continent": "Asia",
+        "flag_1x1": "flags/1x1/sy.svg",
+        "flag_4x3": "flags/4x3/sy.svg",
+        "iso": true,
+        "name": "Syria",
+        "ISO_Code": "760",
+        "german_name": "Syrien",
+        "international_area_code": 963,
+        "length_of_international_area_code_+_00": 5,
+    },
+    {
+        "capital": "São Tomé",
+        "code": "st",
+        "continent": "Africa",
+        "flag_1x1": "flags/1x1/st.svg",
+        "flag_4x3": "flags/4x3/st.svg",
+        "iso": true,
+        "name": "Sao Tome and Principe",
+        "ISO_Code": "678",
+        "german_name": "São Tomé and Príncipe ",
+        "international_area_code": 239,
+        "length_of_international_area_code_+_00": 5,
+    },
+    {
+        "capital": "Pretoria",
+        "code": "za",
+        "continent": "Africa",
+        "flag_1x1": "flags/1x1/za.svg",
+        "flag_4x3": "flags/4x3/za.svg",
+        "iso": true,
+        "name": "South Africa",
+        "ISO_Code": "710",
+        "german_name": "Südafrika",
+        "international_area_code": 27,
+        "length_of_international_area_code_+_00": 4,
+    },
+    {
+        "capital": "King Edward Point",
+        "code": "gs",
+        "continent": "Antarctica",
+        "flag_1x1": "flags/1x1/gs.svg",
+        "flag_4x3": "flags/4x3/gs.svg",
+        "iso": true,
+        "name": "South Georgia and the South Sandwich Islands",
+        "ISO_Code": "239",
+        "german_name": "Südgeorgien und die Südlichen Sandwichinseln",
+        "international_area_code": 500,
+        "length_of_international_area_code_+_00": 5,
+    },
+    {
+        "capital": "Seoul",
+        "code": "kr",
+        "continent": "Asia",
+        "flag_1x1": "flags/1x1/kr.svg",
+        "flag_4x3": "flags/4x3/kr.svg",
+        "iso": true,
+        "name": "South Korea",
+        "ISO_Code": "410",
+        "german_name": "Südkorea",
+        "international_area_code": 82,
+        "length_of_international_area_code_+_00": 4,
+    },
+    {
+        "capital": "Dushanbe",
+        "code": "tj",
+        "continent": "Asia",
+        "flag_1x1": "flags/1x1/tj.svg",
+        "flag_4x3": "flags/4x3/tj.svg",
+        "iso": true,
+        "name": "Tajikistan",
+        "ISO_Code": "762",
+        "german_name": "Tadschikistan",
+        "international_area_code": 992,
+        "length_of_international_area_code_+_00": 5,
     },
     {
         "capital": "Taipei",
@@ -1707,7 +2643,20 @@ export const COUNTRIES_LIBRARY = [
         "ISO_Code": "158",
         "german_name": "Taiwan ",
         "international_area_code": 886,
-        "length_of_international_area_code_+_00": 5
+        "length_of_international_area_code_+_00": 5,
+    },
+    {
+        "capital": "Dodoma",
+        "code": "tz",
+        "continent": "Africa",
+        "flag_1x1": "flags/1x1/tz.svg",
+        "flag_4x3": "flags/4x3/tz.svg",
+        "iso": true,
+        "name": "Tanzania",
+        "ISO_Code": "834",
+        "german_name": "Tansania",
+        "international_area_code": 255,
+        "length_of_international_area_code_+_00": 5,
     },
     {
         "capital": "Bangkok",
@@ -1720,7 +2669,7 @@ export const COUNTRIES_LIBRARY = [
         "ISO_Code": "764",
         "german_name": "Thailand ",
         "international_area_code": 66,
-        "length_of_international_area_code_+_00": 4
+        "length_of_international_area_code_+_00": 4,
     },
     {
         "capital": "Lomé",
@@ -1733,7 +2682,7 @@ export const COUNTRIES_LIBRARY = [
         "ISO_Code": "768",
         "german_name": "Togo ",
         "international_area_code": 228,
-        "length_of_international_area_code_+_00": 5
+        "length_of_international_area_code_+_00": 5,
     },
     {
         "capital": "Nukunonu, Atafu,Tokelau",
@@ -1746,7 +2695,7 @@ export const COUNTRIES_LIBRARY = [
         "ISO_Code": "772",
         "german_name": "Tokelau ",
         "international_area_code": 690,
-        "length_of_international_area_code_+_00": 5
+        "length_of_international_area_code_+_00": 5,
     },
     {
         "capital": "Nukuʻalofa",
@@ -1759,7 +2708,7 @@ export const COUNTRIES_LIBRARY = [
         "ISO_Code": "776",
         "german_name": "Tonga ",
         "international_area_code": 676,
-        "length_of_international_area_code_+_00": 5
+        "length_of_international_area_code_+_00": 5,
     },
     {
         "capital": "Port of Spain",
@@ -1772,7 +2721,46 @@ export const COUNTRIES_LIBRARY = [
         "ISO_Code": "780",
         "german_name": "Trinidad and Tobago ",
         "international_area_code": 1868,
-        "length_of_international_area_code_+_00": 6
+        "length_of_international_area_code_+_00": 6,
+    },
+    {
+        "capital": "N'Djamena",
+        "code": "td",
+        "continent": "Africa",
+        "flag_1x1": "flags/1x1/td.svg",
+        "flag_4x3": "flags/4x3/td.svg",
+        "iso": true,
+        "name": "Chad",
+        "ISO_Code": "148",
+        "german_name": "Tschad",
+        "international_area_code": 235,
+        "length_of_international_area_code_+_00": 5,
+    },
+    {
+        "capital": "Prague",
+        "code": "cz",
+        "continent": "Europe",
+        "flag_1x1": "flags/1x1/cz.svg",
+        "flag_4x3": "flags/4x3/cz.svg",
+        "iso": true,
+        "name": "Czech Republic",
+        "ISO_Code": "203",
+        "german_name": "Tschechien",
+        "international_area_code": 420,
+        "length_of_international_area_code_+_00": 5,
+    },
+    {
+        "capital": "Tunis",
+        "code": "tn",
+        "continent": "Africa",
+        "flag_1x1": "flags/1x1/tn.svg",
+        "flag_4x3": "flags/4x3/tn.svg",
+        "iso": true,
+        "name": "Tunisia",
+        "ISO_Code": "788",
+        "german_name": "Tunesien",
+        "international_area_code": 216,
+        "length_of_international_area_code_+_00": 5,
     },
     {
         "capital": "Ashgabat",
@@ -1785,7 +2773,20 @@ export const COUNTRIES_LIBRARY = [
         "ISO_Code": "795",
         "german_name": "Turkmenistan ",
         "international_area_code": 993,
-        "length_of_international_area_code_+_00": 5
+        "length_of_international_area_code_+_00": 5,
+    },
+    {
+        "capital": "Cockburn Town",
+        "code": "tc",
+        "continent": "North America",
+        "flag_1x1": "flags/1x1/tc.svg",
+        "flag_4x3": "flags/4x3/tc.svg",
+        "iso": true,
+        "name": "Turks and Caicos Islands",
+        "ISO_Code": "796",
+        "german_name": "Turks and Caicos Inseln",
+        "international_area_code": 1649,
+        "length_of_international_area_code_+_00": 6,
     },
     {
         "capital": "Funafuti",
@@ -1798,7 +2799,7 @@ export const COUNTRIES_LIBRARY = [
         "ISO_Code": "798",
         "german_name": "Tuvalu ",
         "international_area_code": 688,
-        "length_of_international_area_code_+_00": 5
+        "length_of_international_area_code_+_00": 5,
     },
     {
         "capital": "Kampala",
@@ -1811,7 +2812,7 @@ export const COUNTRIES_LIBRARY = [
         "ISO_Code": "800",
         "german_name": "Uganda ",
         "international_area_code": 256,
-        "length_of_international_area_code_+_00": 5
+        "length_of_international_area_code_+_00": 5,
     },
     {
         "capital": "Kiev",
@@ -1824,7 +2825,20 @@ export const COUNTRIES_LIBRARY = [
         "ISO_Code": "804",
         "german_name": "Ukraine ",
         "international_area_code": 380,
-        "length_of_international_area_code_+_00": 5
+        "length_of_international_area_code_+_00": 5,
+    },
+    {
+        "capital": "Budapest",
+        "code": "hu",
+        "continent": "Europe",
+        "flag_1x1": "flags/1x1/hu.svg",
+        "flag_4x3": "flags/4x3/hu.svg",
+        "iso": true,
+        "name": "Hungary",
+        "ISO_Code": "348",
+        "german_name": "Ungarn",
+        "international_area_code": 36,
+        "length_of_international_area_code_+_00": 4,
     },
     {
         "capital": "Montevideo",
@@ -1837,7 +2851,20 @@ export const COUNTRIES_LIBRARY = [
         "ISO_Code": "858",
         "german_name": "Uruguay ",
         "international_area_code": 598,
-        "length_of_international_area_code_+_00": 5
+        "length_of_international_area_code_+_00": 5,
+    },
+    {
+        "capital": "Tashkent",
+        "code": "uz",
+        "continent": "Asia",
+        "flag_1x1": "flags/1x1/uz.svg",
+        "flag_4x3": "flags/4x3/uz.svg",
+        "iso": true,
+        "name": "Uzbekistan",
+        "ISO_Code": "860",
+        "german_name": "Usbekistan",
+        "international_area_code": 998,
+        "length_of_international_area_code_+_00": 5,
     },
     {
         "capital": "Port Vila",
@@ -1850,7 +2877,20 @@ export const COUNTRIES_LIBRARY = [
         "ISO_Code": "548",
         "german_name": "Vanuatu ",
         "international_area_code": 678,
-        "length_of_international_area_code_+_00": 5
+        "length_of_international_area_code_+_00": 5,
+    },
+    {
+        "capital": "Vatican City",
+        "code": "va",
+        "continent": "Europe",
+        "flag_1x1": "flags/1x1/va.svg",
+        "flag_4x3": "flags/4x3/va.svg",
+        "iso": true,
+        "name": "Holy See",
+        "ISO_Code": "336",
+        "german_name": "Vatikanstadt",
+        "international_area_code": 379,
+        "length_of_international_area_code_+_00": 5,
     },
     {
         "capital": "Caracas",
@@ -1863,7 +2903,46 @@ export const COUNTRIES_LIBRARY = [
         "ISO_Code": "862",
         "german_name": "Venezuela ",
         "international_area_code": 58,
-        "length_of_international_area_code_+_00": 4
+        "length_of_international_area_code_+_00": 4,
+    },
+    {
+        "capital": "Abu Dhabi",
+        "code": "ae",
+        "continent": "Asia",
+        "flag_1x1": "flags/1x1/ae.svg",
+        "flag_4x3": "flags/4x3/ae.svg",
+        "iso": true,
+        "name": "United Arab Emirates",
+        "ISO_Code": "784",
+        "german_name": "Vereinigte Arabische Emirate",
+        "international_area_code": 971,
+        "length_of_international_area_code_+_00": 5,
+    },
+    {
+        "capital": "Washington, D.C.",
+        "code": "us",
+        "continent": "North America",
+        "flag_1x1": "flags/1x1/us.svg",
+        "flag_4x3": "flags/4x3/us.svg",
+        "iso": true,
+        "name": "United States of America",
+        "ISO_Code": "840",
+        "german_name": "Vereinigte Staaten von Amerika",
+        "international_area_code": 1,
+        "length_of_international_area_code_+_00": 3,
+    },
+    {
+        "capital": "London",
+        "code": "gb-eng",
+        "continent": "Europe",
+        "flag_1x1": "flags/1x1/gb-eng.svg",
+        "flag_4x3": "flags/4x3/gb-eng.svg",
+        "iso": false,
+        "name": "England",
+        "ISO_Code": "826",
+        "german_name": "Vereinigtes Königreich Großbritannien und Nordirland ",
+        "international_area_code": 44,
+        "length_of_international_area_code_+_00": 4,
     },
     {
         "capital": "Hanoi",
@@ -1876,7 +2955,7 @@ export const COUNTRIES_LIBRARY = [
         "ISO_Code": "704",
         "german_name": "Vietnam ",
         "international_area_code": 84,
-        "length_of_international_area_code_+_00": 4
+        "length_of_international_area_code_+_00": 4,
     },
     {
         "capital": "Mata-Utu",
@@ -1889,7 +2968,85 @@ export const COUNTRIES_LIBRARY = [
         "ISO_Code": "876",
         "german_name": "Wallis and Futuna ",
         "international_area_code": 681,
-        "length_of_international_area_code_+_00": 5
+        "length_of_international_area_code_+_00": 5,
+    },
+    {
+        "capital": "Flying Fish Cove",
+        "code": "cx",
+        "continent": "Asia",
+        "flag_1x1": "flags/1x1/cx.svg",
+        "flag_4x3": "flags/4x3/cx.svg",
+        "iso": true,
+        "name": "Christmas Island",
+        "ISO_Code": "162",
+        "german_name": "Weihnachtsinsel ",
+        "international_area_code": 61,
+        "length_of_international_area_code_+_00": 4,
+    },
+    {
+        "capital": "Bangui",
+        "code": "cf",
+        "continent": "Africa",
+        "flag_1x1": "flags/1x1/cf.svg",
+        "flag_4x3": "flags/4x3/cf.svg",
+        "iso": true,
+        "name": "Central African Republic",
+        "ISO_Code": "140",
+        "german_name": "Zentralafrikanische Republik",
+        "international_area_code": 236,
+        "length_of_international_area_code_+_00": 5,
+    },
+    {
+        "capital": "Nicosia",
+        "code": "cy",
+        "continent": "Europe",
+        "flag_1x1": "flags/1x1/cy.svg",
+        "flag_4x3": "flags/4x3/cy.svg",
+        "iso": true,
+        "name": "Cyprus",
+        "ISO_Code": "196",
+        "german_name": "Zypern",
+        "international_area_code": 357,
+        "length_of_international_area_code_+_00": 5,
+    },
+    {
+        "capital": "Cairo",
+        "code": "eg",
+        "continent": "Africa",
+        "flag_1x1": "flags/1x1/eg.svg",
+        "flag_4x3": "flags/4x3/eg.svg",
+        "iso": true,
+        "name": "Egypt",
+        "ISO_Code": "818",
+        "german_name": "Ägypten",
+        "international_area_code": 20,
+        "length_of_international_area_code_+_00": 4,
+    },
+    {
+        "capital": "Malabo",
+        "code": "gq",
+        "continent": "Africa",
+        "flag_1x1": "flags/1x1/gq.svg",
+        "flag_4x3": "flags/4x3/gq.svg",
+        "iso": true,
+        "name": "Equatorial Guinea",
+        "ISO_Code": "226",
+        "german_name": "Äquatorialguinea",
+        "international_area_code": 240,
+        "length_of_international_area_code_+_00": 5,
+    },
+    {
+        "capital": "Addis Ababa",
+        "code": "et",
+        "continent": "Africa",
+        "flag_1x1": "flags/1x1/et.svg",
+        "flag_4x3": "flags/4x3/et.svg",
+        "iso": true,
+        "name": "Ethiopia",
+        "ISO_Code": "231",
+        "german_name": "Äthiopien",
+        "international_area_code": 251,
+        "length_of_international_area_code_+_00": 5,
     },
     {
         "capital": "Vienna",
@@ -1899,9 +3056,9 @@ export const COUNTRIES_LIBRARY = [
         "flag_4x3": "flags/4x3/at.svg",
         "iso": true,
         "name": "Austria",
-        "ISO_Code": "040",
+        "ISO_Code": "40",
         "german_name": "Österreich ",
         "international_area_code": 43,
-        "length_of_international_area_code_+_00": 4
+        "length_of_international_area_code_+_00": 4,
     }
 ]

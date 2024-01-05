@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { CwpFlowControlService } from '../../services/cwp-flow-control.service';
-import { FormControl } from '@angular/forms';
-import { CWPFlowEmploymentRelationship } from '../../enums/employment-relationship.enum';
+import { CwpFormControlService } from '../../services/cwp-form-control.service';
+import { BehaviorSubject } from 'rxjs';
+import { EmploymentStatusService } from 'src/app/shared/services/employment-status.service';
 
 @Component({
   selector: 'app-employment-relationship',
@@ -9,13 +10,18 @@ import { CWPFlowEmploymentRelationship } from '../../enums/employment-relationsh
   styleUrls: ['./employment-relationship.component.scss'],
 })
 export class EmploymentRelationshipComponent {
-  employmentRelationshipOptionControl = new FormControl(null);
+  groupOfProfessionSelectionIsOpen: BehaviorSubject<boolean> =
+    new BehaviorSubject<boolean>(false);
 
-  constructor(public CwpFlowService: CwpFlowControlService) {
-    this.employmentRelationshipOptionControl.valueChanges.subscribe(
-      (value: CWPFlowEmploymentRelationship | null) => {
-        this.CwpFlowService.employmentRelationship.next(value);
-      }
+  constructor(
+    public CwpFlowService: CwpFlowControlService,
+    public CwpFormService: CwpFormControlService,
+    public employmentStatusService: EmploymentStatusService
+  ) {}
+
+  toggleGroupOfProfessionSelection(): void {
+    this.groupOfProfessionSelectionIsOpen.next(
+      !this.groupOfProfessionSelectionIsOpen.value
     );
   }
 }

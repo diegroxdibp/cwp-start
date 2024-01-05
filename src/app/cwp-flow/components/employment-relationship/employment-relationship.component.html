@@ -1,15 +1,98 @@
-<h1 class="title">Employment Details.</h1>
-<label class="description" for="mySelect">Select an option:</label>
-<select id="mySelect" [formControl]="employmentRelationshipOptionControl">
-  <option
-    *ngFor="
-      let option of CwpFlowService.CWPFlowEmploymentRelationshipValuesToArray
-    "
-    [value]="option"
+<h1 class="title">In welchem Arbeitsverhältnis stehen Sie?</h1>
+
+<div class="group-of-profession-selection">
+  <h1 class="label">
+    <span
+      class="asterisk"
+      [ngClass]="{error:CwpFormService.CWPForm.get('personalData.firstName')?.errors?.['required'] && CwpFormService.isSubmited.value}"
+      >*</span
+    >Arbeitsverhältnis
+  </h1>
+  <div
+    class="input-field label"
+    (click)="toggleGroupOfProfessionSelection()"
+    [class.selection-active]="groupOfProfessionSelectionIsOpen.value"
   >
-    {{ option }}
-  </option>
-</select>
-<p class="description">
-  Selected value: {{ CwpFlowService.employmentRelationship | async }}
-</p>
+    <span class="input-text">{{
+      employmentStatusService.currentProfession.value
+    }}</span>
+    <i-tabler
+      *ngIf="!groupOfProfessionSelectionIsOpen.value"
+      name="chevron-down"
+      class="arrow"
+    ></i-tabler>
+    <i-tabler
+      *ngIf="groupOfProfessionSelectionIsOpen.value"
+      name="chevron-up"
+      class="arrow"
+    ></i-tabler>
+  </div>
+  <p *ngIf="!groupOfProfessionSelectionIsOpen.value" class="tip">
+    Geben Sie den Namen des Unternehmens an.
+  </p>
+</div>
+
+<div class="drop-down" *ngIf="groupOfProfessionSelectionIsOpen.value">
+  <div
+    (click)="employmentStatusService.selectGroupOfProfession(groupOfProfession)"
+    (click)="toggleGroupOfProfessionSelection()"
+    class="country"
+    [class.selected-country]="
+      employmentStatusService.currentProfession.value === groupOfProfession
+    "
+    *ngFor="
+      let groupOfProfession of employmentStatusService.groupsOfProfessionsFromValues
+    "
+  >
+    <span class="text">{{ groupOfProfession }} </span>
+    <i-tabler
+      *ngIf="
+        employmentStatusService.currentProfession.value === groupOfProfession
+      "
+      name="check"
+      class="icon-check"
+    >
+    </i-tabler>
+  </div>
+</div>
+
+<div
+  class="monthly-net-income"
+  *ngIf="employmentStatusService.currentProfession.value"
+>
+  <h1 class="label">
+    <span class="asterisk">*</span>Monatliches Nettoeinkommen
+  </h1>
+  <div class="input">
+    <input
+      id="iban"
+      class="input-field label"
+      type="text"
+      name="iban"
+      [formControl]="CwpFormService.ibanControl"
+      [ngClass]="{success:CwpFormService.CWPForm.get('bankData.iban')?.valid ,
+            error:CwpFormService.CWPForm.get('bankData.iban')?.errors?.['required'] && CwpFormService.isSubmited.value}"
+    />
+    <i-tabler
+      *ngIf="CwpFormService.CWPForm.get('bankData.iban')?.errors?.['required'] && CwpFormService.isSubmited.value"
+      name="exclamation-circle"
+      class="icon-exclamation"
+    ></i-tabler>
+    <i-tabler
+      *ngIf="CwpFormService.CWPForm.get('bankData.iban')?.valid"
+      name="circle-check"
+      class="circle-check"
+    >
+    </i-tabler>
+  </div>
+  <p class="description">
+    Notieren Sie Ihr niedrigstes Einkommen der letzten drei Monate.
+  </p>
+  <div
+    *ngIf="
+      !CwpFormService.isSubmited.value ||
+      (CwpFormService.CWPForm.get('bankData.iban')?.valid &&
+        CwpFormService.isSubmited.value)
+    "
+  ></div>
+</div>
