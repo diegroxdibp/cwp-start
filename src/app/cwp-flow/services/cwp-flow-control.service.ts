@@ -75,12 +75,11 @@ export class CwpFlowControlService {
       return;
     }
     //To other employment page
-    //TODO
     if (
       this.CWPFlowStepActive.value ===
         CWPFlowStepsSequence.employmentDetails_employmentRelationtshipPage &&
       this.employmentStatusService.currentProfession.value ===
-        GroupOfProfessions.executive
+        GroupOfProfessions.other
     ) {
       this.toStep(
         CWPFlowStepsSequence.employmentDetails_other

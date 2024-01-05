@@ -1,0 +1,19 @@
+@import "/src/app/styles/variables";
+@import "/src/app/styles/palette";
+
+:host {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  @media (min-width: $breakpoint-sm) {
+    max-width: $max-width-tablet;
+    margin: 0 auto;
+    padding: 32px 0 0 0;
+  }
+
+  @media (min-width: $breakpoint-md) {
+    max-width: $content-max-width-desktop;
+    padding: 40px 64px 64px 40px;
+    margin: 0;
+  }
+}
