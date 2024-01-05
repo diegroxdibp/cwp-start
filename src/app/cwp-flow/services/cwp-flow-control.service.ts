@@ -156,11 +156,11 @@ export class CwpFlowControlService {
         return 'nationality';
       case step === 9:
         return 'bankDetails';
-      case step >= 10 && step <= 13:
+      case step >= 10 && step <= 14:
         return 'employmentDetails';
-      case step >= 14 && step <= 15:
+      case step >= 15 && step <= 16:
         return 'regularExpenses';
-      case step === 16:
+      case step === 17:
         return 'overallOverview';
       default:
         return 'unknownGroup';
