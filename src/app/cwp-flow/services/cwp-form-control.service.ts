@@ -220,7 +220,10 @@ export class CwpFormControlService {
   personalDataControl = this.CWPForm.get('personalData') as FormGroup;
   contactDetailsControl = this.CWPForm.get('contactDetails') as FormGroup;
   bankDetails = this.CWPForm.get('bankDetails') as FormGroup;
-
+  employmentsDetailsControl = this.CWPForm.get(
+    'employmentDetails'
+  ) as FormGroup;
+  familyDetailsControl = this.CWPForm.get('familyDetails') as FormGroup;
   /* get userForm() {
     return this.CWPForm.get('user') as FormGroup;
   }*/
@@ -284,7 +287,61 @@ export class CwpFormControlService {
   get ibanControl() {
     return this.bankDetails!.get('iban') as FormControl;
   }
-
+  get professionControl() {
+    return this.employmentsDetailsControl!.get('profession') as FormGroup;
+  }
+  get netIcome() {
+    return this.employmentsDetailsControl!.get('netIncome') as FormGroup;
+  }
+  get industry() {
+    return this.employmentsDetailsControl!.get(' industry') as FormGroup;
+  }
+  get countryOfActivity() {
+    return this.employmentsDetailsControl!.get(
+      'countryOfActivity'
+    ) as FormGroup;
+  }
+  get employedDateSince() {
+    return this.employmentsDetailsControl!.get(
+      'employedDateSince'
+    ) as FormGroup;
+  }
+  get employmentContractType() {
+    return this.employmentsDetailsControl!.get(
+      ' employmentContractType'
+    ) as FormGroup;
+  }
+  get employmentContractValidTill() {
+    return this.employmentsDetailsControl!.get(
+      'employmentContractValidTill'
+    ) as FormGroup;
+  }
+  get employerZipCode() {
+    return this.employmentsDetailsControl!.get(' employerZipCode') as FormGroup;
+  }
+  get employerCity() {
+    return this.employmentsDetailsControl!.get('employerCity') as FormGroup;
+  }
+  get employerStreet() {
+    return this.employmentsDetailsControl!.get('employerStreet') as FormGroup;
+  }
+  get employerDoorNumber() {
+    return this.employmentsDetailsControl!.get(
+      'employerDoorNumber'
+    ) as FormGroup;
+  }
+  get housingType() {
+    return this.familyDetailsControl!.get('housingType') as FormGroup;
+  }
+  get rent() {
+    return this.familyDetailsControl!.get('rent') as FormGroup;
+  }
+  get childrenCheck() {
+    return this.familyDetailsControl!.get(' childrenCheck') as FormGroup;
+  }
+  get numberOfChildren() {
+    return this.familyDetailsControl!.get('numberOfChildren') as FormGroup;
+  }
   /* public get userFormGroup() {
     return this.CWPForm.get('user') as FormGroup;
   }*/
