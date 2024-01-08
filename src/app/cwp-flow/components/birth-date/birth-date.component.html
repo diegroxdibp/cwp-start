@@ -52,7 +52,7 @@
         </div>
       </div>
       <div
-        *ngIf="
+        *ngIf="!visible &&
           !CwpFormService.isSubmited.value ||
           (CwpFormService.CWPForm.get('personalData.birthDate')?.valid &&
             CwpFormService.isSubmited.value)
@@ -63,7 +63,7 @@
         </p>
       </div>
       <div
-        *ngIf="CwpFormService.CWPForm.get('personalData.birthDate')?.errors?.['required'] && CwpFormService.isSubmited.value && this.CwpFlowService.ageLessThen18Years.value"
+        *ngIf="!visible && CwpFormService.CWPForm.get('personalData.birthDate')?.errors?.['required'] && CwpFormService.isSubmited.value && this.CwpFlowService.ageLessThen18Years.value"
       >
         <p class="validation">
           Bitte tragen Sie Ihr Geburtsdatum ein (Sie müssen mindestens 18 Jahre

@@ -150,7 +150,7 @@
       ></i-tabler>
     </div>
     <div
-      *ngIf="
+      *ngIf="!visible &&
         !CwpFormService.isSubmited.value ||
         (CwpFormService.CWPForm.get('contactDetails.residentDateSince')
           ?.valid &&
@@ -163,7 +163,7 @@
       </p>
     </div>
     <div
-      *ngIf="CwpFormService.CWPForm.get('contactDetails.residentDateSince')?.errors?.['required'] && CwpFormService.isSubmited.value && this.CwpFlowService.residentLessThenTwoYears.value"
+      *ngIf=" !visible && CwpFormService.CWPForm.get('contactDetails.residentDateSince')?.errors?.['required'] && CwpFormService.isSubmited.value && this.CwpFlowService.residentLessThenTwoYears.value"
     >
       <p class="validation">
         Bitte überprüfen Sie das Datum, an welchem Sie an dieser Adresse
