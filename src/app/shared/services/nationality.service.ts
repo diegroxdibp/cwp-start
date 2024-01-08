@@ -12,14 +12,14 @@ export class NationalityService {
   selectedResidencePermit: BehaviorSubject<string | null> = new BehaviorSubject<
     string | null
   >(null);
-  isMSQC: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+  isMSCQ: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
   requiresResidencePermit: BehaviorSubject<boolean> =
     new BehaviorSubject<boolean>(false);
   constructor(public countryService: CountryService) {
     this.countryService.currentCountryNationality.subscribe(
       (country: CountryModel) => {
         this.checkPermirtRequirement();
-        this.checkMSQC();
+        this.checkMSCQ();
       }
     );
   }
@@ -32,7 +32,7 @@ export class NationalityService {
     this.selectedResidencePermit.next(permit);
   }
 
-  checkMSQC() {
+  checkMSCQ() {
     if (
       this.countryService.currentCountryNationality.value.name === 'Cuba' ||
       this.countryService.currentCountryNationality.value.name === 'Ukraine' ||
@@ -41,8 +41,8 @@ export class NationalityService {
         'North Korea' ||
       this.countryService.currentCountryNationality.value.name === 'Syria'
     ) {
-      this.isMSQC.next(true);
-    } else this.isMSQC.next(false);
+      this.isMSCQ.next(true);
+    } else this.isMSCQ.next(false);
   }
 
   checkPermirtRequirement(): void {
