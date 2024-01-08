@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { CwpFlowControlService } from '../../services/cwp-flow-control.service';
 import { CwpFormControlService } from '../../services/cwp-form-control.service';
-import { BsDatepickerConfig } from 'ngx-bootstrap/datepicker';
 import { birthDate } from 'src/app/shared/constants/app.constants';
 import { BehaviorSubject } from 'rxjs';
 @Component({
