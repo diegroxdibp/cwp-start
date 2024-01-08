@@ -75,6 +75,7 @@
         >Nr.
       </h1>
       <app-input
+
         id="doorNumber"
         typeInput="number"
         name="doorNumber"
@@ -113,23 +114,24 @@
       <span
         class="asterisk"
         [ngClass]="{error:CwpFormService.CWPForm.get('contactDetails.residentDateSince')?.errors?.['required'] 
-        && CwpFormService.isSubmited.value && this.CwpFlowService.residentLessThenTwoYears.value}"
+        && CwpFormService.isSubmited.value || less2Years == true}"
         >*</span
       >Wohnhaft seit:
     </h1>
     <div class="input">
       <input
+      (input)="getValue()"
         id="residentDateSince"
         class="input-field"
         type="text"
         name="residentDateSince"
         [formControl]="CwpFormService.residentDateSinceControl"
-        [ngClass]="{success:CwpFormService.CWPForm.get('contactDetails.residentDateSince')?.valid && this.CwpFlowService.residentLessThenTwoYears.value , 
-           error:CwpFormService.CWPForm.get('contactDetails.residentDateSince')?.errors?.['required'] && CwpFormService.isSubmited.value}"
+        [ngClass]="{success:CwpFormService.CWPForm.get('contactDetails.residentDateSince')?.valid &&this.less2Years == false , 
+           error:CwpFormService.CWPForm.get('contactDetails.residentDateSince')?.errors?.['required'] && CwpFormService.isSubmited.value || this.less2Years == true}"
       />
       <i-tabler
         style="margin-right: 34px"
-        *ngIf="CwpFormService.CWPForm.get('contactDetails.residentDateSince')?.errors?.['required'] && CwpFormService.isSubmited.value"
+        *ngIf="CwpFormService.CWPForm.get('contactDetails.residentDateSince')?.errors?.['required'] && CwpFormService.isSubmited.value || this.less2Years == true"
         name="exclamation-circle"
         class="icon-exclamation"
       ></i-tabler>
@@ -137,7 +139,7 @@
         style="margin-right: 34px"
         *ngIf="
           CwpFormService.CWPForm.get('contactDetails.residentDateSince')
-            ?.valid && this.CwpFlowService.residentLessThenTwoYears.value
+            ?.valid && this.less2Years == false
         "
         name="circle-check"
         class="circle-check"
@@ -151,10 +153,10 @@
     </div>
     <div
       *ngIf="
-        !CwpFormService.isSubmited.value ||
+        this.less2Years == false && !CwpFormService.isSubmited.value ||
         (CwpFormService.CWPForm.get('contactDetails.residentDateSince')
           ?.valid &&
-          CwpFormService.isSubmited.value)
+          CwpFormService.isSubmited.value &&  this.less2Years == false)
       "
     >
       <p class="description">
@@ -163,7 +165,7 @@
       </p>
     </div>
     <div
-      *ngIf="CwpFormService.CWPForm.get('contactDetails.residentDateSince')?.errors?.['required'] && CwpFormService.isSubmited.value && this.CwpFlowService.residentLessThenTwoYears.value"
+      *ngIf="CwpFormService.CWPForm.get('contactDetails.residentDateSince')?.errors?.['required'] && CwpFormService.isSubmited.value || this.less2Years == true"
     >
       <p class="validation">
         Bitte überprüfen Sie das Datum, an welchem Sie an dieser Adresse
