@@ -9,7 +9,7 @@
         <input id="birthDate" (input)="getValue()" class="input-field" type="text" name="birthDate"
           placeholder="{{ day }}.{{ month }}.{{ year }}" mask="d0.M0.0000"
           [formControl]="CwpFormService.birthDateControl"
-          [ngClass]="{success:CwpFormService.CWPForm.get('personalData.birthDate')?.valid && this.CwpFlowService.ageLessThen18Years.value &&  less18Years == false, 
+          [ngClass]="{success:CwpFormService.CWPForm.get('personalData.birthDate')?.valid && this.CwpFlowService.ageLessThen18Years.value &&  less18Years == false,
            error:CwpFormService.CWPForm.get('personalData.birthDate')?.errors?.['required'] && CwpFormService.isSubmited.value || less18Years == true}" />
         <i-tabler style="margin-right: 34px"
           *ngIf="less18Years == true || CwpFormService.CWPForm.get('personalData.birthDate')?.errors?.['required'] && CwpFormService.isSubmited.value"
@@ -25,7 +25,7 @@
             (daySelected)="getDay($event)"></app-calendar>
         </div>
       </div>
-      <div *ngIf="
+      <div *ngIf=" !visible &&
           (less18Years == false && !CwpFormService.isSubmited.value) ||
           (CwpFormService.CWPForm.get('personalData.birthDate')?.valid &&
             CwpFormService.isSubmited.value &&
@@ -35,13 +35,13 @@
           Nennen Sie Ihr Geburtsdatum (z. B. 16.06.1996)
         </p>
       </div>
-      <div *ngIf="less18Years == true ">
+      <div *ngIf="  !visible && less18Years == true ">
         <p class="validation">
           Sie müssen mindestens 18 Jahre alt sein.
         </p>
       </div>
       <div
-        *ngIf="CwpFormService.CWPForm.get('personalData.birthDate')?.errors?.['required'] && CwpFormService.isSubmited.value ">
+        *ngIf=" !visible && CwpFormService.CWPForm.get('personalData.birthDate')?.errors?.['required'] && CwpFormService.isSubmited.value ">
         <p class="validation">
           Bitte tragen Sie Ihr Geburtsdatum ein (z. B. 16.06.1996).
         </p>
