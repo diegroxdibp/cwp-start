@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CwpFlowControlService } from '../../services/cwp-flow-control.service';
 import { CwpFormControlService } from '../../services/cwp-form-control.service';
+
 import { birthDate } from 'src/app/shared/constants/app.constants';
 import { BehaviorSubject } from 'rxjs';
 @Component({
@@ -11,7 +12,7 @@ import { BehaviorSubject } from 'rxjs';
 export class BirthDateComponent {
   isSubmited: boolean = false;
   visible: boolean = false;
-  less18Years :boolean = false
+  less18Years: boolean = false;
   year: number | string = 'JJJJ';
   month: number | string = 'MM';
   day: number | string = 'TT';
@@ -27,6 +28,7 @@ export class BirthDateComponent {
     this.year = year;
     console.log(`Year clicked: ${year}`);
     console.log(this.year);
+
     this.updateFormControl();
   }
   getMonth(month: number): void {
@@ -75,20 +77,20 @@ export class BirthDateComponent {
     // Check if the difference is less than 18 years
     if (differenceInYears < 18) {
       this.CwpFlowService.ageLessThen18Years.next(true);
-     this.less18Years = true;
-     console.log(this.less18Years);
+      this.less18Years = true;
+      console.log(this.less18Years);
     } else {
       this.CwpFlowService.ageLessThen18Years.next(false);
       this.less18Years = false;
     }
   }
 
- getValue() {
-    
-    this.birthDate = this.CwpFormService.CWPForm.get(
-      'personalData.birthDate'
-    )?.value;
+  getValue() {
 
+   this.birthDate = this.CwpFormService.CWPForm.get('personalData.birthDate')?.value;
+    console.log(this.birthDate);
+  
+   
     if (this.birthDate && this.birthDate.length === 8) {
       const day = this.birthDate.substring(0, 2);
       const month = this.birthDate.substring(2, 4);
