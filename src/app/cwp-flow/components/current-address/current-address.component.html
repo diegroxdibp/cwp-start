@@ -5,179 +5,108 @@
   </p>
   <div class="introText">
     <h1 class="label">
-      <span
-        class="asterisk"
-        [ngClass]="{error:CwpFormService.CWPForm.get('contactDetails.zipCode')?.errors?.['required'] 
-      && CwpFormService.isSubmited.value}"
-        >*</span
-      >Postleitzahl
+      <span class="asterisk" [ngClass]="{error:CwpFormService.CWPForm.get('contactDetails.zipCode')?.errors?.['required'] 
+      && CwpFormService.isSubmited.value}">*</span>Postleitzahl
     </h1>
 
-    <app-input
-      id="zipCode"
-      typeInput="number"
-      name="zipCode"
-      [control]="CwpFormService.zipCodeControl"
-      message="Geben Sie Ihre PLZ an (z. B. 12345)."
-      [isSubmited]="CwpFormService.isSubmited.value"
+    <app-input id="zipCode" typeInput="number" name="zipCode" [control]="CwpFormService.zipCodeControl"
+      message="Geben Sie Ihre PLZ an (z. B. 12345)." [isSubmited]="CwpFormService.isSubmited.value"
       [msgSuccess]="CwpFormService.CWPForm.get('contactDetails.zipCode')?.valid"
       [msgError]="CwpFormService.CWPForm.get('contactDetails.zipCode')?.errors?.['required']"
-      errorMessage="Bitte überprüfen Sie die PLZ (z. B. 12345)."
-    ></app-input>
+      errorMessage="Bitte überprüfen Sie die PLZ (z. B. 12345)."></app-input>
     <h1 class="label">
-      <span
-        class="asterisk"
-        [ngClass]="{error:CwpFormService.CWPForm.get('contactDetails.city')?.errors?.['required'] 
-      && CwpFormService.isSubmited.value}"
-        >*</span
-      >Ort
+      <span class="asterisk" [ngClass]="{error:CwpFormService.CWPForm.get('contactDetails.city')?.errors?.['required'] 
+      && CwpFormService.isSubmited.value}">*</span>Ort
     </h1>
-
-    <app-input
-      id="city"
-      typeInput="text"
-      name="city"
-      [control]="CwpFormService.cityControl"
-      message="Geben Sie den Ort an, an dem sich diese Adresse befindet."
-      [isSubmited]="CwpFormService.isSubmited.value"
+<div class="input-large-screens">
+    <app-input id="city" typeInput="text" name="city" [control]="CwpFormService.cityControl"
+      message="Geben Sie den Ort an, an dem sich diese Adresse befindet." [isSubmited]="CwpFormService.isSubmited.value"
       [msgSuccess]="CwpFormService.CWPForm.get('contactDetails.city')?.valid"
       [msgError]="CwpFormService.CWPForm.get('contactDetails.city')?.errors?.['required']"
-      errorMessage="Bitte überprüfen Sie die Ortsangabe."
-    ></app-input>
+      errorMessage="Bitte überprüfen Sie die Ortsangabe."></app-input>
+      
+</div>
+<div style="width: 600px;">
     <div class="input-field-street" style="margin-top: -5px">
+
       <h1 style="display: inline-block; margin-right: 70px" class="label">
-        <span
-          class="asterisk"
-          [ngClass]="{error:CwpFormService.CWPForm.get('contactDetails.street')?.errors?.['required'] 
-        && CwpFormService.isSubmited.value}"
-          >*</span
-        >Straße
+        <span class="asterisk" [ngClass]="{error:CwpFormService.CWPForm.get('contactDetails.street')?.errors?.['required'] 
+        && CwpFormService.isSubmited.value}">*</span>Straße
       </h1>
-      <app-input
-        id="street"
-        typeInput="text"
-        name="street"
-        [control]="CwpFormService.streetControl"
-        [isSubmited]="CwpFormService.isSubmited.value"
-        [msgSuccess]="
+      <app-input id="street" typeInput="text" name="street" [control]="CwpFormService.streetControl"
+        [isSubmited]="CwpFormService.isSubmited.value" [msgSuccess]="
           CwpFormService.CWPForm.get('contactDetails.street')?.valid
-        "
-        [msgError]="CwpFormService.CWPForm.get('contactDetails.street')?.errors?.['required']"
-      ></app-input>
+        " [msgError]="CwpFormService.CWPForm.get('contactDetails.street')?.errors?.['required']"></app-input>
     </div>
     <div class="input-field-doorNumber" style="margin-top: -5px">
       <h1 style="display: inline-block" class="label">
-        <span
-          class="asterisk"
-          [ngClass]="{error:CwpFormService.CWPForm.get('contactDetails.doorNumber')?.errors?.['required'] 
-        && CwpFormService.isSubmited.value}"
-          >*</span
-        >Nr.
+        <span class="asterisk" [ngClass]="{error:CwpFormService.CWPForm.get('contactDetails.doorNumber')?.errors?.['required'] 
+        && CwpFormService.isSubmited.value}">*</span>Nr.
       </h1>
-      <app-input
-
-        id="doorNumber"
-        typeInput="number"
-        name="doorNumber"
-        [control]="CwpFormService.doorNumberControl"
-        [isSubmited]="CwpFormService.isSubmited.value"
-        [msgSuccess]="
+      <app-input id="doorNumber" typeInput="number" name="doorNumber" [control]="CwpFormService.doorNumberControl"
+        [isSubmited]="CwpFormService.isSubmited.value" [msgSuccess]="
           CwpFormService.CWPForm.get('contactDetails.doorNumber')?.valid
-        "
-        [msgError]="CwpFormService.CWPForm.get('contactDetails.doorNumber')?.errors?.['required']"
-      ></app-input>
+        " [msgError]="CwpFormService.CWPForm.get('contactDetails.doorNumber')?.errors?.['required']"></app-input>
     </div>
-    <div
-      *ngIf="
+
+    <div *ngIf="
         !CwpFormService.isSubmited.value ||
         (CwpFormService.CWPForm.get('contactDetails.street')?.valid &&
           CwpFormService.CWPForm.get('contactDetails.doorNumber')?.valid &&
           CwpFormService.isSubmited.value)
-      "
-      style="margin-top: -25px"
-    >
+      " style="margin-top: -25px">
       <p class="description">
         Geben Sie Ihre vollständige Adresse an (z. B. Musterstraße 123).
       </p>
     </div>
-    <div
-      style="margin-top: -25px"
+    <div style="margin-top: -25px"
       *ngIf="(CwpFormService.CWPForm.get('contactDetails.street')?.errors?.['required'] && CwpFormService.isSubmited.value )||
-     ( CwpFormService.CWPForm.get('contactDetails.doorNumber')?.errors?.['required'] && CwpFormService.isSubmited.value )"
-    >
+     ( CwpFormService.CWPForm.get('contactDetails.doorNumber')?.errors?.['required'] && CwpFormService.isSubmited.value )">
       <p class="validation">
         Bitte überprüfen Sie die Adresse (z. B. Musterstraße 123).
       </p>
     </div>
-
+  </div>
     <h1 style="display: inline-block" class="label">
-      <span
-        class="asterisk"
-        [ngClass]="{error:CwpFormService.CWPForm.get('contactDetails.residentDateSince')?.errors?.['required'] 
-        && CwpFormService.isSubmited.value || less2Years == true}"
-        >*</span
-      >Wohnhaft seit:
+      <span class="asterisk" [ngClass]="{error:CwpFormService.CWPForm.get('contactDetails.residentDateSince')?.errors?.['required'] 
+        && CwpFormService.isSubmited.value || less2Years == true}">*</span>Wohnhaft seit:
     </h1>
     <div class="input">
-      <input
-      (input)="getValue()"
-        id="residentDateSince"
-        class="input-field"
-        type="text"
-        name="residentDateSince"
+      <input (input)="getValue()" id="residentDateSince" class="input-field" type="text" name="residentDateSince"
         [formControl]="CwpFormService.residentDateSinceControl"
         [ngClass]="{success:CwpFormService.CWPForm.get('contactDetails.residentDateSince')?.valid &&this.less2Years == false , 
-           error:CwpFormService.CWPForm.get('contactDetails.residentDateSince')?.errors?.['required'] && CwpFormService.isSubmited.value || this.less2Years == true}"
-      />
-      <i-tabler
-        style="margin-right: 34px"
+           error:CwpFormService.CWPForm.get('contactDetails.residentDateSince')?.errors?.['required'] && CwpFormService.isSubmited.value || this.less2Years == true}" />
+      <i-tabler style="margin-right: 34px"
         *ngIf="CwpFormService.CWPForm.get('contactDetails.residentDateSince')?.errors?.['required'] && CwpFormService.isSubmited.value || this.less2Years == true"
-        name="exclamation-circle"
-        class="icon-exclamation"
-      ></i-tabler>
-      <i-tabler
-        style="margin-right: 34px"
-        *ngIf="
+        name="exclamation-circle" class="icon-exclamation"></i-tabler>
+      <i-tabler style="margin-right: 34px" *ngIf="
           CwpFormService.CWPForm.get('contactDetails.residentDateSince')
             ?.valid && this.less2Years == false
-        "
-        name="circle-check"
-        class="circle-check"
-      >
+        " name="circle-check" class="icon-check">
       </i-tabler>
-      <i-tabler
-        name="calendar"
-        class="icon-calendar"
-        (click)="openCalendar()"
-      ></i-tabler>
+      <i-tabler name="calendar" class="icon-calendar" (click)="openCalendar()"></i-tabler>
     </div>
-    <div
-      *ngIf="
-        this.less2Years == false && !CwpFormService.isSubmited.value ||
+    <div *ngIf="
+        !visible&& this.less2Years == false && !CwpFormService.isSubmited.value ||
         (CwpFormService.CWPForm.get('contactDetails.residentDateSince')
           ?.valid &&
           CwpFormService.isSubmited.value &&  this.less2Years == false)
-      "
-    >
+      ">
       <p class="description">
         Geben Sie das Datum an, seit dem Sie an dieser Adresse gemeldet sind (z.
         B. 03.2019).
       </p>
     </div>
     <div
-      *ngIf="CwpFormService.CWPForm.get('contactDetails.residentDateSince')?.errors?.['required'] && CwpFormService.isSubmited.value || this.less2Years == true"
-    >
+      *ngIf="!visible&&CwpFormService.CWPForm.get('contactDetails.residentDateSince')?.errors?.['required'] && CwpFormService.isSubmited.value || this.less2Years == true">
       <p class="validation">
         Bitte überprüfen Sie das Datum, an welchem Sie an dieser Adresse
         gemeldet sind (z. B. 03.2019).
       </p>
     </div>
     <div *ngIf="visible">
-      <app-calendar
-        (yearSelected)="getYear($event)"
-        (monthSelected)="getMonth($event)"
-        (daySelected)="getDay($event)"
-      ></app-calendar>
+      <app-calendar (yearSelected)="getYear($event)" (monthSelected)="getMonth($event)"
+        (daySelected)="getDay($event)"></app-calendar>
     </div>
   </div>
 </div>

@@ -74,6 +74,10 @@ export class BirthDateComponent {
       'personalData.birthDate'
     )?.value;
 
+   this.birthDate = this.CwpFormService.CWPForm.get('personalData.birthDate')?.value;
+    console.log(this.birthDate);
+  
+   
     if (this.birthDate && this.birthDate.length === 8) {
       const day = this.birthDate.substring(0, 2);
       const month = this.birthDate.substring(2, 4);

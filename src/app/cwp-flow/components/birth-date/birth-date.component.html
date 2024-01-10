@@ -3,7 +3,11 @@
   <div class="introText">
     <div>
       <h1 class="label">
-        <span class="asterisk" [ngClass]="{error:CwpFormService.CWPForm.get('personalData.birthDate')?.errors?.['required'] && CwpFormService.isSubmited.value || less18Years == true}">*</span>Gerburtsdatum
+        <span
+          class="asterisk"
+          [ngClass]="{error:CwpFormService.CWPForm.get('personalData.birthDate')?.errors?.['required'] && CwpFormService.isSubmited.value || less18Years == true}"
+          >*</span
+        >Gerburtsdatum
       </h1>
       <div class="input">
         <input
@@ -23,47 +27,73 @@
 
         <i-tabler style="margin-right: 34px"
           *ngIf="less18Years == true || CwpFormService.CWPForm.get('personalData.birthDate')?.errors?.['required'] && CwpFormService.isSubmited.value"
-          name="exclamation-circle" class="icon-exclamation"></i-tabler>
-        <i-tabler style="margin-right: 34px" *ngIf="
+          name="exclamation-circle"
+          class="icon-exclamation"
+        ></i-tabler>
+        <i-tabler
+          style="margin-right: 34px"
+          *ngIf="
             CwpFormService.CWPForm.get('personalData.birthDate')?.valid &&
             less18Years == false
-          " name="circle-check" class="icon-check">
+          "
+          name="circle-check"
+          class="icon-check"
+        >
         </i-tabler>
-        <i-tabler name="calendar" class="icon-calendar" (click)="openCalendar()"></i-tabler>
+        <i-tabler
+          name="calendar"
+          class="icon-calendar"
+          (click)="openCalendar()"
+        ></i-tabler>
         <div *ngIf="visible">
-          <app-calendar (yearSelected)="getYear($event)" (monthSelected)="getMonth($event)"
-            (daySelected)="getDay($event)"></app-calendar>
+          <app-calendar
+            (yearSelected)="getYear($event)"
+            (monthSelected)="getMonth($event)"
+            (daySelected)="getDay($event)"
+          ></app-calendar>
         </div>
       </div>
-      <div *ngIf=" !visible &&
-          (less18Years == false && !CwpFormService.isSubmited.value) ||
+      <div
+        *ngIf="
+          (!this.visible && !less18Years && !CwpFormService.isSubmited.value) ||
           (CwpFormService.CWPForm.get('personalData.birthDate')?.valid &&
             CwpFormService.isSubmited.value &&
-            less18Years == false)
-        ">
+            !less18Years)
+        "
+      >
         <p class="description">
           Nennen Sie Ihr Geburtsdatum (z. B. 16.06.1996)
         </p>
       </div>
-      <div *ngIf="  !visible && less18Years == true ">
-        <p class="validation">
-          Sie müssen mindestens 18 Jahre alt sein.
-        </p>
+      <div *ngIf="!this.visible && less18Years; else birthDateValidation">
+        <p class="validation">Sie müssen mindestens 18 Jahre alt sein.</p>
       </div>
-      <div
-        *ngIf=" !visible && CwpFormService.CWPForm.get('personalData.birthDate')?.errors?.['required'] && CwpFormService.isSubmited.value ">
-        <p class="validation">
-          Bitte tragen Sie Ihr Geburtsdatum ein (z. B. 16.06.1996).
-        </p>
-      </div>
+      <ng-template #birthDateValidation>
+        <div
+          *ngIf="!this.visible && (CwpFormService.CWPForm.get('personalData.birthDate')?.errors?.['required'] && CwpFormService.isSubmited.value 
+         || CwpFormService.CWPForm.get('personalData.birthDate')?.errors?.['minlength'] && CwpFormService.isSubmited.value ||CwpFormService.CWPForm.get('personalData.birthDate')?.errors?.['required'] && CwpFormService.isSubmited.value && CwpFormService.CWPForm.get('personalData.birthDate')?.errors?.['minlength'] ) "
+        >
+          <p class="validation">
+            Bitte tragen Sie Ihr Geburtsdatum ein (z. B. 16.06.1996).
+          </p>
+        </div>
+      </ng-template>
     </div>
+
     <div>
       <h1 class="label">
-        Gerburtsname(n)<span class="asterisk" style="padding-left: 8px">(optional)</span>
+        Gerburtsname(n)<span class="asterisk" style="padding-left: 8px"
+          >(optional)</span
+        >
       </h1>
-      <div class="input">
-        <app-input id="birthName" typeInput="text" name="birthName" [control]="CwpFormService.birthNameControl"
-          message="Geben Sie Ihren Geburtsnamen an, falls dieser abweicht."></app-input>
+      <div class="input-large-screens">
+        <app-input
+          id="birthName"
+          typeInput="text"
+          name="birthName"
+          [control]="CwpFormService.birthNameControl"
+          message="Geben Sie Ihren Geburtsnamen an, falls dieser abweicht."
+        ></app-input>
       </div>
     </div>
   </div>

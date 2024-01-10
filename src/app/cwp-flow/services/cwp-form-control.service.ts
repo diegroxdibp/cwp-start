@@ -375,6 +375,16 @@ export class CwpFormControlService {
           this.isSubmited.next(false);
           return true;
         }
+        case this.CwpFlowService.CWPFlowStepActive.value ===
+        this.CwpFlowService.CWPFlowStepsSequence.personalData_birthDatePage:
+        this.isSubmited.next(true);
+        if (this.personalDataControl.controls['birthDate'].invalid) {
+          console.log('2');
+          return false;
+        } else {
+          this.isSubmited.next(false);
+          return true;
+        }
 
       case this.CwpFlowService.CWPFlowStepActive.value ===
         this.CwpFlowService.CWPFlowStepsSequence.contactDetails_phoneNumberPage:

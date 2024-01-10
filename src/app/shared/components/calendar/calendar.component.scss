@@ -8,253 +8,44 @@
 
   @media (min-width: $breakpoint-sm) {
     max-width: 448px;
-    margin: 0 auto;
-    // padding: 32px 0 0 0;
-    .dayWeek {
-      width: 35px;
-      height: 25px;
-      text-align: center;
-      padding-top: 8px;
-      padding-bottom: 8px;
-      color: #000000;
-      font-weight: 300;
-      font-size: 18px;
-      margin-left: 5px;
-    }
-    .day {
-      width: 25px;
-      height: 25px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      margin: auto;
-      cursor: pointer;
-      font-weight: 300;
-      border-radius: 50%;
-      transition: 0.2s;
 
-      font-size: 18px;
-      // padding-top: -25px;
+    .divider {
+      width: 410px;
     }
+
+    .header {
+      width: 420px;
+    }
+
+    .titleYearOrMonth {
+      margin-right: 386px;
+    }
+
   }
 
   // Media query for desktops
   @media (min-width: $breakpoint-md) {
     max-width: 448px;
-    margin: 0 auto;
-    .dayWeek {
-      width: 35px;
-      height: 20px;
-      text-align: center;
 
-      padding-bottom: 8px;
-      color: #000000;
-      font-weight: 300;
-      font-size: 18px;
-      margin-left: 15px;
-      margin-bottom: 6px;
-    }
-    .day {
-      width: 25px;
-      height: 20px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      margin: auto;
-      cursor: pointer;
-      font-weight: 300;
-      border-radius: 50%;
-      transition: 0.2s;
-
-      font-size: 18px;
-      // padding-top: -25px;
-    }
   }
+
   @media (min-width: $breakpoint-mmd) {
-    padding: 40px 64px 64px 40px;
-    margin: 0;
-    .dayWeek {
-      width: 35px;
-      height: 25px;
-      text-align: center;
+    max-width: 448px;
 
-      padding-bottom: 8px;
-      color: #000000;
-      font-weight: 300;
-      font-size: 18px;
-      margin-left: 5px;
-      margin-bottom: 6px;
-    }
-    .day {
-      width: 25px;
-      height: 25px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      margin: auto;
-      cursor: pointer;
-      font-weight: 300;
-      border-radius: 50%;
-      transition: 0.2s;
-
-      font-size: 18px;
-      // padding-top: -25px;
-    }
   }
 
   // Media query for large screens
   @media (min-width: $breakpoint-lg) {
-    margin: 0 auto;
-    .month {
-      font-weight: 300;
-      font-size: 18px;
-      width: 48px;
-      height: 25px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      margin: auto;
-      cursor: pointer;
-      transition: 0.2s;
-      margin-top: 16px;
-      margin-bottom: 16px;
-    }
-
-    .year {
-      width: 48px;
-      height: 30px;
-      cursor: pointer;
-      font-weight: 300;
-      font-size: 18px;
-      line-height: 25px;
-      letter-spacing: -0.20000000298023224px;
-      text-align: center;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 16px;
-      margin-top: 16px;
-      margin-left: 36px;
-    }
-    .day {
-      width: 48px;
-      height: 30px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      margin: auto;
-      cursor: pointer;
-      font-weight: 300;
-      font-size: 18px;
-      border-radius: 50%;
-      transition: 0.2s;
-      width: 14px;
-      height: 10px;
-      // padding-top: -25px;
-      margin-bottom: 10px;
-      margin-top: 16px;
-      //margin-right: 21px;
-    }
     .divider {
-      width: 398px;
-      border: 1px;
-      color: $--color-neutral-light;
-      margin-top: 10px;
-      margin-bottom: 16px;
+      width: 410px;
     }
 
     .header {
-      width: 415px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      width: 420px;
     }
 
-    .years {
-      width: 480px;
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-    }
-
-    .months {
-      width: 480px;
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-    }
-
-    .days {
-      width: 480px;
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-    }
-
-    .titleYear {
-      font-size: 18px;
-      font-weight: 400;
-      line-height: 25px;
-      letter-spacing: -0.10000000149011612px;
-      text-align: left;
-
-      font-family: $font-family-base;
-      margin-right: 360px;
-    }
-
-    .titleMonth {
-      font-size: 18px;
-      font-weight: 400;
-      line-height: 25px;
-      letter-spacing: -0.10000000149011612px;
-      text-align: left;
-
-      font-family: $font-family-base;
-      margin-right: 360px;
-    }
-
-    /*.selected {
-      background-color: $--color-success-default;
-    
-      border-radius: 90px;
-      width: 45px;
-      height: 45px;
-      color: #fff;
-    
-    }*/
-
-    .dayWeek {
-      text-align: center;
-      padding-top: 8px;
-      padding-bottom: 8px;
-      color: #000000;
-      font-weight: 500;
-      margin-left: 13px;
-    }
-
-    .daysWeek {
-      display: grid;
-      grid-template-columns: repeat(7, 1fr);
-
-      width: 436px;
-    }
-    .selected {
-      border-radius: 30px;
-      width: 46px;
-      height: 46px;
-      margin-top: -5px;
-      margin-bottom: -6px;
+    .titleYearOrMonth {
+      margin-right: 386px;
     }
   }
 }
@@ -263,6 +54,7 @@
   height: auto;
   border-radius: 6px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  margin-bottom: 24px;
 }
 
 .content-calendar {
@@ -271,7 +63,7 @@
   align-items: center;
   justify-content: center;
   height: auto;
-  background: #fff;
+  background: $--color-default-white;
   border-radius: 6px;
   padding: 20px;
 }
@@ -284,29 +76,24 @@
   
   
 }*/
-.titleRange {
-  font-family: $font-family-base;
-  font-size: 18px;
-  font-weight: 400;
-  letter-spacing: -0.10000000149011612px;
-  text-align: left;
-}
+
 
 .selected {
-  background-color: $--color-success-default;
-
+  background-color: #00915A;
   border-radius: 40px;
   width: 45px;
   height: 45px;
-  color: #fff;
+  color: $--color-default-white;
+
 }
 
 .divider {
   width: 292px;
   border: 1px;
   color: $--color-neutral-light;
-  margin-top: 10px;
-  margin-bottom: 16px;
+  margin-top: 8px;
+  margin-bottom: 12px;
+
 }
 
 .header {
@@ -329,9 +116,10 @@
   width: 48px;
   height: 48px;
   cursor: pointer;
-  font-weight: 300;
+  font-family: $bnpp-sans-light;
+  font-weight: $font-weight-light;
   font-size: 18px;
-  line-height: 25px;
+  line-height: 25.2px;
   letter-spacing: -0.20000000298023224px;
   text-align: center;
   display: flex;
@@ -339,28 +127,28 @@
   justify-content: center;
   margin-bottom: 16px;
   margin-left: 20px;
+
 }
 
-.titleYear {
+.titleYearOrMonth {
   font-size: 18px;
-  font-weight: 400;
-  line-height: 25px;
+  font-weight: $font-weight-normal;
+  line-height: 25.2px;
   letter-spacing: -0.10000000149011612px;
   text-align: left;
 
-  font-family: $font-family-base;
+  font-family: $bnpp-sans;
   margin-right: 280px;
 }
 
-.titleMonth {
+
+.titleRange {
+  font-family: $bnpp-sans;
   font-size: 18px;
-  font-weight: 400;
-  line-height: 25px;
+  line-height: 25.2px;
+  font-weight: $font-weight-normal;
   letter-spacing: -0.10000000149011612px;
   text-align: left;
-
-  font-family: $font-family-base;
-  margin-right: 280px;
 }
 
 .months {
@@ -381,24 +169,24 @@
   text-align: center;
   margin: auto;
   cursor: pointer;
-  font-weight: 300;
-  border-radius: 50%;
-  transition: 0.2s;
-
-  // padding-top: -25px;
+  letter-spacing: -0.20000000298023224px;
+  font-weight: $font-weight-light;
+  line-height: 25.2px;
+  font-size: 18px;
   margin-bottom: 16px;
+  font-family: $bnpp-sans-light;
 }
 
 .other-month {
-  // background-color: #e0e0e0;
-  color: #888;
+
+  color: $--color-neutrals-border;
   cursor: not-allowed;
   pointer-events: none;
 }
 
 .next-month {
   // background-color: #f0f0f0;
-  color: #999;
+  color: $--color-neutrals-border;
   cursor: not-allowed;
   pointer-events: none;
 }
@@ -406,38 +194,41 @@
 .dayWeek {
   text-align: center;
   padding-top: 8px;
-  padding-bottom: 8px;
-  color: #000000;
+  font-weight: $font-weight-light;
+  color: $--color-default-black;
   font-weight: 300;
   font-size: 18px;
+  width: 40px;
+  height: 40px;
+  line-height: 25.2px;
+  font-family: $bnpp-sans-light;
 }
 
 .daysWeek {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-
   width: 320px;
   margin-top: -5px;
 }
+
 .day {
   width: 40px;
-  height: 35px;
+  height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   margin: auto;
   cursor: pointer;
-  font-weight: 300;
   border-radius: 50%;
   transition: 0.2s;
-
+  line-height: 25.2px;
   font-size: 18px;
-  // padding-top: -25px;
+  font-family: $bnpp-sans-light;
+  font-weight: $font-weight-light;
 }
 
-.day,
-.year,
-.month, .dayWeek {
-  font-family: $bnpp-sans-light;
+.buttonOptions {
+  background-color: $--color-default-white;
+  border: 0rem
 }
