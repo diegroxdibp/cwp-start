@@ -18,8 +18,8 @@ export class CalendarComponent {
   public calendar: { day: number; otherMonth: boolean }[] = [];
 
   step: number = 1;
-  startYear: number = new Date().getFullYear() - 50;
-  endYear: number = new Date().getFullYear() + 50;
+  startYear: number = new Date().getFullYear() - 60;
+  endYear: number = new Date().getFullYear() + 60;
   yearsPerPage: number = 12;
   rangeStartYear!: number;
   rangeEndYear!: number;
@@ -41,7 +41,6 @@ export class CalendarComponent {
     this.selectedYear = year;
     this.yearSelected.emit(year);
     this.currentYearSelected = year;
-    console.log(this.currentYearSelected);
     this.step = 2;
   }
 
@@ -50,9 +49,7 @@ export class CalendarComponent {
   getMonth(month: number): void {
     this.selectedMonth = month;
     // Emit the clicked day to the parent component
-    console.log(month);
     const monthSelected = this.listMonths.find((obj: { id: number }) => {
-      console.log(month);
       return obj.id === month;
     });
     this.nameMonthSelected = monthSelected.name;
@@ -69,18 +66,11 @@ export class CalendarComponent {
   }
   initializeCalendar(): void {
     const currentYear = new Date().getFullYear();
-    const currentBlockStart =
-      Math.floor(currentYear / this.yearsPerPage) * this.yearsPerPage;
 
     this.currentRange = this.displayYears(
-      currentBlockStart,
-      currentBlockStart + this.yearsPerPage - 1
+      currentYear - this.yearsPerPage + 1, // Adjust the start to include current year
+      currentYear
     );
-    console.log(
-      this.currentRange[0],
-      this.currentRange[this.currentRange.length - 1]
-    );
-    // this.selectedYear = currentYear;
   }
 
   displayYears(startYear: number, endYear: number): number[] {
@@ -89,37 +79,29 @@ export class CalendarComponent {
     this.rangeEndYear = endYear;
     for (let year = startYear; year <= endYear; year++) {
       years.push(year);
-      //console.log(year)
     }
     return years;
   }
   getFirstYear(): number {
-    //  console.log(this.currentRange[0])
     return this.currentRange[0];
   }
 
   getLastYear(): number {
-    //  console.log( this.currentRange[this.currentRange.length - 1])
     return this.currentRange[this.currentRange.length - 1];
   }
 
   getNextBlockYears() {
-    console.log('current range' + this.currentRange[0]);
     const newStartYear = Math.min(
       this.currentRange[0] + this.yearsPerPage,
       this.endYear - this.yearsPerPage + 1
     );
-    console.log(this.currentRange[0] + this.yearsPerPage);
-    console.log(this.rangeStartYear);
 
     const newEndYear = Math.min(
-      this.currentRange[0] + 2 * this.yearsPerPage - 1,
+      newStartYear + this.yearsPerPage - 1, // Limit the end year to a block of 12
       this.endYear
     );
 
     this.currentRange = this.displayYears(newStartYear, newEndYear);
-    console.log(this.currentRange);
-    console.log(this.currentRange);
   }
 
   getPreviousBlockYears() {
@@ -127,7 +109,12 @@ export class CalendarComponent {
       this.currentRange[0] - this.yearsPerPage,
       this.startYear
     );
-    const newEndYear = Math.max(this.currentRange[0] - 1, this.startYear - 1);
+
+    const newEndYear = Math.max(
+      newStartYear + this.yearsPerPage - 1, // Limit the end year to a block of 12
+      this.startYear
+    );
+
     this.currentRange = this.displayYears(newStartYear, newEndYear);
   }
   goBack(currentStep: number) {
@@ -136,7 +123,6 @@ export class CalendarComponent {
 
   generateCalendar(currentYear: number, currentMonth: number) {
     this.calendar = [];
-    console.log(currentYear, currentMonth);
     const firstDayOfMonth = new Date(currentYear, currentMonth, 1).getDay();
     const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
     const lastDayOfMonth = new Date(
@@ -152,7 +138,6 @@ export class CalendarComponent {
       0
     ).getDate();
     for (let i = firstDayOfMonth - 1; i >= 0; i--) {
-      console.log(daysInPreviousMonth);
       this.calendar.push({ day: daysInPreviousMonth - i, otherMonth: true });
     }
 

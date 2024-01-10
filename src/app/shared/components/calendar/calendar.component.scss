@@ -33,13 +33,10 @@
       font-weight: 300;
       border-radius: 50%;
       transition: 0.2s;
-    
-      font-size: 18px;
-     // padding-top: -25px;
 
-    
+      font-size: 18px;
+      // padding-top: -25px;
     }
- 
   }
 
   // Media query for desktops
@@ -50,7 +47,7 @@
       width: 35px;
       height: 20px;
       text-align: center;
-    
+
       padding-bottom: 8px;
       color: #000000;
       font-weight: 300;
@@ -70,13 +67,10 @@
       font-weight: 300;
       border-radius: 50%;
       transition: 0.2s;
-    
+
       font-size: 18px;
-     // padding-top: -25px;
-
-    
+      // padding-top: -25px;
     }
-
   }
   @media (min-width: $breakpoint-mmd) {
     padding: 40px 64px 64px 40px;
@@ -85,7 +79,7 @@
       width: 35px;
       height: 25px;
       text-align: center;
-    
+
       padding-bottom: 8px;
       color: #000000;
       font-weight: 300;
@@ -105,18 +99,14 @@
       font-weight: 300;
       border-radius: 50%;
       transition: 0.2s;
-    
-      font-size: 18px;
-     // padding-top: -25px;
 
-    
+      font-size: 18px;
+      // padding-top: -25px;
     }
-    
   }
 
   // Media query for large screens
   @media (min-width: $breakpoint-lg) {
-    
     margin: 0 auto;
     .month {
       font-weight: 300;
@@ -133,9 +123,8 @@
       margin-top: 16px;
       margin-bottom: 16px;
     }
-    
+
     .year {
-  
       width: 48px;
       height: 30px;
       cursor: pointer;
@@ -166,10 +155,10 @@
       transition: 0.2s;
       width: 14px;
       height: 10px;
-     // padding-top: -25px;
-     margin-bottom: 10px;
-     margin-top: 16px;
-     //margin-right: 21px;
+      // padding-top: -25px;
+      margin-bottom: 10px;
+      margin-top: 16px;
+      //margin-right: 21px;
     }
     .divider {
       width: 398px;
@@ -177,7 +166,6 @@
       color: $--color-neutral-light;
       margin-top: 10px;
       margin-bottom: 16px;
-
     }
 
     .header {
@@ -194,8 +182,6 @@
       justify-content: center;
       align-items: center;
       text-align: center;
-
-
     }
 
     .months {
@@ -205,25 +191,18 @@
       justify-content: center;
       align-items: center;
       text-align: center;
-
     }
 
     .days {
-
       width: 480px;
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       justify-content: center;
       align-items: center;
       text-align: center;
-
-
     }
 
-
-
     .titleYear {
-
       font-size: 18px;
       font-weight: 400;
       line-height: 25px;
@@ -235,7 +214,6 @@
     }
 
     .titleMonth {
-
       font-size: 18px;
       font-weight: 400;
       line-height: 25px;
@@ -268,14 +246,10 @@
     .daysWeek {
       display: grid;
       grid-template-columns: repeat(7, 1fr);
-      
+
       width: 436px;
-   
-     
     }
     .selected {
-      
-      
       border-radius: 30px;
       width: 46px;
       height: 46px;
@@ -286,11 +260,9 @@
 }
 
 .calendar {
-
   height: auto;
   border-radius: 6px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-
 }
 
 .content-calendar {
@@ -322,12 +294,11 @@
 
 .selected {
   background-color: $--color-success-default;
-  
+
   border-radius: 40px;
   width: 45px;
   height: 45px;
   color: #fff;
-
 }
 
 .divider {
@@ -336,7 +307,6 @@
   color: $--color-neutral-light;
   margin-top: 10px;
   margin-bottom: 16px;
-
 }
 
 .header {
@@ -353,8 +323,6 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-
-
 }
 
 .year {
@@ -371,11 +339,9 @@
   justify-content: center;
   margin-bottom: 16px;
   margin-left: 20px;
-  
 }
 
 .titleYear {
-
   font-size: 18px;
   font-weight: 400;
   line-height: 25px;
@@ -404,7 +370,6 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-
 }
 
 .month {
@@ -423,9 +388,6 @@
   // padding-top: -25px;
   margin-bottom: 16px;
 }
-
-
-
 
 .other-month {
   // background-color: #e0e0e0;
@@ -453,10 +415,9 @@
 .daysWeek {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  
+
   width: 320px;
   margin-top: -5px;
-
 }
 .day {
   width: 40px;
@@ -472,6 +433,11 @@
   transition: 0.2s;
 
   font-size: 18px;
- // padding-top: -25px;
+  // padding-top: -25px;
+}
 
+.day,
+.year,
+.month, .dayWeek {
+  font-family: $bnpp-sans-light;
 }

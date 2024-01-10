@@ -6,11 +6,21 @@
         <span class="asterisk" [ngClass]="{error:CwpFormService.CWPForm.get('personalData.birthDate')?.errors?.['required'] && CwpFormService.isSubmited.value || less18Years == true}">*</span>Gerburtsdatum
       </h1>
       <div class="input">
-        <input id="birthDate" (input)="getValue()" class="input-field" type="text" name="birthDate"
-          placeholder="{{ day }}.{{ month }}.{{ year }}" mask="d0.M0.0000"
-          [formControl]="CwpFormService.birthDateControl"
-          [ngClass]="{success:CwpFormService.CWPForm.get('personalData.birthDate')?.valid && this.CwpFlowService.ageLessThen18Years.value &&  less18Years == false,
-           error:CwpFormService.CWPForm.get('personalData.birthDate')?.errors?.['required'] && CwpFormService.isSubmited.value || less18Years == true}" />
+        <input
+        id="birthDate"
+        (input)="onInputChange($event)"
+        class="input-field"
+        type="text"
+        name="birthDate"
+        placeholder="{{ day }}.{{ month }}.{{ year }}"
+        [formControl]="CwpFormService.birthDateControl"
+        [ngClass]="{
+          success: CwpFormService.CWPForm.get('personalData.birthDate')?.valid && CwpFlowService.ageLessThen18Years.value && less18Years == false,
+          error: CwpFormService.CWPForm.get('personalData.birthDate')?.errors?.['required'] && CwpFormService.isSubmited.value || less18Years == true
+        }"
+      />
+      
+
         <i-tabler style="margin-right: 34px"
           *ngIf="less18Years == true || CwpFormService.CWPForm.get('personalData.birthDate')?.errors?.['required'] && CwpFormService.isSubmited.value"
           name="exclamation-circle" class="icon-exclamation"></i-tabler>
