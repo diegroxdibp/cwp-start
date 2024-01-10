@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Output, Input, OnInit, SimpleChanges, OnChanges } from '@angular/core';
 import data from 'src/assets/months';
 
 @Component({
@@ -6,10 +6,12 @@ import data from 'src/assets/months';
   templateUrl: './calendar.component.html',
   styleUrls: ['./calendar.component.scss'],
 })
-export class CalendarComponent {
+export class CalendarComponent implements OnInit, OnChanges {
   @Output() yearSelected: EventEmitter<number> = new EventEmitter<number>();
   @Output() monthSelected: EventEmitter<number> = new EventEmitter<number>();
   @Output() daySelected: EventEmitter<number> = new EventEmitter<number>();
+  @Input() dateSelectionOptions: 'past' | 'future' | 'both' = 'both';
+  
 
   selectedYear: number | null = null;
   selectedMonth: number | null = null;
@@ -30,10 +32,48 @@ export class CalendarComponent {
   currentYearSelected!: number;
   currentMonthSelected!: number;
 
-  constructor() {
+  showPreviousButton: boolean = true;
+  showNextButton: boolean = true;
+
+  constructor() {}
+
+  ngOnInit() {
     this.initializeCalendar();
     this.getFirstYear();
     this.getLastYear();
+    this.updateNavigationButtonsVisibility();
+    console.log(this.dateSelectionOptions)
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if ('dateSelectionOptions' in changes) {
+      this.updateNavigationButtonsVisibility();
+    }
+  }
+
+  updateNavigationButtonsVisibility() {
+    const isFirstBlock = this.currentRange[0] === this.startYear;
+    const isLastBlock = this.currentRange[this.currentRange.length - 1] === this.endYear;
+  
+    switch (this.dateSelectionOptions) {
+      case 'past':
+        this.showPreviousButton = !isFirstBlock;
+        this.showNextButton = !isLastBlock;
+        break;
+      case 'future':
+        this.showPreviousButton = !isFirstBlock;
+        this.showNextButton = isLastBlock;
+        break;
+      case 'both':
+        this.showPreviousButton = !isFirstBlock;
+        this.showNextButton = !isLastBlock;
+        break;
+      default:
+        // Default to showing both buttons if the option is not recognized
+        this.showPreviousButton = true;
+        this.showNextButton = true;
+        break;
+    }
   }
 
   getYear(year: number): void {
@@ -60,10 +100,12 @@ export class CalendarComponent {
     this.generateCalendar(this.currentYearSelected, month - 1);
     this.step = 3;
   }
+
   getDay(day: number) {
     this.selectedDay = day;
     this.daySelected.emit(day);
   }
+
   initializeCalendar(): void {
     const currentYear = new Date().getFullYear();
 
@@ -82,6 +124,7 @@ export class CalendarComponent {
     }
     return years;
   }
+
   getFirstYear(): number {
     return this.currentRange[0];
   }
@@ -102,6 +145,7 @@ export class CalendarComponent {
     );
 
     this.currentRange = this.displayYears(newStartYear, newEndYear);
+    this.updateNavigationButtonsVisibility();
   }
 
   getPreviousBlockYears() {
@@ -116,7 +160,9 @@ export class CalendarComponent {
     );
 
     this.currentRange = this.displayYears(newStartYear, newEndYear);
+    this.updateNavigationButtonsVisibility();
   }
+
   goBack(currentStep: number) {
     this.step = currentStep - 1;
   }

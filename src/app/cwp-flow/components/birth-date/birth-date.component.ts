@@ -35,7 +35,6 @@ export class BirthDateComponent {
   updateFormControl() {
     this.concatenatedValue = `${this.day}.${this.month}.${this.year}`;
 
-    console.log(this.concatenatedValue);
     this.CwpFormService.CWPForm.get('personalData.birthDate')?.setValue(
       this.concatenatedValue
     );

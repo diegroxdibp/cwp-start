@@ -2,13 +2,13 @@
   <div *ngIf="step === 1" class="content-calendar">
     <div class="header">
       <div>
-        <button class="buttonOptions" (click)="getPreviousBlockYears()">
+        <button class="buttonOptions" (click)="getPreviousBlockYears()" *ngIf="showPreviousButton">
           <i-tabler name="chevrons-left"></i-tabler>
         </button>
       </div>
       <div class="titleRange">{{ rangeStartYear }}-{{ rangeEndYear }}</div>
       <div>
-        <button class="buttonOptions" (click)="getNextBlockYears()">
+        <button class="buttonOptions" (click)="getNextBlockYears()" *ngIf="showNextButton">
           <i-tabler name="chevrons-right"></i-tabler>
         </button>
       </div>

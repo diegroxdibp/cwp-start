@@ -11,27 +11,27 @@
       </h1>
       <div class="input">
         <input
-        id="birthDate"
-        (input)="onInputChange($event)"
-        class="input-field"
-        type="text"
-        name="birthDate"
-        placeholder="{{ day }}.{{ month }}.{{ year }}"
-        [formControl]="CwpFormService.birthDateControl"
-        [ngClass]="{
+          id="birthDate"
+          (input)="onInputChange($event)"
+          class="input-field"
+          type="text"
+          name="birthDate"
+          placeholder="{{ day }}.{{ month }}.{{ year }}"
+          [formControl]="CwpFormService.birthDateControl"
+          [ngClass]="{
           success: CwpFormService.CWPForm.get('personalData.birthDate')?.valid && CwpFlowService.ageLessThen18Years.value && less18Years == false,
           error: CwpFormService.CWPForm.get('personalData.birthDate')?.errors?.['required'] && CwpFormService.isSubmited.value || less18Years == true
         }"
-      />
-      
+        />
 
-        <i-tabler style="margin-right: 34px"
+        <i-tabler
+          style="margin: 17px 34px 0 0"
           *ngIf="less18Years == true || CwpFormService.CWPForm.get('personalData.birthDate')?.errors?.['required'] && CwpFormService.isSubmited.value"
           name="exclamation-circle"
           class="icon-exclamation"
         ></i-tabler>
         <i-tabler
-          style="margin-right: 34px"
+          style="margin: 17px 34px 0 0"
           *ngIf="
             CwpFormService.CWPForm.get('personalData.birthDate')?.valid &&
             less18Years == false
@@ -50,6 +50,7 @@
             (yearSelected)="getYear($event)"
             (monthSelected)="getMonth($event)"
             (daySelected)="getDay($event)"
+            [dateSelectionOptions]="'past'"
           ></app-calendar>
         </div>
       </div>
