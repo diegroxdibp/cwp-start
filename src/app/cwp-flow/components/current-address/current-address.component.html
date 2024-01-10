@@ -19,13 +19,17 @@
       <span class="asterisk" [ngClass]="{error:CwpFormService.CWPForm.get('contactDetails.city')?.errors?.['required'] 
       && CwpFormService.isSubmited.value}">*</span>Ort
     </h1>
-
+<div class="input-large-screens">
     <app-input id="city" typeInput="text" name="city" [control]="CwpFormService.cityControl"
       message="Geben Sie den Ort an, an dem sich diese Adresse befindet." [isSubmited]="CwpFormService.isSubmited.value"
       [msgSuccess]="CwpFormService.CWPForm.get('contactDetails.city')?.valid"
       [msgError]="CwpFormService.CWPForm.get('contactDetails.city')?.errors?.['required']"
       errorMessage="Bitte überprüfen Sie die Ortsangabe."></app-input>
+      
+</div>
+<div style="width: 600px;">
     <div class="input-field-street" style="margin-top: -5px">
+
       <h1 style="display: inline-block; margin-right: 70px" class="label">
         <span class="asterisk" [ngClass]="{error:CwpFormService.CWPForm.get('contactDetails.street')?.errors?.['required'] 
         && CwpFormService.isSubmited.value}">*</span>Straße
@@ -45,6 +49,7 @@
           CwpFormService.CWPForm.get('contactDetails.doorNumber')?.valid
         " [msgError]="CwpFormService.CWPForm.get('contactDetails.doorNumber')?.errors?.['required']"></app-input>
     </div>
+
     <div *ngIf="
         !CwpFormService.isSubmited.value ||
         (CwpFormService.CWPForm.get('contactDetails.street')?.valid &&
@@ -62,7 +67,7 @@
         Bitte überprüfen Sie die Adresse (z. B. Musterstraße 123).
       </p>
     </div>
-
+  </div>
     <h1 style="display: inline-block" class="label">
       <span class="asterisk" [ngClass]="{error:CwpFormService.CWPForm.get('contactDetails.residentDateSince')?.errors?.['required'] 
         && CwpFormService.isSubmited.value || less2Years == true}">*</span>Wohnhaft seit:

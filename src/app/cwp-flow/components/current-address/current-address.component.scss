@@ -54,25 +54,28 @@
 }
   // Media query for large screens
   @media (min-width: $breakpoint-lg) {
-    padding: 40px 64px 64px 40px;
+   
     margin: 0;
     .input-field-street {
       display: inline-block;
       //width: 359px;
-      width: 79%;
+      width: 476px;
     }
     .input-field-doorNumber {
       display: inline-block;
-      //width: 80px;
-      width: calc(20% - 4px);
+      width: 96px;
+      //width: calc(20% - 4px);
  
+    }
+    .input-large-screens{
+      width: 580px;
     }
     
   }
 }
 .input-field-street {
   display: inline-block;
-  width: 72.5%;
+  width: 90.5%;
 
 }
 .input-field-doorNumber {

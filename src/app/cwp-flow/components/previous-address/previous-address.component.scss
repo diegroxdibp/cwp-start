@@ -59,15 +59,17 @@
     .input-field-street {
       display: inline-block;
       //width: 359px;
-      width: 79%;
+      width: 476px;
     }
     .input-field-doorNumber {
       display: inline-block;
-      //width: 80px;
-      width: calc(20% - 4px);
+      width: 96px;
+      //width: calc(20% - 4px);
  
     }
-    
+    .input-large-screens{
+      width: 580px;
+    }
   }
 }
 .input-field-street {

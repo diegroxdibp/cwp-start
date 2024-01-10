@@ -21,6 +21,9 @@
   @media (min-width: $breakpoint-lg) {
     padding: 40px 64px 64px 40px;
     margin: 0;
+    .input-large-screens{
+      width: 580px;
+    }
   }
 }
 
