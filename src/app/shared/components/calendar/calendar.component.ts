@@ -1,4 +1,12 @@
-import { Component, EventEmitter, Output, Input, OnInit, SimpleChanges, OnChanges } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Output,
+  Input,
+  OnInit,
+  SimpleChanges,
+  OnChanges,
+} from '@angular/core';
 import data from 'src/assets/months';
 
 @Component({
@@ -11,7 +19,6 @@ export class CalendarComponent implements OnInit, OnChanges {
   @Output() monthSelected: EventEmitter<number> = new EventEmitter<number>();
   @Output() daySelected: EventEmitter<number> = new EventEmitter<number>();
   @Input() dateSelectionOptions: 'past' | 'future' | 'both' = 'both';
-  
 
   selectedYear: number | null = null;
   selectedMonth: number | null = null;
@@ -35,6 +42,8 @@ export class CalendarComponent implements OnInit, OnChanges {
   showPreviousButton: boolean = true;
   showNextButton: boolean = true;
 
+  nameMonthSelected: string = '';
+
   constructor() {}
 
   ngOnInit() {
@@ -42,7 +51,7 @@ export class CalendarComponent implements OnInit, OnChanges {
     this.getFirstYear();
     this.getLastYear();
     this.updateNavigationButtonsVisibility();
-    console.log(this.dateSelectionOptions)
+    console.log(this.dateSelectionOptions);
   }
 
   ngOnChanges(changes: SimpleChanges): void {
@@ -52,9 +61,21 @@ export class CalendarComponent implements OnInit, OnChanges {
   }
 
   updateNavigationButtonsVisibility() {
+    const currentYear = new Date().getFullYear();
     const isFirstBlock = this.currentRange[0] === this.startYear;
-    const isLastBlock = this.currentRange[this.currentRange.length - 1] === this.endYear;
-  
+    const isLastBlock =
+      this.currentRange[this.currentRange.length - 1] === this.endYear;
+    const isPresentBlock =
+      this.currentRange[0] <= this.startYear + this.yearsPerPage;
+    console.log('End year » ', this.endYear);
+    console.log('currentRange » ', this.currentRange, isPresentBlock);
+    console.log(
+      this.currentRange[this.currentRange.length - 1],
+      this.currentRange[0],
+      'calc > ',
+      this.currentRange[this.currentRange.length - 1] - this.currentRange[0] ===
+        11
+    );
     switch (this.dateSelectionOptions) {
       case 'past':
         this.showPreviousButton = !isFirstBlock;
@@ -83,8 +104,6 @@ export class CalendarComponent implements OnInit, OnChanges {
     this.currentYearSelected = year;
     this.step = 2;
   }
-
-  nameMonthSelected: string = '';
 
   getMonth(month: number): void {
     this.selectedMonth = month;

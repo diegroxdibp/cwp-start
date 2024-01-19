@@ -375,10 +375,55 @@ export class CwpFormControlService {
           this.isSubmited.next(false);
           return true;
         }
-        case this.CwpFlowService.CWPFlowStepActive.value ===
+
+      case this.CwpFlowService.CWPFlowStepActive.value ===
+        this.CwpFlowService.CWPFlowStepsSequence.personalData_maritalStatusPage:
+        this.isSubmited.next(true);
+        if (this.personalDataControl.controls['maritalStatus'].invalid) {
+          console.log('2');
+          return false;
+        } else {
+          this.isSubmited.next(false);
+          return true;
+        }
+
+      case this.CwpFlowService.CWPFlowStepActive.value ===
         this.CwpFlowService.CWPFlowStepsSequence.personalData_birthDatePage:
         this.isSubmited.next(true);
         if (this.personalDataControl.controls['birthDate'].invalid) {
+          return false;
+        } else {
+          this.isSubmited.next(false);
+          return true;
+        }
+
+      case this.CwpFlowService.CWPFlowStepActive.value ===
+        this.CwpFlowService.CWPFlowStepsSequence
+          .contactDetails_addressCurrentPage:
+        this.isSubmited.next(true);
+        if (
+          this.contactDetailsControl.controls['zipCode'].invalid ||
+          this.contactDetailsControl.controls['city'].invalid ||
+          this.contactDetailsControl.controls['street'].invalid ||
+          this.contactDetailsControl.controls['doorNumber'].invalid ||
+          this.contactDetailsControl.controls['residentDateSince'].invalid
+        ) {
+          console.log('2');
+          return false;
+        } else {
+          this.isSubmited.next(false);
+          return true;
+        }
+      case this.CwpFlowService.CWPFlowStepActive.value ===
+        this.CwpFlowService.CWPFlowStepsSequence
+          .contactDetails_addressPreviousPage:
+        this.isSubmited.next(true);
+        if (
+          this.contactDetailsControl.controls['previousZipCode'].invalid ||
+          this.contactDetailsControl.controls['previousCity'].invalid ||
+          this.contactDetailsControl.controls['previousStreet'].invalid ||
+          this.contactDetailsControl.controls['previousDoorNumber'].invalid
+        ) {
           console.log('2');
           return false;
         } else {

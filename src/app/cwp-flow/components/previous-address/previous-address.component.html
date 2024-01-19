@@ -1,4 +1,3 @@
-<app-navigation-buttons [buttonType]="CwpFlowService.CWPFlowNavigationButtons.back"></app-navigation-buttons>
 <div class="content">
   <h1 class="title">Wie lautet Ihre aktuelle Adresse?</h1>
   <p class="subtitle">
@@ -6,69 +5,73 @@
   </p>
   <div class="introText">
     <h1 class="label">
-      <span class="asterisk" [ngClass]="{error:CwpFormService.CWPForm.get('contactDetails.previousZipCode')?.errors?.['required'] 
+      <span class="asterisk" [ngClass]="{error:CwpFormService.CWPForm.get('contactDetails.previousZipCode')?.errors?.['required']
       && CwpFormService.isSubmited.value}">*</span>Postleitzahl
     </h1>
-
+ 
     <app-input id="previousZipCode" typeInput="number" name="previousZipCode"
       [control]="CwpFormService.previousZipCodeControl" message="Geben Sie die PLZ an (z. B. 12345)."
       [isSubmited]="CwpFormService.isSubmited.value" [msgSuccess]="
         CwpFormService.CWPForm.get('contactDetails.previousZipCode')?.valid
       " [msgError]="CwpFormService.CWPForm.get('contactDetails.previousZipCode')?.errors?.['required']"
       errorMessage="Bitte überprüfen Sie die PLZ (z. B. 12345)."></app-input>
-
+ 
     <h1 class="label">
-      <span class="asterisk" [ngClass]="{error:CwpFormService.CWPForm.get('contactDetails.previousCity')?.errors?.['required'] 
+      <span class="asterisk" [ngClass]="{error:CwpFormService.CWPForm.get('contactDetails.previousCity')?.errors?.['required']
         && CwpFormService.isSubmited.value}">*</span>Ort
     </h1>
     <div class="input-large-screens">
-    <app-input id="previousCity" typeInput="text" name="previousCity" [control]="CwpFormService.previousCityControl"
-      message="Geben Sie Ihren Geburtsnamen an, falls dieser abweicht." [isSubmited]="CwpFormService.isSubmited.value"
-      [msgSuccess]="
-        CwpFormService.CWPForm.get('contactDetails.previousCity')?.valid
-      " [msgError]="CwpFormService.CWPForm.get('contactDetails.previousCity')?.errors?.['required']"
-      errorMessage="Bitte überprüfen Sie die Ortsangabe."></app-input>
-      </div>
-      <div style="width: 600px;">  
+      <app-input id="previousCity" typeInput="text" name="previousCity" [control]="CwpFormService.previousCityControl"
+        message="Geben Sie Ihren Geburtsnamen an, falls dieser abweicht." [isSubmited]="CwpFormService.isSubmited.value"
+        [msgSuccess]="
+          CwpFormService.CWPForm.get('contactDetails.previousCity')?.valid
+        " [msgError]="CwpFormService.CWPForm.get('contactDetails.previousCity')?.errors?.['required']"
+        errorMessage="Bitte überprüfen Sie die Ortsangabe."></app-input>
+    </div>
+    <div class="door-street">
       <div class="input-field-street" style="margin-top: -5px">
         <h1 style="display: inline-block; margin-right: 70px" class="label">
-          <span class="asterisk" [ngClass]="{error:CwpFormService.CWPForm.get('contactDetails.previousStreet')?.errors?.['required'] 
-        && CwpFormService.isSubmited.value}">*</span>Straße
+          <span class="asterisk"
+            [ngClass]="{error:CwpFormService.CWPForm.get('contactDetails.previousStreet')?.errors?.['required'] &&  CwpFormService.isSubmited.value}">*</span>Straße
         </h1>
         <app-input id="previousStreet" typeInput="text" name="previousStreet"
           [control]="CwpFormService.previousStreetControl" [isSubmited]="CwpFormService.isSubmited.value" [msgSuccess]="
-          CwpFormService.CWPForm.get('contactDetails.previousStreet')?.valid
-        " [msgError]="CwpFormService.CWPForm.get('contactDetails.previousStreet')?.errors?.['required']"></app-input>
+            CwpFormService.CWPForm.get('contactDetails.previousStreet')?.valid
+          " [msgError]="CwpFormService.CWPForm.get('contactDetails.previousStreet')?.errors?.['required']"></app-input>
       </div>
       <div class="input-field-doorNumber" style="margin-top: -5px">
         <h1 style="display: inline-block" class="label">
-          <span class="asterisk" [ngClass]="{error:CwpFormService.CWPForm.get('contactDetails.previousDoorNumber')?.errors?.['required'] 
-        && CwpFormService.isSubmited.value}">*</span>Nr.
+          <span class="asterisk" [ngClass]="{error:CwpFormService.CWPForm.get('contactDetails.previousDoorNumber')?.errors?.['required']
+          && CwpFormService.isSubmited.value}">*</span>Nr.
         </h1>
         <app-input id="previousDoorNumber" typeInput="number" name="previousDoorNumber"
           [control]="CwpFormService.previousDoorNumberControl" [isSubmited]="CwpFormService.isSubmited.value"
           [msgSuccess]="
-          CwpFormService.CWPForm.get('contactDetails.previousDoorNumber')?.valid
-        "
+            CwpFormService.CWPForm.get('contactDetails.previousDoorNumber')
+              ?.valid
+          "
           [msgError]="CwpFormService.CWPForm.get('contactDetails.previousDoorNumber')?.errors?.['required']"></app-input>
+ 
       </div>
+    </div>
       <div style="margin-top: -25px" *ngIf="
-        !CwpFormService.isSubmited.value ||
-        (CwpFormService.CWPForm.get('contactDetails.previousStreet')?.valid &&
-          CwpFormService.CWPForm.get('contactDetails.previousDoorNumber')?.valid &&
-          CwpFormService.isSubmited.value)
-      ">
+          !CwpFormService.isSubmited.value ||
+          (CwpFormService.CWPForm.get('contactDetails.previousStreet')?.valid &&
+            CwpFormService.CWPForm.get('contactDetails.previousDoorNumber')
+              ?.valid &&
+            CwpFormService.isSubmited.value)
+        ">
         <p class="description">
           Geben Sie die vollständige Adresse an (z. B. Musterstraße 123).
         </p>
       </div>
-      <div style="margin-top: -25px"
+      <div style="margin-top:-80px"
         *ngIf="(CwpFormService.CWPForm.get('contactDetails.previousStreet')?.errors?.['required'] && CwpFormService.isSubmited.value )||
   (CwpFormService.CWPForm.get('contactDetails.previousDoorNumber')?.errors?.['required'] && CwpFormService.isSubmited.value )">
         <p class="validation">
           Bitte überprüfen Sie die Adresse (z. B. Musterstraße 123).
         </p>
       </div>
-    </div>
+ 
   </div>
-  </div>
+</div>

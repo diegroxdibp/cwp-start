@@ -47,47 +47,48 @@ body {
 }
 
 .description {
-  font-family: $bnpp-sans-light;
+  font-family: $font-family-base;
   color: $--color-default-black;
   font-size: 16px;
   font-style: normal;
   font-weight: 300;
-  line-height: 150%; /* 24px */
+ 
   letter-spacing: -0.15px;
-
+ 
   margin-bottom: 24px;
-
+ 
   @media (min-width: $breakpoint-sm) {
-    font-size: 21px;
+    font-size: 16px;
   }
-
+ 
   // Media query for desktops
   @media (min-width: $breakpoint-md) {
   }
-
+ 
   // Media query for large screens
   @media (min-width: $breakpoint-lg) {
   }
 }
-
+ 
 .tip {
-  font-family: $bnpp-sans-light;
+  font-family: $font-family-base;
   color: $--color-default-black;
   font-size: 16px;
   font-style: normal;
   font-weight: 300;
   line-height: 150%; /* 24px */
   letter-spacing: -0.15px;
-
+ 
   margin-bottom: 24px;
-
+ 
   @media (min-width: $breakpoint-sm) {
+    font-size: 16px;
   }
-
+ 
   // Media query for desktops
   @media (min-width: $breakpoint-md) {
   }
-
+ 
   // Media query for large screens
   @media (min-width: $breakpoint-lg) {
   }
@@ -225,6 +226,7 @@ body {
 
 .validation {
   // width: 327px;
+  font-family: $bnpp-sans-light;
   height: 48px;
   font-size: 16px;
   font-weight: 300;
@@ -232,7 +234,6 @@ body {
   letter-spacing: -0.15000000596046448px;
   text-align: left;
   color: $--color-error-default;
-  font-family: $font-family-base;
 }
 
 .circle-check {

@@ -1,6 +1,6 @@
 @import "/src/app/styles/variables";
 @import "/src/app/styles/palette";
-
+ 
 :host {
   display: flex;
   flex-direction: column;
@@ -11,28 +11,34 @@
     //padding: 32px 0 0 0;
     .input-field-street {
       display: inline-block;
-      width: 73%; // Ajuste para ocupar 100% da largura na tela pequena
+      width: 65%; // Ajuste para ocupar 100% da largura na tela pequena
     }
-
+ 
     .input-field-doorNumber {
       display: inline-block;
       //width: 81px;
-      width: calc(26% - 4px); // Ajuste para 50% da largura na tela pequena, considerando a margem
+      width: calc(24% - 4px); // Ajuste para 50% da largura na tela pequena, considerando a margem
+    }
+    .door-street{
+      width: 500px;
     }
   }
-
+ 
   // Media query for desktops
   @media (min-width: $breakpoint-md) {
     max-width: 448px;
     margin: 0 auto;
     .input-field-street {
       display: inline-block;
-      width: 77.5%; // Reset para a largura original
+      width: 65%; // Reset para a largura original
     }
-
+ 
     .input-field-doorNumber {
       display: inline-block;
       width: calc(25% - 4px); // Reset para a largura original
+    }
+    .door-street{
+      width: 500px;
     }
   }
  // Media query for large screens
@@ -42,24 +48,26 @@
   .input-field-street {
     display: inline-block;
     //width: 359px;
-    width: 76%;
+    width: 65%;
   }
   .input-field-doorNumber {
     display: inline-block;
     //width: 80px;
     width: calc(22.5% - 4px);
-
+ 
   }
-  
+  .door-street{
+    width: 500px;
+  }
 }
   // Media query for large screens
   @media (min-width: $breakpoint-lg) {
-    padding: 40px 64px 64px 40px;
+   
     margin: 0;
     .input-field-street {
       display: inline-block;
-      //width: 359px;
       width: 476px;
+      //width: 476px;
     }
     .input-field-doorNumber {
       display: inline-block;
@@ -70,17 +78,21 @@
     .input-large-screens{
       width: 580px;
     }
+    .door-street{
+      width: 600px;
+    }
+   
   }
 }
 .input-field-street {
   display: inline-block;
-  width: 72.5%;
-
+  width: 58%;
+ 
 }
 .input-field-doorNumber {
   display: inline-block;
-  width: calc(26% - 4px);
-  margin-left:8px
+  width: calc(22% - 4px);
+  margin-left:8px;
 }
 .subtitle{
 font-family: $font-family-base;
@@ -89,4 +101,8 @@ font-weight: 300;
 line-height: 27px;
 letter-spacing: -0.001em;
 text-align: left;
+}
+ 
+.door-street{
+  width: 400px;
 }
