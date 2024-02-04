@@ -23,6 +23,7 @@ import { EmployeeComponent } from './components/employee/employee.component';
 import { SelfEmployedComponent } from './components/self-employed/self-employed.component';
 import { ExecutiveComponent } from './components/executive/executive.component';
 import { OtherComponent } from './components/other/other.component';
+import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,15 @@ import { OtherComponent } from './components/other/other.component';
     ExecutiveComponent,
     OtherComponent,
   ],
-  imports: [CommonModule, SharedModule, FormsModule, ReactiveFormsModule],
+  imports: [
+    CommonModule,
+    SharedModule,
+    FormsModule,
+    ReactiveFormsModule,
+    NgxMaskDirective,
+    NgxMaskPipe,
+  ],
   exports: [CwpFlowComponent],
+  providers: [provideNgxMask()],
 })
 export class CwpFlowModule {}

@@ -20,18 +20,15 @@
     .titleYearOrMonth {
       margin-right: 386px;
     }
-
   }
 
   // Media query for desktops
   @media (min-width: $breakpoint-md) {
     max-width: 448px;
-
   }
 
   @media (min-width: $breakpoint-mmd) {
     max-width: 448px;
-
   }
 
   // Media query for large screens
@@ -77,14 +74,12 @@
   
 }*/
 
-
 .selected {
-  background-color: #00915A;
+  background-color: #00915a;
   border-radius: 40px;
   width: 45px;
   height: 45px;
   color: $--color-default-white;
-
 }
 
 .divider {
@@ -93,14 +88,14 @@
   color: $--color-neutral-light;
   margin-top: 8px;
   margin-bottom: 12px;
-
 }
 
 .header {
   width: 314px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr; /* Three columns with equal width */
+  gap: 10px; /* Adjust the gap as needed */
+  align-items: center; /* Center items vertically */
 }
 
 .years {
@@ -127,7 +122,6 @@
   justify-content: center;
   margin-bottom: 16px;
   margin-left: 20px;
-
 }
 
 .titleYearOrMonth {
@@ -141,7 +135,6 @@
   margin-right: 280px;
 }
 
-
 .titleRange {
   font-family: $bnpp-sans;
   font-size: 18px;
@@ -149,6 +142,11 @@
   font-weight: $font-weight-normal;
   letter-spacing: -0.10000000149011612px;
   text-align: left;
+
+}
+
+.header-arrow:last-child {
+  justify-self: end;
 }
 
 .months {
@@ -178,7 +176,6 @@
 }
 
 .other-month {
-
   color: $--color-neutrals-border;
   cursor: not-allowed;
   pointer-events: none;
@@ -230,5 +227,5 @@
 
 .buttonOptions {
   background-color: $--color-default-white;
-  border: 0rem
+  border: 0rem;
 }

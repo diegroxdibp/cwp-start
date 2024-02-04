@@ -27,18 +27,19 @@ import { InputComponent } from './components/input/input.component';
 import { CalendarComponent } from './components/calendar/calendar.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CheckboxComponent } from './components/checkbox/checkbox.component';
+import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
 
 const icons = {
   IconCircleCheck,
   IconExclamationCircle,
-  IconCalendar, 
+  IconCalendar,
   IconChevronUp,
   IconChevronDown,
   IconChevronLeft,
   IconChevronRight,
   IconChevronsLeft,
   IconChevronsRight,
-  IconCheck
+  IconCheck,
 };
 @NgModule({
   declarations: [
@@ -61,6 +62,8 @@ const icons = {
     TablerIconsModule.pick(icons),
     FormsModule,
     ReactiveFormsModule,
+    NgxMaskDirective,
+    NgxMaskPipe,
   ],
   exports: [
     ArrowComponent,
@@ -73,5 +76,6 @@ const icons = {
     InputComponent,
     CalendarComponent,
   ],
+  providers: [provideNgxMask()],
 })
 export class SharedModule {}

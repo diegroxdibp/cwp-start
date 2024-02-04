@@ -294,8 +294,6 @@ export class CwpFormControlService {
       return;
     }
     console.log(this.CWPForm.value);*/
-
-    console.log(this.CWPForm.value);
   }
   /*
   validation() {

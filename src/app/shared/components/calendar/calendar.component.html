@@ -1,14 +1,22 @@
 <div class="calendar">
   <div *ngIf="step === 1" class="content-calendar">
     <div class="header">
-      <div>
-        <button class="buttonOptions" (click)="getPreviousBlockYears()" *ngIf="showPreviousButton">
+      <div class="header-arrow">
+        <button
+          class="buttonOptions"
+          (click)="getPreviousBlockYears()"
+          *ngIf="showPreviousButton"
+        >
           <i-tabler name="chevrons-left"></i-tabler>
         </button>
       </div>
       <div class="titleRange">{{ rangeStartYear }}-{{ rangeEndYear }}</div>
-      <div>
-        <button class="buttonOptions" (click)="getNextBlockYears()" *ngIf="showNextButton">
+      <div class="header-arrow">
+        <button
+          class="buttonOptions"
+          (click)="getNextBlockYears()"
+          *ngIf="showNextButton"
+        >
           <i-tabler name="chevrons-right"></i-tabler>
         </button>
       </div>
@@ -17,8 +25,12 @@
       <hr />
     </div>
     <div class="years">
-      <li (click)="getYear(year)" class="year" *ngFor="let year of currentRange"
-        [ngClass]="{ selected: year === selectedYear }">
+      <li
+        (click)="getYear(year)"
+        class="year"
+        *ngFor="let year of currentRange"
+        [ngClass]="{ selected: year === selectedYear }"
+      >
         {{ year }}
       </li>
     </div>
@@ -36,8 +48,21 @@
       <hr />
     </div>
     <div class="months">
-      <li (click)="getMonth(listMonths.id)" class="month" *ngFor="let listMonths of listMonths"
-        [ngClass]="{ selected: listMonths.id === selectedMonth }">
+      <li
+        (click)="getMonth(listMonths.id)"
+        class="month"
+        *ngFor="let listMonths of listMonths"
+        [ngClass]="{
+          selected: listMonths.id === selectedMonth,
+          'other-month':
+            (listMonths.value + 1 > currentMonth &&
+              dateSelectionOptions === 'past' &&
+              selectedYear === currentYear) ||
+            (listMonths.value + 1 < currentMonth &&
+              dateSelectionOptions === 'future' &&
+              selectedYear === currentYear)
+        }"
+      >
         {{ listMonths.acronym }}
       </li>
     </div>
@@ -59,10 +84,15 @@
         <div class="dayWeek" *ngFor="let weeks of dayWeek">{{ weeks }}</div>
       </div>
       <div class="daysWeek">
-        <li class="day" (click)="getDay(day.day)" *ngFor="let day of calendar" [ngClass]="{
+        <li
+          class="day"
+          (click)="getDay(day.day)"
+          *ngFor="let day of calendar"
+          [ngClass]="{
             'other-month': day.otherMonth,
             selected: day.day === selectedDay && !day.otherMonth
-          }">
+          }"
+        >
           {{ day.day }}
         </li>
       </div>

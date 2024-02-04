@@ -25,24 +25,26 @@ export class CalendarComponent implements OnInit, OnChanges {
   selectedDay: number | null = null;
 
   public calendar: { day: number; otherMonth: boolean }[] = [];
-
+  yearsRange: number = 60;
   step: number = 1;
-  startYear: number = new Date().getFullYear() - 60;
-  endYear: number = new Date().getFullYear() + 60;
+  startYear: number = new Date().getFullYear() - this.yearsRange + 1;
+  endYear: number = new Date().getFullYear() + this.yearsRange - 1;
   yearsPerPage: number = 12;
   rangeStartYear!: number;
   rangeEndYear!: number;
   currentRange: number[] = [];
+  currentDay: number = new Date().getDate();
+  currentMonth: number = new Date().getMonth() + 1;
+  currentYear: number = new Date().getFullYear();
 
   listMonths: any = data.months;
   dayWeek = ['So', 'Mo', 'Di', 'Mi', 'Do', 'Fr', 'Sa'];
   currentYearSelected!: number;
   currentMonthSelected!: number;
+  nameMonthSelected: string = '';
 
   showPreviousButton: boolean = true;
   showNextButton: boolean = true;
-
-  nameMonthSelected: string = '';
 
   constructor() {}
 
@@ -62,12 +64,12 @@ export class CalendarComponent implements OnInit, OnChanges {
 
   updateNavigationButtonsVisibility() {
     const currentYear = new Date().getFullYear();
-    const isFirstBlock = this.currentRange[0] === this.startYear;
+    console.log('Start year => ', this.startYear);
+    console.log('End year » ', this.endYear);
     const isLastBlock =
       this.currentRange[this.currentRange.length - 1] === this.endYear;
     const isPresentBlock =
       this.currentRange[0] <= this.startYear + this.yearsPerPage;
-    console.log('End year » ', this.endYear);
     console.log('currentRange » ', this.currentRange, isPresentBlock);
     console.log(
       this.currentRange[this.currentRange.length - 1],
@@ -78,16 +80,37 @@ export class CalendarComponent implements OnInit, OnChanges {
     );
     switch (this.dateSelectionOptions) {
       case 'past':
-        this.showPreviousButton = !isFirstBlock;
-        this.showNextButton = !isLastBlock;
+        if (
+          this.currentRange[this.currentRange.length - 1] === currentYear ||
+          this.currentRange[this.currentRange.length - 1] === currentYear - 1
+        ) {
+          this.showNextButton = false;
+        } else {
+          this.showNextButton = true;
+        }
+
+        if (this.currentRange[0] === this.startYear) {
+          this.showPreviousButton = false;
+        } else {
+          this.showPreviousButton = true;
+        }
         break;
       case 'future':
-        this.showPreviousButton = !isFirstBlock;
-        this.showNextButton = isLastBlock;
+        if (this.currentRange[0] === currentYear) {
+          this.showPreviousButton = false;
+        } else {
+          this.showPreviousButton = true;
+        }
+
+        if (this.currentRange[this.currentRange.length - 1] === this.endYear) {
+          this.showNextButton = false;
+        } else {
+          this.showNextButton = true;
+        }
         break;
       case 'both':
-        this.showPreviousButton = !isFirstBlock;
-        this.showNextButton = !isLastBlock;
+        // this.showPreviousButton = !isFirstBlock;
+        // this.showNextButton = !isLastBlock;
         break;
       default:
         // Default to showing both buttons if the option is not recognized
@@ -127,11 +150,30 @@ export class CalendarComponent implements OnInit, OnChanges {
 
   initializeCalendar(): void {
     const currentYear = new Date().getFullYear();
-
-    this.currentRange = this.displayYears(
-      currentYear - this.yearsPerPage + 1, // Adjust the start to include current year
-      currentYear
-    );
+    switch (this.dateSelectionOptions) {
+      case 'past':
+        this.currentRange = this.displayYears(
+          currentYear - this.yearsPerPage + 1, // Adjust the start to include current year
+          currentYear
+        );
+        break;
+      case 'future':
+        this.currentRange = this.displayYears(
+          // Adjust the start to include current year
+          currentYear,
+          currentYear + this.yearsPerPage - 1
+        );
+        break;
+      case 'both':
+        // this.showPreviousButton = !isFirstBlock;
+        // this.showNextButton = !isLastBlock;
+        break;
+      default:
+        // Default to showing both buttons if the option is not recognized
+        this.showPreviousButton = true;
+        this.showNextButton = true;
+        break;
+    }
   }
 
   displayYears(startYear: number, endYear: number): number[] {
@@ -163,6 +205,9 @@ export class CalendarComponent implements OnInit, OnChanges {
       this.endYear
     );
 
+    if (this.dateSelectionOptions === 'past') {
+    }
+
     this.currentRange = this.displayYears(newStartYear, newEndYear);
     this.updateNavigationButtonsVisibility();
   }
@@ -188,6 +233,7 @@ export class CalendarComponent implements OnInit, OnChanges {
 
   generateCalendar(currentYear: number, currentMonth: number) {
     this.calendar = [];
+    console.log(this.currentDay);
     const firstDayOfMonth = new Date(currentYear, currentMonth, 1).getDay();
     const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
     const lastDayOfMonth = new Date(
@@ -196,24 +242,91 @@ export class CalendarComponent implements OnInit, OnChanges {
       daysInMonth
     ).getDay();
 
-    // Dias do mês anterior
     const daysInPreviousMonth = new Date(
       currentYear,
       currentMonth,
       0
     ).getDate();
-    for (let i = firstDayOfMonth - 1; i >= 0; i--) {
-      this.calendar.push({ day: daysInPreviousMonth - i, otherMonth: true });
+    console.log('daysInMonth > ', daysInMonth);
+    console.log('lastDayOfMonth > ', lastDayOfMonth);
+
+    // Dias do mês anterior
+    if (this.dateSelectionOptions === 'past') {
+      for (let i = firstDayOfMonth - 1; i >= 0; i--) {
+        this.calendar.push({ day: daysInPreviousMonth - i, otherMonth: true });
+      }
+    }
+    if (this.dateSelectionOptions === 'future') {
+      for (let i = firstDayOfMonth - 1; i >= 0; i--) {
+        this.calendar.push({ day: daysInPreviousMonth - i, otherMonth: true });
+      }
+      if (currentMonth + 1 === this.currentMonth) {
+        for (let i = 1; i < this.currentDay; i++) {
+          this.calendar.push({ day: i, otherMonth: true });
+        }
+      }
     }
 
     // Dias do mês atual
-    for (let i = 1; i <= daysInMonth; i++) {
-      this.calendar.push({ day: i, otherMonth: false });
+    if (this.dateSelectionOptions === 'past') {
+      if (
+        currentMonth + 1 === this.currentMonth &&
+        currentYear === this.currentYear
+      ) {
+        for (let i = 1; i <= this.currentDay; i++) {
+          this.calendar.push({ day: i, otherMonth: false });
+        }
+      } else {
+        for (let i = 1; i <= daysInMonth; i++) {
+          this.calendar.push({ day: i, otherMonth: false });
+        }
+      }
+    }
+
+    if (this.dateSelectionOptions === 'future') {
+      if (
+        currentMonth + 1 === this.currentMonth &&
+        currentYear === this.currentYear
+      ) {
+        for (let i = this.currentDay; i <= daysInMonth; i++) {
+          this.calendar.push({ day: i, otherMonth: false });
+        }
+      } else {
+        for (let i = 1; i <= daysInMonth; i++) {
+          this.calendar.push({ day: i, otherMonth: false });
+        }
+      }
     }
 
     // Dias do próximo mês
-    for (let i = 1; i <= 6 - lastDayOfMonth; i++) {
-      this.calendar.push({ day: i, otherMonth: true });
+    if (this.dateSelectionOptions === 'past') {
+      if (
+        currentMonth + 1 === this.currentMonth &&
+        currentYear === this.currentYear
+      ) {
+        for (let i = this.currentDay + 1; i <= daysInMonth; i++) {
+          this.calendar.push({ day: i, otherMonth: true });
+        }
+      }
+      for (let i = 1; i <= 6 - lastDayOfMonth; i++) {
+        this.calendar.push({ day: i, otherMonth: true });
+      }
+    }
+
+    if (this.dateSelectionOptions === 'future') {
+      if (
+        currentMonth + 1 === this.currentMonth &&
+        currentYear === this.currentYear
+      ) {
+        for (let i = 1; i <= 6 - lastDayOfMonth; i++) {
+          this.calendar.push({ day: i, otherMonth: true });
+        }
+      } else {
+        for (let i = 1; i <= 6 - lastDayOfMonth; i++) {
+          // add daysInPreviousMonth
+          this.calendar.push({ day: i, otherMonth: true });
+        }
+      }
     }
   }
 }

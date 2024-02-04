@@ -9,14 +9,15 @@
           >*</span
         >Gerburtsdatum
       </h1>
-      <div class="input">
+      <div class="input" >
         <input
           id="birthDate"
-          (input)="onInputChange($event)"
+          mask="00.00.0000"
           class="input-field"
           type="text"
           name="birthDate"
           placeholder="{{ day }}.{{ month }}.{{ year }}"
+          (click)="inputCalendarToggle()"
           [formControl]="CwpFormService.birthDateControl"
           [ngClass]="{
           success: CwpFormService.CWPForm.get('personalData.birthDate')?.valid && CwpFlowService.ageLessThen18Years.value && less18Years == false,

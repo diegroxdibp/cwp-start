@@ -43,10 +43,15 @@ export class BirthDateComponent {
   }
   openCalendar() {
     this.visible = !this.visible;
-    if (this.visible === true) {
-      this.CwpFormService.CWPForm.get('personalData.birthDate')?.disable();
-    } else {
-      this.CwpFormService.CWPForm.get('personalData.birthDate')?.enable();
+    // if (this.visible === true) {
+    //   this.CwpFormService.CWPForm.get('personalData.birthDate')?.disable();
+    // } else {
+    //   this.CwpFormService.CWPForm.get('personalData.birthDate')?.enable();
+    // }
+  }
+  inputCalendarToggle() {
+    if (this.visible) {
+      this.visible = !this.visible;
     }
   }
   isUserAtLeast18YearsOld() {
@@ -73,10 +78,11 @@ export class BirthDateComponent {
       'personalData.birthDate'
     )?.value;
 
-   this.birthDate = this.CwpFormService.CWPForm.get('personalData.birthDate')?.value;
+    this.birthDate = this.CwpFormService.CWPForm.get(
+      'personalData.birthDate'
+    )?.value;
     console.log(this.birthDate);
-  
-   
+
     if (this.birthDate && this.birthDate.length === 8) {
       const day = this.birthDate.substring(0, 2);
       const month = this.birthDate.substring(2, 4);
@@ -100,23 +106,23 @@ export class BirthDateComponent {
       }
     }
   }
-  onInputChange(event: Event): void {
-    const inputElement = event.target as HTMLInputElement;
-    let inputValue = inputElement.value.replace(/[^0-9]/g, '');
-  
-    if (inputValue.length > 8) {
-      inputValue = inputValue.substring(0, 8);
-    }
-  
-    if (inputValue.length >= 2) {
-      inputValue = `${inputValue.substring(0, 2)}.${inputValue.substring(2)}`;
-    }
-  
-    if (inputValue.length >= 5) {
-      inputValue = `${inputValue.substring(0, 5)}.${inputValue.substring(5)}`;
-    }
-  
-    inputElement.value = inputValue;
-    this.CwpFormService.birthDateControl.setValue(inputValue);
-  }
+  // onInputChange(event: Event): void {
+  //   const inputElement = event.target as HTMLInputElement;
+  //   let inputValue = inputElement.value.replace(/[^0-9]/g, '');
+
+  //   if (inputValue.length > 8) {
+  //     inputValue = inputValue.substring(0, 8);
+  //   }
+
+  //   if (inputValue.length >= 2) {
+  //     inputValue = `${inputValue.substring(0, 2)}.${inputValue.substring(2)}`;
+  //   }
+
+  //   if (inputValue.length >= 5) {
+  //     inputValue = `${inputValue.substring(0, 5)}.${inputValue.substring(5)}`;
+  //   }
+
+  //   inputElement.value = inputValue;
+  //   this.CwpFormService.birthDateControl.setValue(inputValue);
+  // }
 }
